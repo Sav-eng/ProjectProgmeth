@@ -5,14 +5,14 @@ public abstract class Character {
 	private int atk;
 	private int def;
 	
-	public void Character(int hp, int atk, int def) {
+	public Character(int hp, int atk, int def) {
 		this.hp = hp;
-		this.def = def;
 		this.atk = atk;
+		this.def = def;
 	}
 	
-	public void move() { 
-		//TODO after finish GUI
+	public int move() { 
+		//TODO add some move 
 	}
 	
 	public abstract int attack();
