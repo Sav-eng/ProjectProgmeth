@@ -1,5 +1,5 @@
 package base;
 
-public class Melee {
-
+public interface Melee {
+	public void defenceBoost();
 }

@@ -1,5 +1,5 @@
 package base;
 
-public class Range {
-
+public interface Range {
+	public void attackBoost();
 }
