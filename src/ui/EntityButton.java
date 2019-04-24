@@ -28,6 +28,7 @@ public class EntityButton extends Button {
 		if (isPress == false) {
 			isPress = true;
 			//TODO add method
+			System.out.println("test thing");
 		}
 	}
 
