@@ -16,6 +16,7 @@ public class EntityButton extends Button {
 
 	String character;
 	boolean isPress;
+	boolean isCooldown;
 
 	public EntityButton(String character) {
 		super();
@@ -23,9 +24,11 @@ public class EntityButton extends Button {
 
 		setBorder(new Border(new BorderStroke(Color.GRAY, SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		isPress = false;
+		isCooldown = false;
 		
 		String url;
 		switch(character) {
+		//TODO fix path
 			case "Wood" : url = "/res/Wood.png"; break;
 			case "Iron" : url = "/res/Iron_ore.png"; break;
 			case "Iron Plate" : url = "/res/Iron_plate.png"; break;
@@ -35,7 +38,7 @@ public class EntityButton extends Button {
 		}
 		Image image = new Image(getClass().getResourceAsStream(url));
 		this.setGraphic(new ImageView(image));
-
+		this.setStyle("-fx-background-color: #ffffff;");
 	}
 
 	public void buttonPressed() {
@@ -48,5 +51,12 @@ public class EntityButton extends Button {
 
 	public void buttonRelease() {
 		isPress = false;
+	}
+	
+	public boolean isCooldown() {
+		return isCooldown;
+	}
+	public void buttonCooldown() {
+		//TODO thread timer(countdown)
 	}
 }
