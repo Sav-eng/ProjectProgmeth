@@ -25,7 +25,7 @@ public abstract class Character {
 
 	public int move() {
 		// TODO add some move
-
+		System.out.println("hello world");
 	}
 
 	public abstract int attack();
