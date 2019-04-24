@@ -14,13 +14,16 @@ import javafx.scene.paint.Color;
 
 public class EntityButton extends Button {
 
-	String character;
-	boolean isPress;
-	boolean isCooldown;
+	private String character;
+	private int price;
+	private boolean isPress;
+	private boolean isCooldown;
 
-	public EntityButton(String character) {
+	public EntityButton(String character,int price) {
 		super();
 		this.setPadding(new Insets(5, 5, 5, 5));
+		this.character = character;
+		this.price = price;
 
 		setBorder(new Border(new BorderStroke(Color.GRAY, SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		isPress = false;
@@ -53,10 +56,26 @@ public class EntityButton extends Button {
 		isPress = false;
 	}
 	
-	public boolean isCooldown() {
+	public boolean getIsCooldown() {
 		return isCooldown;
 	}
 	public void buttonCooldown() {
 		//TODO thread timer(countdown)
+	}
+
+	public boolean isPress() {
+		return isPress;
+	}
+
+	public void setPress(boolean isPress) {
+		this.isPress = isPress;
+	}
+
+	public String getCharacter() {
+		return character;
+	}
+
+	public int getPrice() {
+		return price;
 	}
 }
