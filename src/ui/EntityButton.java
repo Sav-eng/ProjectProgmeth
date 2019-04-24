@@ -4,6 +4,8 @@ import static javafx.scene.layout.BorderStrokeStyle.SOLID;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderWidths;
@@ -21,6 +23,18 @@ public class EntityButton extends Button {
 
 		setBorder(new Border(new BorderStroke(Color.GRAY, SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		isPress = false;
+		
+		String url;
+		switch(character) {
+			case "Wood" : url = "/res/Wood.png"; break;
+			case "Iron" : url = "/res/Iron_ore.png"; break;
+			case "Iron Plate" : url = "/res/Iron_plate.png"; break;
+			case "Iron Sword" : url = "/res/Iron_Sword.png"; break;
+			case "Gem"	: url = "/res/Gem.png"; break;
+			default : url = "/res/Other.png";
+		}
+		Image image = new Image(getClass().getResourceAsStream(url));
+		this.setGraphic(new ImageView(image));
 
 	}
 
