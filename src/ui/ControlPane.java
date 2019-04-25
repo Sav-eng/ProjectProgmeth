@@ -14,6 +14,8 @@ public class ControlPane extends HBox{
 	EntityButton Char5;
 	RateButton rateUp;
 	UpgradeButton levelUp;
+	AttackBuffButton attackUp;
+	DefenceBuffButton defenceUp;
 	
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
@@ -33,11 +35,14 @@ public class ControlPane extends HBox{
 		Char1 = new EntityButton(character, price , cooldowmTime);
 		rateUp = new RateButton(character, price, 1);
 		levelUp = new UpgradeButton(character, price, cooldowmTime, 1);
+		attackUp = new AttackBuffButton(character, price, cooldownTime, buffAmount);
+		defenceUp = new DefenceBuffButton(character, price, cooldownTime, buffAmount);
 	}
 	
 	public void InitializeButtonLevel2() {
 		Char1 = new EntityButton(character, price, cooldownTime);
 		rateUp = new RateButton(character, price, RateButton.getLevel());
-			 
+		attackUp = new AttackBuffButton(character, price, cooldownTime, buffAmount);
+		defenceUp = new DefenceBuffButton(character, price, cooldownTime, buffAmount);
 	}
 }
