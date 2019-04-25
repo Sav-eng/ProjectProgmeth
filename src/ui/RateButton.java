@@ -1,6 +1,6 @@
 package ui;
 
-public class RateButton extends EntityButton{
+public class RateButton extends GameButton{
 	
 	private static int level;
 	private static int produceRate;

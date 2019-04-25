@@ -30,13 +30,13 @@ public class ControlPane extends HBox{
 	
 	public void InitializeButtonLevel1() {
 		//TODO set entityButton
-		Char1 = new EntityButton(character, price);
+		Char1 = new EntityButton(character, price , cooldowmTime);
 		rateUp = new RateButton(character, price, 1);
-		levelUp = new UpgradeButton(character, price, 1);
+		levelUp = new UpgradeButton(character, price, cooldowmTime, 1);
 	}
 	
 	public void InitializeButtonLevel2() {
-		Char1 = new EntityButton(character, price);
+		Char1 = new EntityButton(character, price, cooldownTime);
 		rateUp = new RateButton(character, price, RateButton.getLevel());
 			 
 	}

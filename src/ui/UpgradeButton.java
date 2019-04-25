@@ -2,7 +2,7 @@ package ui;
 
 import javafx.scene.control.Button;
 
-public class UpgradeButton extends EntityButton{
+public class UpgradeButton extends GameButton{
 	private int level;
 	
 	public UpgradeButton(String character, int price, int level) {
