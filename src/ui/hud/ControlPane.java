@@ -1,4 +1,4 @@
-package ui;
+package ui.hud;
 
 import constant.Numbers;
 import javafx.geometry.Insets;

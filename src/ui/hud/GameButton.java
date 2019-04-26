@@ -1,4 +1,4 @@
-package ui;
+package ui.hud;
 
 import static javafx.scene.layout.BorderStrokeStyle.SOLID;
 

@@ -1,4 +1,4 @@
-package ui;
+package ui.hud;
 
 public class EntityButton extends GameButton{
 

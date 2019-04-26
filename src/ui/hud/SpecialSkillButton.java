@@ -1,4 +1,4 @@
-package ui;
+package ui.hud;
 
 public abstract class SpecialSkillButton extends GameButton{
 

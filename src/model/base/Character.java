@@ -1,6 +1,6 @@
-package model;
+package model.base;
 
-public abstract class Character {
+public abstract class Character implements IRenderable{
 	private int hp;
 	private int atk;
 	private int def;
@@ -28,8 +28,12 @@ public abstract class Character {
 		
 	}
 
+	public boolean canAttack() {
+		//TODO add can attack
+	}
+	
 	public abstract int attack();
-
+	
 	public boolean isDeath() {
 		return this.hp <= 0;
 	}
