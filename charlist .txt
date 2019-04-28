@@ -1,0 +1,22 @@
+world 1:
+1 hero : wizard fire
+2 melee :	1. Knight 1 
+	2.  Thief
+2 range :	1. archer blue hair
+	2. Fairy
+
+world 2:
+1 hero : fallen angle 3
+2 melee :	1. Knight 2
+	2. Knight 3
+2 range :	1. wizard fire
+	2. wizard laser
+
+Monster :
+minion : 	1. Goblin
+	2. Golem 2
+big monster: 	1.orc
+		2, Troll 1
+Boss:	1. ork 3
+	2. Troll 2
+
