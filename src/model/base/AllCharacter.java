@@ -5,6 +5,7 @@ import java.util.List;
 
 public class AllCharacter {
 	List<Character> allCharacters;
+	
 	public AllCharacter() {
 		allCharacters = new ArrayList<Character>();
 		
@@ -17,6 +18,8 @@ public class AllCharacter {
 	public void renderCharacter() {
 		for(Character x: allCharacters) {
 			// TODO render each character
+			x.renderMove();
+			x.renderAttck();
 		}
 	}
 	
