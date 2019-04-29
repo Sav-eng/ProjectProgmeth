@@ -23,7 +23,9 @@ public class CharacterLink {
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5] ;
 	public static Image[] wizardFireAttack = new Image[5] ;
-	public static Image[] knightWalk = new Image[];
+	public static Image[] knight1Walk = new Image[7];
+	public static Image[] knight1Die = new Image[7];
+	public static Image[] knight1Attack = new Image[8];
 	
 	public static void loadResource() {
 		
