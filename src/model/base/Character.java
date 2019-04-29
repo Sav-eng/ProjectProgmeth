@@ -4,7 +4,11 @@ public abstract class Character implements IRenderable{
 	private int hp;
 	private int atk;
 	private int def;
-
+	private int x;
+	private int xSprite;
+	private int moveSpeed;
+	private boolean player;
+	
 	public Character(int hp, int atk, int def) {
 		if (hp <= 0) {
 			this.hp = 1;
@@ -23,15 +27,13 @@ public abstract class Character implements IRenderable{
 		}
 	}
 
-	public int move() {
+	public void move() {
 		// TODO add some move
 		
-	}
+	}	
 
-	public boolean canAttack() {
-		//TODO add can attack
-	}
-	
+	public abstract void renderMove();
+	public abstract void renderAttck();
 	public abstract int attack();
 	
 	public boolean isDeath() {

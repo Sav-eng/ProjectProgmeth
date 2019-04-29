@@ -1,0 +1,32 @@
+PIC .png
+menu
+button in menu
+bg in game ( 2 phase ?)
+icon character/ icon energy rate
+base (2 phase)
+pause button
+pause bg
+
+
+SOUND .wav
+menu
+game ( 2 phase ?)
+effect attack of each character
+effect on each button
+
+init stat each mons
+***
+hp
+atk
+def
+movespeed
+atkspeed
+hit box
+***
+(stack all mons // one to one)
+
+
+
+
+
+
