@@ -1,16 +1,15 @@
 PIC .png
-menu
+bg menu
 button in menu
 bg in game ( 2 phase ?)
 icon character/ icon energy rate
 base (2 phase)
 pause button
-pause bg
-
+LOGO
 
 SOUND .wav
-menu
-game ( 2 phase ?)
+bg menu
+bg game ( 2 phase ?)
 effect attack of each character
 effect on each button
 
@@ -19,12 +18,19 @@ init stat each mons
 hp
 atk
 def
-movespeed
-atkspeed
-hit box
+movespeed // movespeed per frame
+atkspeed // sec per hit
+hit box // 3 character
+cooldown
+cost
 ***
-(stack all mons // one to one)
 
+init cost to rank up money 
+init cost to rank up phase
+init cost to use special/cooldown/buff amount
+
+
+(stack all mons // one to one)
 
 
 

@@ -16,10 +16,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		
 		Scene scene = new MainMenuScene();
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");
+		
+		
+		
 		primaryStage.show();
 	
 	}

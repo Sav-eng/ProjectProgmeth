@@ -4,37 +4,51 @@ public abstract class Character implements IRenderable{
 	private int hp;
 	private int atk;
 	private int def;
-	private int x;
+	private int x,z;
 	private int xSprite;
 	private int moveSpeed;
 	private boolean player;
 	
-	public Character(int hp, int atk, int def) {
-		if (hp <= 0) {
-			this.hp = 1;
-		} else {
-			this.hp = hp;
-		}
-		if (atk <= 0) {
-			this.atk = 1;
-		} else {
-			this.atk = atk;
-		}
-		if (def <= 0) {
-			this.def = 1;
-		} else {
-			this.def = def;
-		}
+	public Character(int hp, int atk, int def,int moveSpeed,int x) {
+		this.hp = hp;
+		this.atk = atk;
+		this.def = def;
+		this.moveSpeed = moveSpeed;
+		this.x = x;
 	}
 
 	public void move() {
 		// TODO add some move
-		
+		x += moveSpeed;
 	}	
 
-	public abstract void renderMove();
-	public abstract void renderAttck();
-	public abstract int attack();
+	public void renderMove() {
+		
+	}
+	public void renderAttck() {
+		
+	}
+	public void attack(Character enemy) {
+		
+	}
+	
+	public int getMoveSpeed() {
+		
+	}
+	
+	public void die() {
+		// TODO delete from entities list and team list
+	}
+	
+	public int beAttacked() {
+		
+	}
+	public void isAttack() {
+		
+	}
+	public void die() {
+		
+	}
 	
 	public boolean isDeath() {
 		return this.hp <= 0;

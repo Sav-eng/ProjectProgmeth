@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-public abstract class GameButton extends Button {
+public abstract class GameButton extends EntityButton {
 
 	private String character;
 	private int price;

@@ -9,7 +9,6 @@ import javafx.scene.layout.StackPane;
 
 public class GamePlayScene extends Scene {
 
-	AnimationTimer timerAnimation;
 	StackPane root;
 
 	public GamePlayScene() {
