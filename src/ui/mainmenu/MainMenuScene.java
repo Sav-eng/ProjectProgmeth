@@ -48,7 +48,7 @@ public class MainMenuScene extends StackPane {
 		gc = bg.getGraphicsContext2D();
 		this.drawBg(gc);
 		this.getChildren().add(bg);
-		
+
 		menuButton = new VBox();
 		menuButton.setPadding(new Insets(10));
 		menuButton.setSpacing(40);
