@@ -22,7 +22,7 @@ public class test extends Application {
 		
 		MainMenuScene root = new MainMenuScene();
 //		HBox root = new HBox();
-
+		LoadResource.loadResource();
 		Scene scene = new Scene(root);
 		primaryStage.setTitle("test"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene

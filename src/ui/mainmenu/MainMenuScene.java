@@ -49,28 +49,12 @@ public class MainMenuScene extends StackPane {
 		gc.setFill(Color.DARKRED);
 		gc.fillRect(0, 0, 200, 200);
 		this.getChildren().add(bg);
-//		
-//		menuButton = new VBox();
-//		menuButton.setPadding(new Insets(10));
-//		menuButton.setSpacing(10);
-//		menuButton.setAlignment(Pos.BASELINE_CENTER);
-//		
-//		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
-//		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
-//		
-//		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
-//		
-//		this.getChildren().add(menuButton);
 
 		
 	}
 	
 	
 	public void drawBg(GraphicsContext gc) {
-		gc.setFill(Color.RED);
-		//a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
-		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
 		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 	}
 }
