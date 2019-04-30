@@ -14,6 +14,6 @@ public class GamePlayScene extends Scene {
 	public GamePlayScene() {
 		super(new StackPane(), Numbers.WIN_WIDTH , Numbers.WIN_HEIGHT);
 		root = (StackPane)getRoot();
-	
+	}
 		
 }
