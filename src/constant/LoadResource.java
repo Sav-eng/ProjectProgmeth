@@ -24,6 +24,7 @@ public class LoadResource {
 	public static Image menuBg;
 	public static Image playButtonIcon;
 	public static Image exitButtonIcon;
+	public static Image logo;
 	
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5] ;
@@ -169,6 +170,7 @@ public class LoadResource {
 		menuBg = loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		playButtonIcon = loadImage("Other/playButton.png", 100, 50);
 		exitButtonIcon = loadImage("Other/exitButton.png", 100, 50);
+		logo = loadImage("Other/Logo.png", 700, 100);
 		
 //		setProgress(0.1);
 //		setProgress(0.2);

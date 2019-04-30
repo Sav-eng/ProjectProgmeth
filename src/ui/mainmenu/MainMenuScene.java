@@ -56,8 +56,9 @@ public class MainMenuScene extends StackPane {
 		
 		Image b = LoadResource.loadImage("Other/playButton.png", 100, 50);
 		Image c = LoadResource.loadImage("Other/exitButton.png", 100, 50);
-		playButtonMainmenu = new ButtonMainmenu(b);
-		exitButtonMainmenu = new ButtonMainmenu(c);
+		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
+		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
+		
 		
 		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
 		
@@ -68,10 +69,11 @@ public class MainMenuScene extends StackPane {
 	
 	
 	public void drawBg(GraphicsContext gc) {
-		gc.setFill(Color.RED);
 		a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
 //		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
-		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		Image d = LoadResource.loadImage("Other/Logo.png", 700, 100);
+		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		gc.drawImage(LoadResource.logo, 500, 50);
 	}
 }
