@@ -6,13 +6,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import constant.CharacterLink;
+import constant.LoadResource;
 
 public class RenderableHolder {
 	private List<IRenderable> entities;
 	
 	static {
-		CharacterLink.loadResource();
+		LoadResource.loadResource();
 	}
 	
 	public void update() {

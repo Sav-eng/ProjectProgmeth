@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -27,6 +28,8 @@ public class MainMenuScene extends Scene {
 	private VBox menus;
 	private ButtonMainmenu playButtonMainmenu;
 	private ButtonMainmenu creditButtonMainmenu;
+	
+	
 	public MainMenuScene() {
 		super(new Pane(),Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
 		
@@ -37,6 +40,7 @@ public class MainMenuScene extends Scene {
 		Canvas menuBackgroud = new Canvas(Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
 		GraphicsContext gc = menuBackgroud.getGraphicsContext2D();
 		gc.setFill(Color.BLACK);
+		gc.drawImage(new Image("/res/Other/mainBg.jpg"), 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		
 		
 		playButtonMainmenu = new ButtonMainmenu("PLAY");

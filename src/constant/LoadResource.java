@@ -2,7 +2,7 @@ package constant;
 
 import javafx.scene.image.Image;
 
-public class CharacterLink {
+public class LoadResource {
 	
 	private static double progress = 0;
 	
@@ -176,7 +176,7 @@ public class CharacterLink {
 	}
 	
 	public static void setProgress(double progress) {
-		CharacterLink.progress = progress;
+		LoadResource.progress = progress;
 	}
 	
 	public static Image loadImage(String path, double width, double height){
