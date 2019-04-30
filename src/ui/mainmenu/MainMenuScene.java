@@ -15,51 +15,37 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
-
-
-
+import sun.misc.GC;
 import constant.Numbers;
+import constant.LoadResource;
 
-
-public class MainMenuScene extends Scene {
+public class MainMenuScene extends StackPane {
 	
-
-	private Pane root;
-	private VBox menus;
+	private Canvas bg;
+	private GraphicsContext gc;
+	private VBox manuButton;
 	private ButtonMainmenu playButtonMainmenu;
-	private ButtonMainmenu creditButtonMainmenu;
+	private ButtonMainmenu exitButtonMainmenu;
 	
 	
 	public MainMenuScene() {
-		super(new Pane(),Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
+		super();
+		this.setPrefHeight(Numbers.WIN_HEIGHT);
+		this.setPrefWidth(Numbers.WIN_WIDTH);
+
+		bg = new Canvas();
+		bg.setWidth(Numbers.WIN_WIDTH);
+		bg.setHeight(Numbers.WIN_HEIGHT);
+		gc = bg.getGraphicsContext2D();
+		this.drawBg(gc);
+		this.getChildren().add(bg);
+
 		
-		root = (Pane)getRoot();
-		
-		menus = new VBox();
-		
-		Canvas menuBackgroud = new Canvas(Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
-		GraphicsContext gc = menuBackgroud.getGraphicsContext2D();
+	}
+	
+	
+	public void drawBg(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
-		gc.drawImage(new Image("/res/Other/mainBg.jpg"), 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		
-		
-		playButtonMainmenu = new ButtonMainmenu("PLAY");
-		playButtonMainmenu.setAlignment(Pos.CENTER);
-		creditButtonMainmenu = new ButtonMainmenu("CREDIT");
-		creditButtonMainmenu.setAlignment(Pos.CENTER);
-		playButtonMainmenu.setOnAction(e -> {
-			// TODO set to gameplay
-		});
-		
-		creditButtonMainmenu.setOnAction(e -> {
-			// TODO set to action
-		});
-		
-		menus.getChildren().addAll(playButtonMainmenu,creditButtonMainmenu);
-//		menus.add(playButtonMainmenu,creditButtonMainmenu);
-		
-		root.getChildren().addAll(menuBackgroud,menus);
-		
-		
+		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 	}
 }

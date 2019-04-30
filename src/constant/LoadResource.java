@@ -21,6 +21,7 @@ public class LoadResource {
 	public static Image orkIcon;
 	public static Image angleIcon;
 	public static Image fairyIcon;
+	public static Image menuBg;
 	
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5] ;
@@ -163,6 +164,7 @@ public class LoadResource {
 			fairyDie[i] = loadImage("Fairy/die/" + i+1 + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			fairyWalk[i] = loadImage("Fairy/walk/" + i+1 + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		menuBg = loadImage("/res/Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		setProgress(0.1);
 		setProgress(0.2);
 		setProgress(0.3);
