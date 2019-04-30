@@ -20,6 +20,7 @@ public class Loop {
 //				update money
 //				update time
 //				update cooldown
+				
 			}
 			frameCount++;
 		}

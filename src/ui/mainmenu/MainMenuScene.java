@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -18,6 +19,11 @@ import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
 import sun.misc.GC;
 import constant.Numbers;
+
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+
 import constant.LoadResource;
 
 public class MainMenuScene extends StackPane {
@@ -62,7 +68,9 @@ public class MainMenuScene extends StackPane {
 	
 	public void drawBg(GraphicsContext gc) {
 		gc.setFill(Color.RED);
+		//a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
+		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
 		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 	}
 }

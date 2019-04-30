@@ -20,6 +20,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");
 		
+		scene.setRoot(value);
 		
 		
 		primaryStage.show();
