@@ -1,5 +1,6 @@
 package ui.mainmenu;
 
+import constant.LoadResource;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -17,6 +18,8 @@ public class test extends Application {
 	public void start(Stage primaryStage) {
 
 		// TODO Implement Main
+//		LoadResource.loadResource();
+		
 		MainMenuScene root = new MainMenuScene();
 //		HBox root = new HBox();
 

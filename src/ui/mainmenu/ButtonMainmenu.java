@@ -1,9 +1,12 @@
 package ui.mainmenu;
 
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class ButtonMainmenu extends Button{
-	public ButtonMainmenu(String text) {
-		setText(text);
+	public ButtonMainmenu(Image image) {
+		this.setGraphic(new ImageView(image));
+		this.setStyle("-fx-background-color: #ffffff;");
 	}
 }

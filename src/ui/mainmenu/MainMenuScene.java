@@ -4,6 +4,7 @@ import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -23,9 +24,10 @@ public class MainMenuScene extends StackPane {
 	
 	private Canvas bg;
 	private GraphicsContext gc;
-	private VBox manuButton;
+	private VBox menuButton;
 	private ButtonMainmenu playButtonMainmenu;
 	private ButtonMainmenu exitButtonMainmenu;
+	Image a;
 	
 	
 	public MainMenuScene() {
@@ -38,14 +40,29 @@ public class MainMenuScene extends StackPane {
 		bg.setHeight(Numbers.WIN_HEIGHT);
 		gc = bg.getGraphicsContext2D();
 		this.drawBg(gc);
+		gc.setFill(Color.DARKRED);
+		gc.fillRect(0, 0, 200, 200);
 		this.getChildren().add(bg);
+//		
+//		menuButton = new VBox();
+//		menuButton.setPadding(new Insets(10));
+//		menuButton.setSpacing(10);
+//		menuButton.setAlignment(Pos.BASELINE_CENTER);
+//		
+//		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
+//		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
+//		
+//		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
+//		
+//		this.getChildren().add(menuButton);
 
 		
 	}
 	
 	
 	public void drawBg(GraphicsContext gc) {
-		gc.setFill(Color.BLACK);
-		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		gc.setFill(Color.RED);
+		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
+		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 	}
 }

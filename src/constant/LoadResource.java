@@ -22,6 +22,8 @@ public class LoadResource {
 	public static Image angleIcon;
 	public static Image fairyIcon;
 	public static Image menuBg;
+	public static Image playButtonIcon;
+	public static Image exitButtonIcon;
 	
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5] ;
@@ -72,7 +74,7 @@ public class LoadResource {
 		
 	public static void loadResource() {
 		
-		setProgress(0);
+//		setProgress(0);
 		for(int i=0;i<5;i++) {
 			wizardFireWalk[i] = loadImage("Wizard_fire/walk/" + i+1 + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			wizardFireDie[i] = loadImage("Wizard_fire/die/" + i+1 + ".png" , Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -164,17 +166,20 @@ public class LoadResource {
 			fairyDie[i] = loadImage("Fairy/die/" + i+1 + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			fairyWalk[i] = loadImage("Fairy/walk/" + i+1 + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
-		menuBg = loadImage("/res/Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		setProgress(0.1);
-		setProgress(0.2);
-		setProgress(0.3);
-		setProgress(0.4);
-		setProgress(0.5);
-		setProgress(0.6);
-		setProgress(0.7);
-		setProgress(0.8);
-		setProgress(0.9);
-		setProgress(1.0);
+		menuBg = loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		playButtonIcon = loadImage("Other/playButton.png", 100, 50);
+		exitButtonIcon = loadImage("Other/exitButton.png", 100, 50);
+		
+//		setProgress(0.1);
+//		setProgress(0.2);
+//		setProgress(0.3);
+//		setProgress(0.4);
+//		setProgress(0.5);
+//		setProgress(0.6);
+//		setProgress(0.7);
+//		setProgress(0.8);
+//		setProgress(0.9);
+//		setProgress(1.0);
 	}
 	
 	public static void setProgress(double progress) {
