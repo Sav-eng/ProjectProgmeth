@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
+import sun.awt.image.ImageAccessException;
 import sun.misc.GC;
 import constant.Numbers;
 
@@ -46,21 +47,21 @@ public class MainMenuScene extends StackPane {
 		bg.setHeight(Numbers.WIN_HEIGHT);
 		gc = bg.getGraphicsContext2D();
 		this.drawBg(gc);
-		gc.setFill(Color.DARKRED);
-		gc.fillRect(0, 0, 200, 200);
 		this.getChildren().add(bg);
-//		
-//		menuButton = new VBox();
-//		menuButton.setPadding(new Insets(10));
-//		menuButton.setSpacing(10);
-//		menuButton.setAlignment(Pos.BASELINE_CENTER);
-//		
-//		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
-//		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
-//		
-//		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
-//		
-//		this.getChildren().add(menuButton);
+		
+		menuButton = new VBox();
+		menuButton.setPadding(new Insets(10));
+		menuButton.setSpacing(40);
+		menuButton.setAlignment(Pos.CENTER);
+		
+		Image b = LoadResource.loadImage("Other/playButton.png", 100, 50);
+		Image c = LoadResource.loadImage("Other/exitButton.png", 100, 50);
+		playButtonMainmenu = new ButtonMainmenu(b);
+		exitButtonMainmenu = new ButtonMainmenu(c);
+		
+		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
+		
+		this.getChildren().add(menuButton);
 
 		
 	}
@@ -68,9 +69,9 @@ public class MainMenuScene extends StackPane {
 	
 	public void drawBg(GraphicsContext gc) {
 		gc.setFill(Color.RED);
-		//a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
-		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
+//		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
 		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 	}
 }
