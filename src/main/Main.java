@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
-import ui.mainmenu.MainMenuScene;
+import ui.scene.MainMenuScene;
 
 public class Main extends Application {
 

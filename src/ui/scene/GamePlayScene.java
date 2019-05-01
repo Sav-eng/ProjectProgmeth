@@ -1,4 +1,4 @@
-package ui.hud;
+package ui.scene;
 
 import constant.Numbers;
 import javafx.animation.Animation;

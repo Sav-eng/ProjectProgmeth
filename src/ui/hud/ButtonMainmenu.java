@@ -1,4 +1,4 @@
-package ui.mainmenu;
+package ui.hud;
 
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

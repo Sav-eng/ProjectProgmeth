@@ -29,8 +29,8 @@ init cost to rank up money
 init cost to rank up phase
 init cost to use special/cooldown/buff amount
 
+init bot
 
-(stack all mons // one to one)
 
 
 

@@ -1,4 +1,4 @@
-package ui.mainmenu;
+package ui.scene;
 
 import constant.LoadResource;
 import javafx.application.Application;

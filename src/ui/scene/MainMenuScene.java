@@ -1,4 +1,4 @@
-package ui.mainmenu;
+package ui.scene;
 
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
 import sun.awt.image.ImageAccessException;
 import sun.misc.GC;
+import ui.hud.ButtonMainmenu;
 import constant.Numbers;
 
 import java.awt.image.BufferedImage;
