@@ -30,6 +30,8 @@ import java.io.FileInputStream;
 
 import javax.swing.text.Highlighter.Highlight;
 
+import com.sun.org.apache.xalan.internal.xsltc.dom.ExtendedSAX;
+
 import constant.LoadResource;
 
 public class MainMenuScene extends StackPane {
@@ -65,12 +67,19 @@ public class MainMenuScene extends StackPane {
 //		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
 		playButtonMainmenu = new MainmenuButton(b);
 		exitButtonMainmenu = new MainmenuButton(c);
+		
+
+		setMouseEvent(playButtonMainmenu);
+		setMouseEvent(exitButtonMainmenu);
+		
 		exitButtonMainmenu.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent event) {
 	            System.exit(1);
 	        }
 		});
+		
+		//TODO add playButton OnPressEvent (go to game play scene)
 		
 		
 		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
@@ -91,5 +100,23 @@ public class MainMenuScene extends StackPane {
 
 		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		gc.drawImage(d, 500, 50);
+	}
+	
+	private void setMouseEvent(MainmenuButton butt) {
+		butt.addEventHandler(MouseEvent.MOUSE_ENTERED,
+		        new EventHandler<MouseEvent>() {
+	          @Override
+	          public void handle(MouseEvent e) {
+	            butt.highlight();
+	          }
+	        });
+		
+		butt.addEventHandler(MouseEvent.MOUSE_EXITED,
+		        new EventHandler<MouseEvent>() {
+		          @Override
+		          public void handle(MouseEvent e) {
+		            butt.unHighlight();
+		          }
+		        });
 	}
 }
