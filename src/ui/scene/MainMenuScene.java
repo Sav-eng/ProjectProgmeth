@@ -3,6 +3,7 @@ package ui.scene;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,6 +12,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -19,12 +21,14 @@ import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
 import sun.awt.image.ImageAccessException;
 import sun.misc.GC;
-import ui.hud.ButtonMainmenu;
+import ui.hud.MainmenuButton;
 import constant.Numbers;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+
+import javax.swing.text.Highlighter.Highlight;
 
 import constant.LoadResource;
 
@@ -33,8 +37,8 @@ public class MainMenuScene extends StackPane {
 	private Canvas bg;
 	private GraphicsContext gc;
 	private VBox menuButton;
-	private ButtonMainmenu playButtonMainmenu;
-	private ButtonMainmenu exitButtonMainmenu;
+	private MainmenuButton playButtonMainmenu;
+	private MainmenuButton exitButtonMainmenu;
 	Image a;
 	
 	
@@ -59,12 +63,15 @@ public class MainMenuScene extends StackPane {
 		Image c = LoadResource.loadImage("Other/exitButton.png", 100, 50);
 //		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
 //		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
-		playButtonMainmenu = new ButtonMainmenu(b);
-		exitButtonMainmenu = new ButtonMainmenu(c);
-//		exitButtonMainmenu.setOnAction(EventHandler<ActionEvent>{
-//			
-//		});
-//		
+		playButtonMainmenu = new MainmenuButton(b);
+		exitButtonMainmenu = new MainmenuButton(c);
+		exitButtonMainmenu.setOnAction(new EventHandler<ActionEvent>() {
+	        @Override
+	        public void handle(ActionEvent event) {
+	            System.exit(1);
+	        }
+		});
+		
 		
 		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
 		
