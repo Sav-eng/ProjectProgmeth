@@ -61,7 +61,10 @@ public class MainMenuScene extends StackPane {
 //		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
 		playButtonMainmenu = new ButtonMainmenu(b);
 		exitButtonMainmenu = new ButtonMainmenu(c);
-		
+//		exitButtonMainmenu.setOnAction(EventHandler<ActionEvent>{
+//			
+//		});
+//		
 		
 		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
 		
