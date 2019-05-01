@@ -9,4 +9,6 @@ public class Numbers {
 	public static final int BOSS_HEIGHT = 150;
 	public static final int POSITION_ENEMY = ;
 	public static final int POSITION_PLAYER = ;
+	public static final int HP_PLAYER_BASE = 5000;
+	public static final int HP_ENEMY_BASE = 10000;
 }
