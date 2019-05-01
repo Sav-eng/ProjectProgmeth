@@ -11,4 +11,6 @@ public class Numbers {
 	public static final int POSITION_PLAYER = ;
 	public static final int HP_PLAYER_BASE = 5000;
 	public static final int HP_ENEMY_BASE = 10000;
+	public static final double world1BuffAmount = 0.5;
+	public static final double world2BuffAmount = 1.0;
 }

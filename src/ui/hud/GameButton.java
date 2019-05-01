@@ -14,12 +14,12 @@ import javafx.scene.paint.Color;
 
 public abstract class GameButton extends Button {
 
-	private String character;
+	private Image character;
 	private int price;
 	private boolean isPress;
 	private boolean isCooldown;
 
-	public GameButton(String character,int price) {
+	public GameButton(Image character,int price) {
 		super();
 		this.setPadding(new Insets(5, 5, 5, 5));
 		this.character = character;
@@ -28,19 +28,8 @@ public abstract class GameButton extends Button {
 		setBorder(new Border(new BorderStroke(Color.GRAY, SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		isPress = false;
 		isCooldown = false;
-		
-		String url;
-		switch(character) {
-		//TODO fix path
-			case "Wood" : url = "/res/Wood.png"; break;
-			case "Iron" : url = "/res/Iron_ore.png"; break;
-			case "Iron Plate" : url = "/res/Iron_plate.png"; break;
-			case "Iron Sword" : url = "/res/Iron_Sword.png"; break;
-			case "Gem"	: url = "/res/Gem.png"; break;
-			default : url = "/res/Other.png";
-		}
-		Image image = new Image(getClass().getResourceAsStream(url));
-		this.setGraphic(new ImageView(image));
+
+		this.setGraphic(new ImageView(character));
 		this.setStyle("-fx-background-color: #ffffff;");
 	}
 
@@ -71,7 +60,7 @@ public abstract class GameButton extends Button {
 		this.isPress = isPress;
 	}
 
-	public String getCharacter() {
+	public Image getCharacter() {
 		return character;
 	}
 

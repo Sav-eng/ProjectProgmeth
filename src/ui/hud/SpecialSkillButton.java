@@ -1,11 +1,13 @@
 package ui.hud;
 
+import javafx.scene.image.Image;
+
 public abstract class SpecialSkillButton extends GameButton{
 
 	private int cooldownTime;
-	private Float buffAmount;
+	private Double buffAmount;
 	
-	public SpecialSkillButton(String character, int price, int cooldownTime, Float buffAmount) {
+	public SpecialSkillButton(Image character, int price, int cooldownTime, Double buffAmount) {
 		super(character, price);
 		// TODO Auto-generated constructor stub
 		this.cooldownTime = cooldownTime;

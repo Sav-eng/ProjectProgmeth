@@ -1,13 +1,12 @@
 package ui.hud;
 
+import javafx.scene.image.Image;
+
 public class AttackBuffButton extends SpecialSkillButton{
 
-	public AttackBuffButton(String character, int price, int cooldownTime, Float buffAmount) {
+	public AttackBuffButton(Image character, int price, int cooldownTime, Double buffAmount) {
 		super(character, price, cooldownTime, buffAmount);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void attackBuff() {
-		//TODO add attack buff logic/function
-	}
 }

@@ -1,5 +1,6 @@
 package ui.hud;
 
+import constant.LoadResource;
 import constant.Numbers;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
@@ -22,27 +23,38 @@ public class ControlPane extends HBox{
 		super();
 		this.setSpacing(10);
 		this.setPrefHeight(0.2*Numbers.WIN_HEIGHT);
+		this.setPrefWidth(Numbers.WIN_WIDTH);
 		this.setPadding(new Insets(5,0,0,0));
 		
 		switch(level) {
 		case 1 : InitializeButtonLevel1(); break;
 		case 2 : InitializeButtonLevel2(); break;
 		}
+		
+		
 	}
 	
 	public void InitializeButtonLevel1() {
 		//TODO set entityButton
-		Char1 = new EntityButton(character, price , cooldowmTime);
-		rateUp = new RateButton(character, price, 1);
-		levelUp = new UpgradeButton(character, price, cooldowmTime, 1);
-		attackUp = new AttackBuffButton(character, price, cooldownTime, buffAmount);
-		defenceUp = new DefenceBuffButton(character, price, cooldownTime, buffAmount);
+		Char1 = new EntityButton(LoadResource.knight1Icon, 100 , 1);
+		Char2 = new EntityButton(LoadResource.thiefIcon, 100, 1);
+		Char3 = new EntityButton(LoadResource.archerIcon, 100, 1);
+		Char4 = new EntityButton(LoadResource.fairyIcon, 100, 1);
+		Char5 = new EntityButton(LoadResource.wizardFireIcon, 100, 1);
+		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.world1BuffAmount);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.world1BuffAmount);
 	}
 	
 	public void InitializeButtonLevel2() {
-		Char1 = new EntityButton(character, price, cooldownTime);
-		rateUp = new RateButton(character, price, RateButton.getLevel());
-		attackUp = new AttackBuffButton(character, price, cooldownTime, buffAmount);
-		defenceUp = new DefenceBuffButton(character, price, cooldownTime, buffAmount);
+		Char1 = new EntityButton(LoadResource.knight2Icon, 100 , 1);
+		Char2 = new EntityButton(LoadResource.knight3Icon, 100, 1);
+		Char3 = new EntityButton(LoadResource.wizardFireIcon, 100, 1);
+		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 100, 1);
+		Char5 = new EntityButton(LoadResource.angleIcon, 100, 1);
+		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 20, Numbers.world2BuffAmount);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 20, Numbers.world2BuffAmount);
 	}
 }

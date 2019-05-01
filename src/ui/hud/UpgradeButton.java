@@ -1,11 +1,12 @@
 package ui.hud;
 
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 
 public class UpgradeButton extends GameButton{
 	private int level;
 	
-	public UpgradeButton(String character, int price, int level) {
+	public UpgradeButton(Image character, int price, int level) {
 		super(character, price);
 		this.level = level;
 		// TODO Auto-generated constructor stub
