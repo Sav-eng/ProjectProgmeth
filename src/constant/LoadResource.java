@@ -181,7 +181,7 @@ public class LoadResource {
 		logo = loadImage("Other/Logo.png", 700, 100);
 		wizardFireIcon = loadImage("Wizard_fire/walk/1.png", 120, 100);
 		knight1Icon = loadImage("Knight_1/walk/1.png", 120, 100);
-		thiefIcon = loadImage("Thief/attack/1.png", 120, 100);
+		thiefIcon = loadImage("Thief/walk/1.png", 120, 100);
 		archerIcon = loadImage("Archer/walk/1.png", 120, 100);
 		knight2Icon = loadImage("Knight_2/walk/1.png", 120, 100);
 		knight3Icon = loadImage("Knight_3/walk/1.png", 120, 100);
@@ -191,11 +191,11 @@ public class LoadResource {
 		rateUp = loadImage("Other/energyRateBlue.png", 120, 100);
 		levelUp = loadImage("Other/upgradeIcon.png", 120, 100);
 		atkUp = loadImage("Other/atkUpRed.png", 120, 100);
-		defUp = loadImage("Other/defUpIcon.png", 120, 100);
+		defUp = loadImage("Other/shieldUpRed.png", 120, 100);
 		rateUpCd = loadImage("Other/energyRate.png", 120, 100);
 		levelUpCd = loadImage("Other/upgrade.png", 120, 100);
 		atkUpCd = loadImage("Other/atkUpBlack.png", 120, 100);
-		defUpCd = loadImage("Other/defUpBlack.png", 120, 100);
+		defUpCd = loadImage("Other/shieldUpBlack.png", 120, 100);
 		
 //		setProgress(0.1);
 //		setProgress(0.2);

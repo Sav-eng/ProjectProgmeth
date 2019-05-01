@@ -22,6 +22,9 @@ public abstract class GameButton extends Button {
 	public GameButton(Image character,int price) {
 		super();
 		this.setPadding(new Insets(5, 5, 5, 5));
+		this.setPrefSize(100, 100);
+		this.setMaxSize(100, 100);
+		this.setMinSize(100, 100);
 		this.character = character;
 		this.price = price;
 
