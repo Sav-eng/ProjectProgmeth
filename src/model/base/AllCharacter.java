@@ -17,9 +17,7 @@ public class AllCharacter {
 	
 	public void renderCharacter() {
 		for(Character x: allCharacters) {
-			// TODO render each character
-			x.renderMove();
-			x.renderAttck();
+			x.render();
 		}
 	}
 	

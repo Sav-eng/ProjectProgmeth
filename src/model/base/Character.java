@@ -22,31 +22,26 @@ public abstract class Character implements IRenderable{
 		x += moveSpeed;
 	}	
 
-	public void renderMove() {
+	public void render() {
 		
 	}
-	public void renderAttck() {
-		
-	}
+	
 	public void attack(Character enemy) {
 		
 	}
 	
 	public int getMoveSpeed() {
-		
+		return moveSpeed;
 	}
 	
 	public void die() {
 		// TODO delete from entities list and team list
 	}
 	
-	public int beAttacked() {
+	public void beAttacked() {
 		
 	}
-	public void isAttack() {
-		
-	}
-	public void die() {
+	public void attack() {
 		
 	}
 	
