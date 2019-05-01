@@ -15,9 +15,9 @@ public class AllCharacter {
 		allCharacters.add(x);
 	}
 	
-	public void renderCharacter() {
+	public static void updateCharacter() {
 		for(Character x: allCharacters) {
-			x.render();
+			x.update();
 		}
 	}
 	
@@ -28,11 +28,13 @@ public class AllCharacter {
 	public static Character getFirstEnemy() {
 		return enemy.get(0);
 	}
-	public void update() {
-		for (int i = allCharacters.size()-1; i>=0 ;i--) {
-			if(allCharacters.get(i).isDestroyed()) {
-				allCharacters.remove(i);
-			}
-		}
+
+	public static List<Character> getEnemy() {
+		return enemy;
 	}
+
+	public static List<Character> getPlayer() {
+		return player;
+	}
+	
 }

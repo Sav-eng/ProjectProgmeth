@@ -1,38 +1,42 @@
 package model.mon;
 
+import constant.Numbers;
 import javafx.scene.canvas.GraphicsContext;
+import main.Game;
 import model.base.Character;
+import model.base.Melee;
+import model.base.Range;
 
-public class BossMonster extends Character {
+public class BossMonster extends Character implements Range,Melee{
 
-	@Override
-	public int getZ() {
-		super.getZ();
-		return 0;
+	private int baseAtk;
+	private int baseDef;
+	
+	public BossMonster(int hp, int atk, int def, int moveSpeed, int range, boolean player) {
+		super(hp, atk, def, moveSpeed, range, player);
+		baseAtk = atk;
+		baseDef = def;
 	}
 
 	@Override
-	public int getNowX() {
-		// TODO Auto-generated method stub
-		return 0;
+	public void deBuffAtk() {
+		super.setAtk(baseAtk);
 	}
 
 	@Override
-	public void draw(GraphicsContext gc) {
-		// TODO Auto-generated method stub
-		
+	public void defenceBoost() {
+		super.setDef((int) (baseDef + baseDef*Numbers.WORLDBUFFAMOUNT*Game.getPhase()));
 	}
 
 	@Override
-	public boolean isVisble() {
-		// TODO Auto-generated method stub
-		return false;
+	public void attackBoost() {
+		super.setAtk((int) (baseAtk + baseAtk*Numbers.WORLDBUFFAMOUNT*Game.getPhase()));
 	}
 
 	@Override
-	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
+	public void deBuffDef() {
+		super.setDef(baseDef);
 	}
+
 
 }

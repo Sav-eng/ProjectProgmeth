@@ -1,6 +1,7 @@
 package model.base;
 
 import constant.Numbers;
+import main.Game;
 
 public abstract class Character{
 	private int hp;
@@ -11,9 +12,11 @@ public abstract class Character{
 	private int sprite;
 	private int moveSpeed;
 	private boolean player;
-	private int doing; // 1=walk, 2=attack, 3=die
+	private int doing; // 1=walk, 2=attack, 3=attackbase, 4=die
+	private int cooldown;
+	private int baseCooldown;
 	
-	public Character(int hp, int atk, int def,int moveSpeed,int range,boolean player) {
+	public Character(int hp, int atk, int def,int moveSpeed,int range,boolean player,int baseCooldown) {
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;
@@ -21,60 +24,99 @@ public abstract class Character{
 		this.x = 0;
 		this.range = range;
 		this.player = player;
+		this.baseCooldown = baseCooldown;
+		cooldown = 0;
+		if(player)AllCharacter.getPlayer().add(this);
+		else AllCharacter.getEnemy().add(this);
 	}
 
 	public void move() {
-		// TODO add some move
+		cooldown = 0;
 		x += moveSpeed;
 	}	
 
-	public abstract void getbuff();
+	public boolean isCooldown() {
+		return cooldown > 0;
+	}
 	
-	public void render() {
-		if(this.canAttack(AllCharacter.getFirstEnemy())) {
-			this.attack(AllCharacter.getFirstEnemy());
-		} else if (this.canAttackBase()) {
-			this.attackBase();
+	public void decreaseCooldown() {
+		cooldown--;
+	}
+	
+	public void update() {
+		if(!isCooldown() && this.canAttack(AllCharacter.getFirstEnemy())) {
+			doing = 2;
+		} else if (!isCooldown() && this.canAttackBase()) {
+			doing = 3;
 		} else if(this.canMove()){
+			this.move();
 			
 		}
 	}
 	
 	private void attackBase() {
-		if(this.playey) {
-			enemy.base
+		if(this.player) {
+			Game.setHpEnemyBase(Game.getHpEnemyBase()-atk);
+		} else {
+			Game.setHpPlayerBase(Game.getHpPlayerBase()-atk);
 		}
 	}
 	
 	private boolean canAttackBase() {
-		if(this.player == true && this.range >= Numbers.POSITION_ENEMY-this.getNowX()) {
+		if(this.player == true && this.range >= Numbers.POSITION_ENEMY-this.getX()) {
 			return true;
-		} else if (this.player == false && this.range >= this.getNowX()-Numbers.POSITION_PLAYER) {
+		} else if (this.player == false && this.range >= this.getX()-Numbers.POSITION_PLAYER) {
 			return true;
 		}
 		return false;
 	}
 	
 	private boolean canMove() {
-		if(this.getNowX())
-	}
-	private boolean canAttack(Character enemy) {
-		if(Math.abs(enemy.getNowX()-this.x) <= this.range) {
-			return true;
-		} 
+		int pos;
+		if(player) {
+			pos = AllCharacter.getPlayer().indexOf(this);
+			if(AllCharacter.getPlayer().get(pos+1) != null && Math.abs(this.getX()-AllCharacter.getPlayer().get(pos+1).getX()) >= Numbers.SPACINGCHARACTER){
+				return false;
+			}
+		} else {
+			pos = AllCharacter.getEnemy().indexOf(this);
+			if(AllCharacter.getEnemy().get(pos+1) != null && Math.abs(this.getX()-AllCharacter.getEnemy().get(pos+1).getX()) >= Numbers.SPACINGCHARACTER){
+				return false;
+			}
+		}
 		return false;
 	}
+	
+	private boolean canAttack(Character enemy) {
+		if(Math.abs(enemy.getX()-this.x) <= this.range && cooldown ==0) {
+			return true;
+		} else if (Math.abs(enemy.getX()-this.x) <= this.range) {
+			decreaseCooldown();
+		}
+		return false;
+	}
+	
 	public void attack(Character enemy) {
 		int atkWithDef;
+		cooldown = baseCooldown;
 		if (this.atk-enemy.getDef()  <0)
 			atkWithDef = 0;
 		else
 			atkWithDef = this.atk-enemy.getDef();
 		enemy.setHp(enemy.getHp()-atkWithDef);
+		if(enemy.getHp()<=0) {
+			enemy.doing = 4;
+			doing = 1;
+		}
+		
 	}
 	
 	public void die() {
-		// TODO delete from entities list and team list
+		if(this.player) {
+			AllCharacter.getEnemy().remove(0);
+		} else {
+			AllCharacter.getPlayer().remove(0);
+		}
 	}
 	
 	public int getMoveSpeed() {
