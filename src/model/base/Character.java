@@ -5,16 +5,18 @@ public abstract class Character implements IRenderable{
 	private int atk;
 	private int def;
 	private int x,z;
+	private int range;
 	private int xSprite;
 	private int moveSpeed;
 	private boolean player;
 	
-	public Character(int hp, int atk, int def,int moveSpeed,int x) {
+	public Character(int hp, int atk, int def,int moveSpeed,int range) {
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;
 		this.moveSpeed = moveSpeed;
-		this.x = x;
+		this.x = 0;
+		this.range = range;
 	}
 
 	public void move() {
@@ -23,26 +25,30 @@ public abstract class Character implements IRenderable{
 	}	
 
 	public void render() {
-		
+		if(canAttack)
 	}
 	
+	private boolean canAttack(Character enemy) {
+		if(enemy.getNowX()-this.x <= this.range) {
+			return true;
+		}
+		return false;
+	}
 	public void attack(Character enemy) {
-		
-	}
-	
-	public int getMoveSpeed() {
-		return moveSpeed;
+		int atkWithDef;
+		if (this.atk-enemy.getDef()  <0)
+			atkWithDef = 0;
+		else
+			atkWithDef = this.atk-enemy.getDef();
+		enemy.setHp(enemy.getHp()-atkWithDef);
 	}
 	
 	public void die() {
 		// TODO delete from entities list and team list
 	}
 	
-	public void beAttacked() {
-		
-	}
-	public void attack() {
-		
+	public int getMoveSpeed() {
+		return moveSpeed;
 	}
 	
 	public boolean isDeath() {
