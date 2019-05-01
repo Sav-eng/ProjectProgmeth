@@ -13,4 +13,6 @@ public abstract class SpecialSkillButton extends GameButton{
 		this.cooldownTime = cooldownTime;
 		this.buffAmount = buffAmount;
 	}
+	
+	
 }

@@ -3,6 +3,7 @@ package ui.hud;
 import constant.LoadResource;
 import constant.Numbers;
 import javafx.geometry.Insets;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
@@ -17,6 +18,7 @@ public class ControlPane extends HBox{
 	UpgradeButton levelUp;
 	AttackBuffButton attackUp;
 	DefenceBuffButton defenceUp;
+
 	
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
@@ -26,12 +28,14 @@ public class ControlPane extends HBox{
 		this.setPrefWidth(Numbers.WIN_WIDTH);
 		this.setPadding(new Insets(5,0,0,0));
 		
+
+		
 		switch(level) {
 		case 1 : InitializeButtonLevel1(); break;
 		case 2 : InitializeButtonLevel2(); break;
 		}
 		
-		
+		this.getChildren().addAll(rateUp,Char1,Char2,Char3,Char4,Char5,levelUp,attackUp,defenceUp);
 	}
 	
 	public void InitializeButtonLevel1() {
