@@ -10,6 +10,7 @@ import constant.LoadResource;
 
 public class RenderableHolder {
 	private List<IRenderable> entities;
+	private static final RenderableHolder instance = new RenderableHolder();
 	
 	static {
 		LoadResource.loadResource();
@@ -21,5 +22,9 @@ public class RenderableHolder {
 				entities.remove(i);
 			}
 		}
+	}
+	
+	public static RenderableHolder getInstance() {
+		return instance;
 	}
 }
