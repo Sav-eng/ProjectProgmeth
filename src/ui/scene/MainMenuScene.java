@@ -61,12 +61,12 @@ public class MainMenuScene extends StackPane {
 		menuButton.setSpacing(40);
 		menuButton.setAlignment(Pos.CENTER);
 		
-		Image b = LoadResource.loadImage("Other/playButton.png", 100, 50);
-		Image c = LoadResource.loadImage("Other/exitButton.png", 100, 50);
-//		playButtonMainmenu = new ButtonMainmenu(LoadResource.playButtonIcon);
-//		exitButtonMainmenu = new ButtonMainmenu(LoadResource.exitButtonIcon);
-		playButtonMainmenu = new MainmenuButton(b);
-		exitButtonMainmenu = new MainmenuButton(c);
+//		Image b = LoadResource.loadImage("Other/playButton.png", 100, 50);
+//		Image c = LoadResource.loadImage("Other/exitButton.png", 100, 50);
+		playButtonMainmenu = new MainmenuButton(LoadResource.playButtonIcon);
+		exitButtonMainmenu = new MainmenuButton(LoadResource.exitButtonIcon);
+//		playButtonMainmenu = new MainmenuButton(b);
+//		exitButtonMainmenu = new MainmenuButton(c);
 		
 
 		setMouseEvent(playButtonMainmenu);
@@ -91,15 +91,15 @@ public class MainMenuScene extends StackPane {
 	
 	
 	public void drawBg(GraphicsContext gc) {
-		a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		//a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
+//		a = LoadResource.loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 //		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
-		Image d = LoadResource.loadImage("Other/Logo.png", 700, 100);
-//		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-//		gc.drawImage(LoadResource.logo, 500, 50);
+//		a = new Image(ClassLoader.getSystemResource("Other/mainBg.jpg").toString());
+//		Image d = LoadResource.loadImage("Other/Logo.png", 700, 100);
+		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		gc.drawImage(LoadResource.logo, 500, 50);
 
-		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		gc.drawImage(d, 500, 50);
+//		gc.drawImage(a, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+//		gc.drawImage(d, 500, 50);
 	}
 	
 	private void setMouseEvent(MainmenuButton butt) {

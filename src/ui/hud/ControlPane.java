@@ -3,6 +3,7 @@ package ui.hud;
 import constant.LoadResource;
 import constant.Numbers;
 import javafx.beans.binding.Bindings;
+import javafx.beans.binding.NumberExpression;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -59,8 +60,8 @@ public class ControlPane extends HBox{
 		Char5.setStyle("-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
 		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
-		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.world1BuffAmount);
-		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.world1BuffAmount);
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
 	}
 	
 	public void InitializeButtonLevel2() {
@@ -70,8 +71,8 @@ public class ControlPane extends HBox{
 		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 100, 1);
 		Char5 = new EntityButton(LoadResource.angleIcon, 100, 1);
 		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
-		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 20, Numbers.world2BuffAmount);
-		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 20, Numbers.world2BuffAmount);
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT*2);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT*2);
 		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
 	}
 }

@@ -13,4 +13,7 @@ public class Numbers {
 	public static final int HP_ENEMY_BASE = 10000;
 	public static final double WORLDBUFFAMOUNT = 0.5;
 	public static final int SPACINGCHARACTER = 100;
+	public static final int BASE_WIDTH = 200;
+	public static final int BASE_HEIGHT = 250;
+	public static final int CONTROLPANE_HEIGHT = 120;
 }

@@ -18,7 +18,7 @@ public class test extends Application {
 	public void start(Stage primaryStage) {
 
 		// TODO Implement Main
-//		LoadResource.loadResource();
+		LoadResource.loadResource();
 		
 		MainMenuScene root = new MainMenuScene();
 //		HBox root = new HBox();
