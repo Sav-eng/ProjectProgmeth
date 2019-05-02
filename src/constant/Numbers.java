@@ -17,4 +17,7 @@ public class Numbers {
 	public static final int BASE_HEIGHT = 250;
 	public static final int CONTROLPANE_HEIGHT = 120;
 	public static final double TIMEFRAME = 1/30;
+	public static final int ORK_WIDTH = 210;
+	public static final int KNIGHT1_WIDTH = 140;
+
 }

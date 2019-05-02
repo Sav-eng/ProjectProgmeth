@@ -12,8 +12,8 @@ public class HeroMonster extends Character implements Range,Melee{
 	private int baseAtk;
 	private int baseDef;
 	
-	public HeroMonster(String name,int hp, int atk, int def, int moveSpeed, int range, boolean player,int baseCooldown) {
-		super(name, hp, atk, def, moveSpeed, range, player,baseCooldown);
+	public HeroMonster(String name,int hp, int atk, int def, int moveSpeed, int range, boolean player,int baseCooldown,int reward) {
+		super(name, hp, atk, def, moveSpeed, range, player,baseCooldown,reward);
 		baseAtk = atk;
 		baseDef = def;
 	}
