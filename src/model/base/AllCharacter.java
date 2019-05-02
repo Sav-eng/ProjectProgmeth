@@ -6,7 +6,7 @@ import java.util.List;
 import constant.Numbers;
 
 public class AllCharacter {
-	List<Character> allCharacters = new ArrayList<Character>();
+	private static List<Character> allCharacters = new ArrayList<Character>();
 	private static List<Character> enemy = new ArrayList<Character>();
 	private static List<Character> player = new ArrayList<Character>();
 	private static int hpEnemyBase = Numbers.HP_ENEMY_BASE;

@@ -16,4 +16,5 @@ public class Numbers {
 	public static final int BASE_WIDTH = 200;
 	public static final int BASE_HEIGHT = 250;
 	public static final int CONTROLPANE_HEIGHT = 120;
+	public static final double TIMEFRAME = 1/30;
 }

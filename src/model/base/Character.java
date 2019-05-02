@@ -4,6 +4,7 @@ import constant.LoadResource;
 import constant.Numbers;
 import javafx.scene.image.Image;
 import main.Game;
+import model.data.Player;
 
 public abstract class Character {
 	private String name;
@@ -19,9 +20,9 @@ public abstract class Character {
 	private int pastDoing;
 	private int cooldown;
 	private int baseCooldown;
+	private int reward;
 
-	public Character(String name, int hp, int atk, int def, int moveSpeed, int range, boolean player,
-			int baseCooldown) {
+	public Character(String name, int hp, int atk, int def, int moveSpeed, int range, boolean player,int baseCooldown,int reward) {
 		this.name = name;
 		this.hp = hp;
 		this.atk = atk;
@@ -31,6 +32,7 @@ public abstract class Character {
 		this.x = 0;
 		this.player = player;
 		this.baseCooldown = baseCooldown;
+		this.reward = reward;
 		cooldown = 0;
 		if (player)
 			AllCharacter.getPlayer().add(this);
@@ -115,6 +117,7 @@ public abstract class Character {
 			atkWithDef = this.atk - enemy.getDef();
 		enemy.setHp(enemy.getHp() - atkWithDef);
 		if (enemy.getHp() <= 0) {
+			Player.setMoney(reward);
 			enemy.doing = 4;
 			doing = 1;
 		}

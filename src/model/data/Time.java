@@ -1,13 +1,18 @@
 package model.data;
 
-public class Time {
-	public static int time;
+import constant.Numbers;
 
-	public static int getTime() {
+public class Time {
+	public static double time;
+
+	public static void updateTime() {
+		time += Numbers.TIMEFRAME;
+	}
+	public static double getTime() {
 		return time;
 	}
 
-	public static void setTime(int time) {
+	public static void setTime(double time) {
 		Time.time = time;
 	}
 	
