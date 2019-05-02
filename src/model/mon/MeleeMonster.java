@@ -8,8 +8,8 @@ import model.base.Melee;
 public class MeleeMonster extends Character implements Melee{
 
 	private int baseDef;
-	public MeleeMonster(int hp, int atk, int def, int moveSpeed, int range, boolean player) {
-		super(hp, atk, def, moveSpeed, range, player);
+	public MeleeMonster(String name,int hp, int atk, int def, int moveSpeed,int range, boolean player,int baseCooldown) {
+		super(name, hp, atk, def, moveSpeed , range , player, baseCooldown);
 		baseDef = def;
 	}
 	@Override

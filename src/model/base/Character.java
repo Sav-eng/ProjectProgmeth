@@ -24,8 +24,8 @@ public abstract class Character{
 		this.atk = atk;
 		this.def = def;
 		this.moveSpeed = moveSpeed;
-		this.x = 0;
 		this.range = range;
+		this.x = 0;
 		this.player = player;
 		this.baseCooldown = baseCooldown;
 		cooldown = 0;

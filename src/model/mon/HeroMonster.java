@@ -7,13 +7,13 @@ import model.base.Character;
 import model.base.Melee;
 import model.base.Range;
 
-public class BossMonster extends Character implements Range,Melee{
+public class HeroMonster extends Character implements Range,Melee{
 
 	private int baseAtk;
 	private int baseDef;
 	
-	public BossMonster(int hp, int atk, int def, int moveSpeed, int range, boolean player) {
-		super(hp, atk, def, moveSpeed, range, player);
+	public HeroMonster(String name,int hp, int atk, int def, int moveSpeed, int range, boolean player,int baseCooldown) {
+		super(name, hp, atk, def, moveSpeed, range, player,baseCooldown);
 		baseAtk = atk;
 		baseDef = def;
 	}
