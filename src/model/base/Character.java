@@ -62,7 +62,7 @@ public abstract class Character {
 		}
 	}
 
-	private void attackBase() {
+	public void attackBase() {
 		if (this.player) {
 			Game.setHpEnemyBase(Game.getHpEnemyBase() - atk);
 		} else {
