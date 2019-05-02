@@ -21,17 +21,17 @@ public class testGameScene extends Application {
 
 		// TODO Implement Main
 		LoadResource.loadResource();
-		BorderPane aPane = new BorderPane();
+		GamePlayScene aPane = new GamePlayScene(1);
 //		GamePlayScene root = new GamePlayScene();
-		ControlPane root = new ControlPane(1);
-		root.setAlignment(Pos.BOTTOM_CENTER);
-		
-		aPane.setBottom(root);
+//		ControlPane root = new ControlPane(1);
+//		root.setAlignment(Pos.BOTTOM_CENTER);
+//		
+//		aPane.setBottom(root);
 		
 //		HBox root = new HBox();
 //		LoadResource.loadResource();
 		
-		Scene scene = new Scene(aPane,Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
+		Scene scene = new Scene(aPane);
 		primaryStage.setTitle("test"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene
 		primaryStage.show();

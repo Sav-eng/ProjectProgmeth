@@ -27,7 +27,11 @@ public class LoadResource {
 	public static Image levelUpCd;
 	public static Image atkUpCd;
 	public static Image defUpCd;
-
+	public static Image world1Bg;
+	public static Image world2Bg;
+	public static Image world1Base;
+	public static Image world2Base;
+	public static Image enerymyBase;
 	
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5];
@@ -183,23 +187,27 @@ public class LoadResource {
 		playButtonIcon = loadImage("Other/playButton.png", 100, 50);
 		exitButtonIcon = loadImage("Other/exitButton.png", 100, 50);
 		logo = loadImage("Other/Logo.png", 700, 100);
-		wizardFireIcon = loadImage("Icon/WizardFire.png", 120, 100);
-		knight1Icon = loadImage("Icon/Knight1.png", 120, 100);
-		thiefIcon = loadImage("Icon/Thief.png", 120, 100);
-		archerIcon = loadImage("Icon/Archer.png", 120, 100);
-		knight2Icon = loadImage("Icon/Knight2.png", 120, 100);
-		knight3Icon = loadImage("Icon/Knight3.png", 120, 100);
-		wizardLaserIcon = loadImage("Icon/WizardLaser.png", 120, 100);
-		angleIcon = loadImage("Icon/Angle.png", 120, 100);
-		fairyIcon = loadImage("Icon/Fairy.png", 120, 100);
-		rateUp = loadImage("Other/energyRateBlue.png", 120, 100);
-		levelUp = loadImage("Other/upgradeIcon.png", 120, 100);
-		atkUp = loadImage("Other/atkUpRed.png", 120, 100);
-		defUp = loadImage("Other/shieldUpRed.png", 120, 100);
-		rateUpCd = loadImage("Other/energyRate.png", 120, 100);
-		levelUpCd = loadImage("Other/upgrade.png", 120, 100);
-		atkUpCd = loadImage("Other/atkUpBlack.png", 120, 100);
-		defUpCd = loadImage("Other/shieldUpBlack.png", 120, 100);
+		wizardFireIcon = loadImage("Icon/WizardFire.png", 100, 100);
+		knight1Icon = loadImage("Icon/Knight1.png", 100, 100);
+		thiefIcon = loadImage("Icon/Thief.png", 100, 100);
+		archerIcon = loadImage("Icon/Archer.png", 100, 100);
+		knight2Icon = loadImage("Icon/Knight2.png", 100, 100);
+		knight3Icon = loadImage("Icon/Knight3.png", 100, 100);
+		wizardLaserIcon = loadImage("Icon/WizardLaser.png", 100, 100);
+		angleIcon = loadImage("Icon/Angle.png", 100, 100);
+		fairyIcon = loadImage("Icon/Fairy.png", 100, 100);
+		rateUp = loadImage("Other/energyRateBlue.png", 100, 100);
+		levelUp = loadImage("Other/upgradeIcon.png", 100, 100);
+		atkUp = loadImage("Other/atkUpRed.png", 100, 100);
+		defUp = loadImage("Other/shieldUpRed.png", 100, 100);
+		rateUpCd = loadImage("Other/energyRate.png", 100, 100);
+		levelUpCd = loadImage("Other/upgrade.png", 100, 100);
+		atkUpCd = loadImage("Other/atkUpBlack.png", 100, 100);
+		defUpCd = loadImage("Other/shieldUpBlack.png", 100, 100);
+		world1Bg = loadImage("Other/world1.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		world2Bg = loadImage("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		
 //		setProgress(0.1);
 //		setProgress(0.2);
@@ -218,6 +226,6 @@ public class LoadResource {
 	}
 
 	public static Image loadImage(String path, double width, double height) {
-		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, true, true);
+		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, false, true);
 	}
 }
