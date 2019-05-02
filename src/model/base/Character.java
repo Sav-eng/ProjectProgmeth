@@ -4,6 +4,7 @@ import constant.Numbers;
 import main.Game;
 
 public abstract class Character{
+	private String name;
 	private int hp;
 	private int atk;
 	private int def;
@@ -13,10 +14,12 @@ public abstract class Character{
 	private int moveSpeed;
 	private boolean player;
 	private int doing; // 1=walk, 2=attack, 3=attackbase, 4=die
+	private int pastDoing;
 	private int cooldown;
 	private int baseCooldown;
 	
-	public Character(int hp, int atk, int def,int moveSpeed,int range,boolean player,int baseCooldown) {
+	public Character(String name,int hp, int atk, int def,int moveSpeed,int range,boolean player,int baseCooldown) {
+		this.name = name;
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;
@@ -193,6 +196,38 @@ public abstract class Character{
 
 	public void setMoveSpeed(int moveSpeed) {
 		this.moveSpeed = moveSpeed;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPastDoing() {
+		return pastDoing;
+	}
+
+	public void setPastDoing(int pastDoing) {
+		this.pastDoing = pastDoing;
+	}
+
+	public int getCooldown() {
+		return cooldown;
+	}
+
+	public void setCooldown(int cooldown) {
+		this.cooldown = cooldown;
+	}
+
+	public int getBaseCooldown() {
+		return baseCooldown;
+	}
+
+	public void setBaseCooldown(int baseCooldown) {
+		this.baseCooldown = baseCooldown;
 	}
 
 	
