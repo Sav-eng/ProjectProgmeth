@@ -3,17 +3,13 @@ package model.data;
 import constant.Numbers;
 
 public class Time {
-	public static double time;
-
+	public static int time=0;
+	
 	public static void updateTime() {
-		time += Numbers.TIMEFRAME;
+		time++;
 	}
 	public static double getTime() {
 		return time;
-	}
-
-	public static void setTime(double time) {
-		Time.time = time;
 	}
 	
 }

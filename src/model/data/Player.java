@@ -29,5 +29,6 @@ public class Player {
 		Player.buffDef = buffDef;
 	}
 	
+	public static void 
 	
 }

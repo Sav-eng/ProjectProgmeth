@@ -1,0 +1,148 @@
+World 1:
+
+Wizard Fire
+HP: 2000
+ATK: 888
+DEF: 400
+MOVESPEED: 
+BaseCooldown: 110
+CooldownButton: 500
+Cost: 700
+
+Knight
+HP: 989
+ATK: 611
+DEF: 300
+MOVESPEED: 
+BaseCooldown: 80
+CooldownButton: 120
+Cost: 100
+
+Thief
+HP: 564
+ATK: 356
+DEF: 100
+MOVESPEED:
+BaseCooldown: 30
+CooldownButton: 150
+Cost: 150
+
+Archer
+HP: 999
+ATK: 421
+DEF: 20
+MOVESPEED: 
+BaseCooldown: 40
+CooldownButton: 120
+Cost: 250
+
+Fairy
+HP: 821
+ATK: 777
+DEF: 100
+MOVESPEED:
+BaseCooldown: 100
+CooldownButton: 200
+Cost: 350
+
+WORLD 2
+
+ANGLE
+HP: 5000
+ATK: 2777
+DEF: 1200
+MOVESPEED:
+BaseCooldown: 
+CooldownButton: 500
+Cost: 1500
+
+Knight2
+HP: 2000
+ATK: 1111
+DEF: 700
+MOVESPEED:
+BaseCooldown:
+CooldownButton: 80
+Cost: 350
+
+Knight3
+HP: 3000
+ATK: 1223
+DEF: 400
+MOVESPEED:
+BaseCooldown: 90 
+CooldownButton: 90
+Cost: 400
+
+Wizard Fire
+HP: 2000
+ATK: 888
+DEF: 400
+MOVESPEED:
+BaseCooldown: 110
+CooldownButton: 100
+Cost: 700
+
+Wizard laser:
+HP: 2000
+ATK: 1999
+DEF: 100
+MOVESPEED:
+BaseCooldown: 150
+CooldownButton: 130
+Cost: 900
+
+
+//////////////////////////////////////////////////////////
+
+
+MONSTER
+
+Goblin
+HP: 1000
+ATK: 555
+DEF: 100
+MOVESPEED:
+BaseCooldown: 60
+Reward: 30
+
+
+Golem
+HP: 10000
+ATK: 3641
+DEF: 0
+MOVESPEED: 
+BaseCooldown: 500
+Reward: 100
+
+Orc
+HP: 1500
+ATK: 966
+DEF: 300
+MOVESPEED:
+BaseCooldown: 100
+Reward: 100
+
+Troll1
+HP: 3500
+ATK: 1577
+DEF: 700
+MOVESPEED:
+BaseCooldown: 80 
+Reward: 200
+
+Ork
+HP: 2000
+ATK: 3277
+DEF: 350
+MOVESPEED:
+BaseCooldown: 200 
+Reward: 250
+
+Troll2
+HP: 7000
+ATK: 1000
+DEF: 400
+MOVESPEED: 
+BaseCooldown: 30
+Reward: 500
