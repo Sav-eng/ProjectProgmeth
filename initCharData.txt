@@ -62,7 +62,7 @@ ATK: 1111
 DEF: 700
 MOVESPEED:
 BaseCooldown:
-CooldownButton: 80
+CooldownButton: 40
 Cost: 350
 
 Knight3
@@ -108,7 +108,7 @@ Reward: 30
 
 
 Golem
-HP: 10000
+HP: 6000
 ATK: 3641
 DEF: 0
 MOVESPEED: 

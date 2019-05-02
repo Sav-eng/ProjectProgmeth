@@ -1,0 +1,43 @@
+init // wait for 60f
+150f per Goblin
+250f per Orc
+
+
+after pass 50 % hp or 2 min pass
+summon ork
+
+150f per Troll1
+240f per Golem
+
+
+
+after pass 10% hp
+summon ork and troll2 and pause all other monster
+
+Rate 
+lv 1 
+3 fr
+lv 2
+2 fr
+lv 3
+1 fr
+lv 4
+frame  = 2
+lv 5
+frame = 3
+lv 6
+frame = 4
+lv 7
+frame = 5
+lv 8
+frame = 6
+lv 9
+frame = 7
+lv 10
+frame = 8
+
+buffATKPhase 1 = 200
+buffDEFPhase 1 = 200
+
+buffATKPhase 2 = 500
+buffDEFPhase 2 = 500
