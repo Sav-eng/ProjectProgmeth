@@ -75,7 +75,8 @@ public class LoadResource {
 	public static Image[] fairyWalk = new Image[5];
 	public static Image[] fairyDie = new Image[5];
 	public static Image[] fairyAttack = new Image[5];
-
+	public static Image[] ice = new Image[5];
+	
 	public static void loadResource() {
 
 //		setProgress(0);
@@ -175,19 +176,22 @@ public class LoadResource {
 			fairyDie[i] = loadImage("Fairy/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			fairyWalk[i] = loadImage("Fairy/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		for(int i=0;i<5;i++) {
+			ice[i] = loadImage("Ice/Ice" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+		}
 		menuBg = loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		playButtonIcon = loadImage("Other/playButton.png", 100, 50);
 		exitButtonIcon = loadImage("Other/exitButton.png", 100, 50);
 		logo = loadImage("Other/Logo.png", 700, 100);
-		wizardFireIcon = loadImage("Wizard_fire/walk/1.png", 120, 100);
-		knight1Icon = loadImage("Knight_1/walk/1.png", 120, 100);
-		thiefIcon = loadImage("Thief/walk/1.png", 120, 100);
-		archerIcon = loadImage("Archer/walk/1.png", 120, 100);
-		knight2Icon = loadImage("Knight_2/walk/1.png", 120, 100);
-		knight3Icon = loadImage("Knight_3/walk/1.png", 120, 100);
-		wizardLaserIcon = loadImage("Wizard_laser/walk/1.png", 120, 100);
-		angleIcon = loadImage("Angle/walk/1.png", 120, 100);
-		fairyIcon = loadImage("Fairy/walk/1.png", 120, 100);
+		wizardFireIcon = loadImage("Icon/WizardFire.png", 120, 100);
+		knight1Icon = loadImage("Icon/Knight1.png", 120, 100);
+		thiefIcon = loadImage("Icon/Thief.png", 120, 100);
+		archerIcon = loadImage("Icon/Archer.png", 120, 100);
+		knight2Icon = loadImage("Icon/Knight2.png", 120, 100);
+		knight3Icon = loadImage("Icon/Knight3.png", 120, 100);
+		wizardLaserIcon = loadImage("Icon/WizardLaser.png", 120, 100);
+		angleIcon = loadImage("Icon/Angle.png", 120, 100);
+		fairyIcon = loadImage("Icon/Fairy.png", 120, 100);
 		rateUp = loadImage("Other/energyRateBlue.png", 120, 100);
 		levelUp = loadImage("Other/upgradeIcon.png", 120, 100);
 		atkUp = loadImage("Other/atkUpRed.png", 120, 100);
