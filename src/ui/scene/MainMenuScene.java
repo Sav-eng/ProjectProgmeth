@@ -67,6 +67,7 @@ public class MainMenuScene extends StackPane {
 			@Override
 			public void handle(ActionEvent event) {
 				Main.getScene().setRoot(Main.getGame1());
+				bgm.stop();
 			}
 		});
 
