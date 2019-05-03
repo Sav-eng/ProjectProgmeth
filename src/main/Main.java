@@ -34,6 +34,7 @@ public class Main extends Application {
 		primaryStage.show();
 		
 		new Thread(()-> {
+			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			LoadResource.loadResource();
 			main = new MainMenuScene();
 			game1 = new GamePlayScene(1);

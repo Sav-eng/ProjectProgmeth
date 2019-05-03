@@ -20,4 +20,6 @@ public class Numbers {
 	public static final int ORK_WIDTH = 210;
 	public static final int KNIGHT1_WIDTH = 140;
 	public static final int CHA_MOVESPD = 1;
+	public static final int MELEE_RANGE = 100;
+	public static final int LONG_RANGE = 100;
 }
