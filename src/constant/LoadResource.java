@@ -107,6 +107,10 @@ public class LoadResource {
 			knight2Attack[i] = loadImage("Knight_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight2Die[i] = loadImage("Knight_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		setProgress(1);
+		
+		
+		
 		for (int i = 0; i < 7; i++) {
 			knight3Walk[i] = loadImage("Knight_3/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight3Attack[i] = loadImage("Knight_3/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -130,6 +134,10 @@ public class LoadResource {
 			wizardLaserWalk[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
 		}
+		setProgress(2);
+		
+		
+		
 		for (int i = 0; i < 3; i++) {
 			laser[i] = loadImage("Wizard_laser/laser/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
@@ -217,8 +225,6 @@ public class LoadResource {
 //		mainMenuSound = loadSound("Sound/mainMenu");
 //		bossSound = loadSound("Sound/boss");
 //		gamePlaySound = loadSound("Sound/gamePlay");
-		setProgress(1);
-		setProgress(2);
 		setProgress(3);
 		setProgress(4);
 		setProgress(5);

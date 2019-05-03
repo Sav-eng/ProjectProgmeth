@@ -33,11 +33,11 @@ public class Main extends Application {
 	
 		new Thread(()-> {
 			LoadResource.loadResource();
+			main = new MainMenuScene();
+			game1 = new GamePlayScene(1);
+//			game2 = new GamePlayScene(2);
 		}).start();
 		
-		main = new MainMenuScene();
-		game1 = new GamePlayScene(1);
-//		game2 = new GamePlayScene(2);
 	}
 
 	public static LoadingScene getLoad() {
