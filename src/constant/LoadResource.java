@@ -1,6 +1,7 @@
 package constant;
 
 import javafx.scene.image.Image;
+import javafx.scene.media.AudioClip;
 
 public class LoadResource {
 
@@ -81,7 +82,9 @@ public class LoadResource {
 	public static Image[] fairyAttack = new Image[5];
 	public static Image[] ice = new Image[5];
 	
-	
+	public static AudioClip mainMenuSound;
+	public static AudioClip bossSound;
+	public static AudioClip gamePlaySound;
 	
 	public static void loadResource() {
 
@@ -211,6 +214,9 @@ public class LoadResource {
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		
+		mainMenuSound = loadSound("Sound/mainMenu");
+		bossSound = loadSound("Sound/boss");
+		gamePlaySound = loadSound("Sound/gamePlay");
 		setProgress(1);
 		setProgress(2);
 		setProgress(3);
@@ -230,7 +236,11 @@ public class LoadResource {
 	public static int getProgress() {
 		return progress;
 	}
-	public static Image loadImage(String path, double width, double height) {
+	private static Image loadImage(String path, double width, double height) {
 		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, false, true);
+	}
+
+	private static AudioClip loadSound(String path) {
+		return new AudioClip(ClassLoader.getSystemResource("audio/" + path).toString());
 	}
 }

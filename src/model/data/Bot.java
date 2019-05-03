@@ -5,6 +5,7 @@ import model.base.AllCharacter;
 import model.base.Character;
 
 public class Bot {
+	private static boolean check = false;
 	public static void summon() {
 		int timeNow = Time.getTime()-60;
 		int phase = Game.getPhase();
@@ -34,8 +35,11 @@ public class Bot {
 				AllCharacter.getEnemy().add(new Character("Orc",1500,966,300,movespeed,range,0,100,100));
 			}
 		} else {
-			AllCharacter.getEnemy().add(new Character("Ork",2000,3277,350,movespeed,range,0,200,250));
-			AllCharacter.getEnemy().add(new Character("Troll2",7000,1500,800,movespeed,range,0,30,1000));
+			if(!check) {
+				AllCharacter.getEnemy().add(new Character("Ork",2000,3277,350,movespeed,range,0,200,250));
+				AllCharacter.getEnemy().add(new Character("Troll2",7000,1500,800,movespeed,range,0,30,1000));
+				check=true;
+			}
 		}
 	}
 }
