@@ -1,6 +1,7 @@
 package main;
 
 import constant.LoadResource;
+import constant.Numbers;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -25,7 +26,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		load = new LoadingScene();
-		scene = new Scene(load);
+		scene = new Scene(load,Numbers.WIN_WIDTH,Numbers.WIN_HEIGHT);
 //		Main.getScene().setRoot(Main.getMain());
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");

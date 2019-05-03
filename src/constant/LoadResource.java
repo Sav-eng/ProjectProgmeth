@@ -88,7 +88,6 @@ public class LoadResource {
 	
 	public static void loadResource() {
 
-		setProgress(1);
 		for (int i = 0; i < 5; i++) {
 			wizardFireWalk[i] = loadImage("Wizard_fire/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
@@ -101,21 +100,21 @@ public class LoadResource {
 			knight1Attack[i] = loadImage("Knight_1/die/" + (i + 1) + ".png", Numbers.KNIGHT1_WIDTH, Numbers.CHA_HEIGHT);
 			knight1Die[i] = loadImage("Knight_1/attack/" + (i + 1) + ".png", Numbers.KNIGHT1_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		setProgress(1);
+		
 		knight1Attack[7] = loadImage("Knight_1/attack/8.png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		for (int i = 0; i < 7; i++) {
 			knight2Walk[i] = loadImage("Knight_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight2Attack[i] = loadImage("Knight_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight2Die[i] = loadImage("Knight_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
-		setProgress(1);
-		
-		
-		
 		for (int i = 0; i < 7; i++) {
 			knight3Walk[i] = loadImage("Knight_3/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight3Attack[i] = loadImage("Knight_3/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			knight3Die[i] = loadImage("Knight_3/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		setProgress(2);
+		
 		for (int i = 0; i < 5; i++) {
 			thiefAttack[i] = loadImage("Thief/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			thiefWalk[i] = loadImage("Thief/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -134,7 +133,7 @@ public class LoadResource {
 			wizardLaserWalk[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
 		}
-		setProgress(2);
+		setProgress(3);
 		
 		
 		
@@ -157,6 +156,8 @@ public class LoadResource {
 		for (int i = 12; i < 15; i++) {
 			golemDie[i] = loadImage("Golem/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		setProgress(4);
+		
 		for (int i = 0; i < 12; i++) {
 			orcAttack[i] = loadImage("Orc/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			orcDie[i] = loadImage("Orc/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -170,6 +171,8 @@ public class LoadResource {
 			troll1Die[i] = loadImage("Troll_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			troll1Walk[i] = loadImage("Troll_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		
+		setProgress(5);
 		for (int i = 0; i < 7; i++) {
 			troll2Attack[i] = loadImage("Troll_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			troll2Die[i] = loadImage("Troll_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -185,6 +188,8 @@ public class LoadResource {
 			angleDie[i] = loadImage("Angle/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 			angleWalk[i] = loadImage("Angle/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		setProgress(6);
+		
 		for (int i = 12; i < 15; i++) {
 			angleDie[i] = loadImage("Angle/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
@@ -196,6 +201,8 @@ public class LoadResource {
 		for(int i=0;i<5;i++) {
 			ice[i] = loadImage("Ice/Ice" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
+		
+		setProgress(7);
 		menuBg = loadImage("Other/mainBg.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		playButtonIcon = loadImage("Other/playButton.png", 100, 50);
 		exitButtonIcon = loadImage("Other/exitButton.png", 100, 50);
@@ -222,17 +229,14 @@ public class LoadResource {
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		
-//		mainMenuSound = loadSound("Sound/mainMenu");
-//		bossSound = loadSound("Sound/boss");
-//		gamePlaySound = loadSound("Sound/gamePlay");
-		setProgress(3);
-		setProgress(4);
-		setProgress(5);
-		setProgress(6);
-		setProgress(7);
 		setProgress(8);
+		
+		mainMenuSound = loadSound("Sound/mainMenu.mp3");
 		setProgress(9);
+		gamePlaySound = loadSound("Sound/gamePlay.mp3");
 		setProgress(10);
+		bossSound = loadSound("Sound/boss.mp3");
+		setProgress(11);
 	}
 
 	public static void setProgress(int progress) {
@@ -247,6 +251,6 @@ public class LoadResource {
 	}
 
 	private static AudioClip loadSound(String path) {
-		return new AudioClip(ClassLoader.getSystemResource("audio/" + path).toString());
+		return new AudioClip(ClassLoader.getSystemResource(path).toString());
 	}
 }
