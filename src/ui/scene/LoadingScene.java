@@ -17,13 +17,14 @@ public class LoadingScene extends StackPane {
 	private static Canvas bg;
 	private static GraphicsContext gContext;
 	private static int progress;
+	private static AnimationTimer timer;
 
 	public LoadingScene() {
 		// TODO Auto-generated constructor stub
 		bg = new Canvas();
 		gContext = bg.getGraphicsContext2D();
 		//System.out.println("Hello");
-		AnimationTimer timer = new AnimationTimer() {
+		timer = new AnimationTimer() {
 			
 			@Override
 			public void handle(long now) {
@@ -46,11 +47,7 @@ public class LoadingScene extends StackPane {
 				for (int i = 0; i < progress; i++) {
 					drawLoadProgress(i);
 				}
-				if(progress == 10) {
-					//Main.getScene().setRoot(Main.getMain());
-					Thread.currentThread().stop();
-					System.out.println("STOPPP");
-				}
+				
 			}
 		};
 		timer.start();
@@ -60,4 +57,13 @@ public class LoadingScene extends StackPane {
 	private static void drawLoadProgress(int pos) {
 		gContext.fillRect((pos*80)+405, 265, 70, 70);
 	}
+
+	public static AnimationTimer getTimer() {
+		return timer;
+	}
+
+	public static void setTimer(AnimationTimer timer) {
+		LoadingScene.timer = timer;
+	}
+	
 }

@@ -3,6 +3,7 @@ package main;
 import constant.LoadResource;
 import constant.Numbers;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -36,11 +37,19 @@ public class Main extends Application {
 		new Thread(()-> {
 			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			LoadResource.loadResource();
+			LoadingScene.getTimer().stop();
 			main = new MainMenuScene();
 			game1 = new GamePlayScene(1);
 //			game2 = new GamePlayScene(2);
-			Main.getScene().setRoot(Main.getMain());
-			System.out.println("RUN");
+			System.out.println("Done download");
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					System.out.println("Change Scene");
+					Main.getScene().setRoot(Main.getMain());
+					
+				}
+			});
 		}).start();
 		
 	}
