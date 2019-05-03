@@ -9,9 +9,10 @@ public class RangeMonster extends Character implements Range{
 
 	private int baseAttack;
 	
-	public RangeMonster(String name,int hp, int atk, int def, int moveSpeed, int range, boolean player, int baseCooldown,int reward) {
-		super(name, hp, atk, def, moveSpeed, range, player,baseCooldown, reward);
+	public RangeMonster(String name,int hp, int atk, int def, boolean player, int baseCooldown,int reward) {
+		super(name, hp, atk, def, player,baseCooldown, reward);
 		baseAttack = atk;
+		super.setRange(Numbers.LONG_RANGE);
 	}
 
 	@Override

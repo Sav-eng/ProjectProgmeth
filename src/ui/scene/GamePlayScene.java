@@ -12,6 +12,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import model.data.Player;
 import ui.hud.ControlPane;
 import ui.hud.PauseButton;
 
@@ -57,6 +60,11 @@ public class GamePlayScene extends StackPane {
 	public void drawBg() {
 			gc.drawImage(LoadResource.world2Bg, 100, -120);
 			gc.drawImage(LoadResource.pauseButton, 1452, 0);
+			gc.setFill(Color.BLACK);
+			gc.setStroke(Color.GOLDENROD);
+			gc.setLineWidth(1.0);
+			gc.setFont(new Font("AR ADGothicJP", 30));
+			gc.strokeText(Player.getMoney()+"", 150, 50, 100);
 	}
 	
 	public void drawBase(int level) {

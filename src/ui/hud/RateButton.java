@@ -21,7 +21,7 @@ public class RateButton extends GameButton{
 		RateButton.level = level;
 	}
 	
-	public void levelUp() {
+	public static void levelUp() {
 		RateButton.level++;
 	}
 

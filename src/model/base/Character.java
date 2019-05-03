@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import main.Game;
 import model.data.Player;
 
-public abstract class Character {
+public class Character {
 	private String name;
 	private int hp;
 	private int atk;
@@ -22,13 +22,12 @@ public abstract class Character {
 	private int baseCooldown;
 	private int reward;
 
-	public Character(String name, int hp, int atk, int def, int moveSpeed, int range, boolean player,int baseCooldown,int reward) {
+	public Character(String name, int hp, int atk, int def, boolean player,int baseCooldown,int reward) {
 		this.name = name;
 		this.hp = hp;
 		this.atk = atk;
 		this.def = def;
-		this.moveSpeed = moveSpeed;
-		this.range = range;
+		this.moveSpeed = Numbers.CHA_MOVESPD;
 		this.x = 0;
 		this.player = player;
 		this.baseCooldown = baseCooldown;
