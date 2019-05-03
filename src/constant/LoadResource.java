@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 public class LoadResource {
 
-	private static double progress = 0;
+	private static int progress = 0;
 
 	public static Image wizardFireIcon;
 	public static Image knight1Icon;
@@ -223,11 +223,11 @@ public class LoadResource {
 		setProgress(10);
 	}
 
-	public static void setProgress(double progress) {
+	public static void setProgress(int progress) {
 		LoadResource.progress = progress;
 	}
 
-	public static int getProgress(int progress) {
+	public static int getProgress() {
 		return progress;
 	}
 	public static Image loadImage(String path, double width, double height) {

@@ -18,11 +18,12 @@ public class test extends Application {
 	public void start(Stage primaryStage) {
 
 		// TODO Implement Main
-		LoadResource.loadResource();
+//		LoadResource.loadResource();
 		
-		MainMenuScene root = new MainMenuScene();
+//		MainMenuScene root = new MainMenuScene();
 //		HBox root = new HBox();
 //		LoadResource.loadResource();
+		LoadingScene root = new LoadingScene();
 		Scene scene = new Scene(root);
 		primaryStage.setTitle("test"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene
