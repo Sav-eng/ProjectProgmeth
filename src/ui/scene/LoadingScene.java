@@ -8,6 +8,8 @@ import javafx.application.Platform;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import main.Main;
 
@@ -15,13 +17,14 @@ public class LoadingScene extends StackPane {
 	private static Canvas bg;
 	private static GraphicsContext gContext;
 	private static int progress;
+	private static AnimationTimer timer;
 
 	public LoadingScene() {
 		// TODO Auto-generated constructor stub
 		bg = new Canvas();
 		gContext = bg.getGraphicsContext2D();
 		//System.out.println("Hello");
-		AnimationTimer timer = new AnimationTimer() {
+		timer = new AnimationTimer() {
 			
 			@Override
 			public void handle(long now) {
@@ -45,10 +48,6 @@ public class LoadingScene extends StackPane {
 					drawLoadProgress(i);
 				}
 				
-				if(progress == 11) {
-					Main.getScene().setRoot(Main.getMain());
-					stop();
-				}
 			}
 		};
 		timer.start();
@@ -58,4 +57,13 @@ public class LoadingScene extends StackPane {
 	private static void drawLoadProgress(int pos) {
 		gContext.fillRect((pos*80)+405, 265, 70, 70);
 	}
+
+	public static AnimationTimer getTimer() {
+		return timer;
+	}
+
+	public static void setTimer(AnimationTimer timer) {
+		LoadingScene.timer = timer;
+	}
+	
 }

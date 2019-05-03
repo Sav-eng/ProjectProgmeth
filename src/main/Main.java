@@ -3,6 +3,8 @@ package main;
 import constant.LoadResource;
 import constant.Numbers;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -31,14 +33,23 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");
 		primaryStage.show();
-	
+		
 		new Thread(()-> {
 			Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
 			LoadResource.loadResource();
+			LoadingScene.getTimer().stop();
 			main = new MainMenuScene();
 			game1 = new GamePlayScene(1);
 //			game2 = new GamePlayScene(2);
-			
+			System.out.println("Done download");
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					System.out.println("Change Scene");
+					Main.getScene().setRoot(Main.getMain());
+					
+				}
+			});
 		}).start();
 		
 	}

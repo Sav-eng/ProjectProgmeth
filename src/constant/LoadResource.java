@@ -236,9 +236,9 @@ public class LoadResource {
 		mainMenuSound = loadSound("Sound/mainMenu.mp3");
 		setProgress(9);
 		gamePlaySound = loadSound("Sound/gamePlay.mp3");
-		setProgress(10);
 		bossSound = loadSound("Sound/boss.mp3");
-		setProgress(11);
+		setProgress(10);
+		//setProgress(11);
 	}
 
 	public static void setProgress(int progress) {
