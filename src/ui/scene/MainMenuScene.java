@@ -19,6 +19,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.converter.NumberStringConverter;
+import main.Main;
 import sun.awt.image.ImageAccessException;
 import sun.misc.GC;
 import ui.hud.MainmenuButton;
@@ -80,6 +81,12 @@ public class MainMenuScene extends StackPane {
 		});
 		
 		//TODO add playButton OnPressEvent (go to game play scene)
+		playButtonMainmenu.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+	        public void handle(ActionEvent event) {
+	            Main.getScene().setRoot(Main.getGame1());
+	        }
+		});
 		
 		
 		menuButton.getChildren().addAll(playButtonMainmenu,exitButtonMainmenu);
