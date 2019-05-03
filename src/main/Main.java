@@ -46,8 +46,7 @@ public class Main extends Application {
 				@Override
 				public void run() {
 					System.out.println("Change Scene");
-					Main.getScene().setRoot(Main.getMain());
-					
+					Main.getScene().setRoot(Main.getMain());	
 				}
 			});
 		}).start();
