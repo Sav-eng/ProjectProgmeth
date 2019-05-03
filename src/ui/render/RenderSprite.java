@@ -14,6 +14,9 @@ public class RenderSprite {
 		for(Character a : AllCharacter.getPlayer()) {
 			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
 		}
+		for(Character a : AllCharacter.getEnemy()) {
+			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
+		}
 	}
 
 	public static Canvas getAllChar() {

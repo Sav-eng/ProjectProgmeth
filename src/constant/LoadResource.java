@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 public class LoadResource {
 
-	private static double progress = 0;
+	private static int progress = 0;
 
 	public static Image wizardFireIcon;
 	public static Image knight1Icon;
@@ -83,7 +83,7 @@ public class LoadResource {
 	
 	public static void loadResource() {
 
-//		setProgress(0);
+		setProgress(1);
 		for (int i = 0; i < 5; i++) {
 			wizardFireWalk[i] = loadImage("Wizard_fire/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
@@ -209,22 +209,25 @@ public class LoadResource {
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		
-//		setProgress(0.1);
-//		setProgress(0.2);
-//		setProgress(0.3);
-//		setProgress(0.4);
-//		setProgress(0.5);
-//		setProgress(0.6);
-//		setProgress(0.7);
-//		setProgress(0.8);
-//		setProgress(0.9);
-//		setProgress(1.0);
+		setProgress(1);
+		setProgress(2);
+		setProgress(3);
+		setProgress(4);
+		setProgress(5);
+		setProgress(6);
+		setProgress(7);
+		setProgress(8);
+		setProgress(9);
+		setProgress(10);
 	}
 
-	public static void setProgress(double progress) {
+	public static void setProgress(int progress) {
 		LoadResource.progress = progress;
 	}
 
+	public static int getProgress() {
+		return progress;
+	}
 	public static Image loadImage(String path, double width, double height) {
 		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, false, true);
 	}

@@ -29,6 +29,11 @@ public class Player {
 		Player.buffDef = buffDef;
 	}
 	
-	public static void 
+	public static void consumeMoney(int money) {
+		Player.money -= money;
+	}
 	
+	public static boolean isConsume(int money) {
+		return Player.money > money;
+	}
 }
