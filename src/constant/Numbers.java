@@ -19,5 +19,5 @@ public class Numbers {
 	public static final double TIMEFRAME = 1/30;
 	public static final int ORK_WIDTH = 210;
 	public static final int KNIGHT1_WIDTH = 140;
-
+	public static final int CHA_MOVESPD = 1;
 }

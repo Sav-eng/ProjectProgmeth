@@ -4,6 +4,8 @@ import constant.LoadResource;
 import constant.Numbers;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.NumberExpression;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -11,6 +13,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import main.Main;
+import model.base.AllCharacter;
+import model.base.Character;
 
 public class ControlPane extends HBox{
 	
@@ -63,7 +68,12 @@ public class ControlPane extends HBox{
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
 		
-		
+		Char1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+	        public void handle(ActionEvent event) {
+	            AllCharacter.getPlayer().add(new character("Knight1",989,611,300,))
+	        }
+		});
 	}
 	
 	public void InitializeButtonLevel2() {
