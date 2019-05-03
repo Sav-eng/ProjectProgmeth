@@ -17,21 +17,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import javafx.util.converter.NumberStringConverter;
 import main.Main;
-import sun.awt.image.ImageAccessException;
-import sun.misc.GC;
 import ui.hud.MainmenuButton;
 import constant.Numbers;
-
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-
 import javax.swing.text.Highlighter.Highlight;
-
-import com.sun.org.apache.xalan.internal.xsltc.dom.ExtendedSAX;
 
 import constant.LoadResource;
 
@@ -93,7 +87,12 @@ public class MainMenuScene extends StackPane {
 		
 		this.getChildren().add(menuButton);
 
-		
+//		MediaPlayer sound = new MediaPlayer(new Media(LoadResource.mainMenuSound.getSource()));
+//		sound.setOnEndOfMedia(() -> {
+//			sound.seek(Duration.ZERO);
+//		});
+//		sound.play();
+	
 	}
 	
 	
