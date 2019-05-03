@@ -62,6 +62,8 @@ public class ControlPane extends HBox{
 		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
+		
+		
 	}
 	
 	public void InitializeButtonLevel2() {

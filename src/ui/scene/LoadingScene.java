@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import main.Main;
 
 public class LoadingScene extends StackPane {
 	private static Canvas bg;
@@ -35,6 +36,9 @@ public class LoadingScene extends StackPane {
 		}
 		
 		this.getChildren().add(bg);
+		if(progress == 10) {
+			Main.getScene().setRoot(Main.getMain());
+		}
 	}
 	
 	private static void drawLoadProgress(int pos) {
