@@ -16,8 +16,8 @@ public class LoadingScene extends StackPane {
 		// TODO Auto-generated constructor stub
 		bg = new Canvas();
 		gContext = bg.getGraphicsContext2D();
-		//progress = LoadResource.getProgress();
-		progress = 10;
+		progress = LoadResource.getProgress();
+		
 		bg.setWidth(Numbers.WIN_WIDTH);
 		bg.setHeight(Numbers.WIN_HEIGHT);
 		gContext.setFill(Color.BLACK);

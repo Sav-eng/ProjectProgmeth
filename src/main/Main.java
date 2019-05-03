@@ -11,7 +11,6 @@ import ui.scene.MainMenuScene;
 
 public class Main extends Application {
 
-	private static int phase = 0;
 	private static LoadingScene load = new LoadingScene();
 	private static MainMenuScene start = new MainMenuScene();
 	private static GamePlayScene game1 = new GamePlayScene(1);
@@ -25,10 +24,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		switch (phase) {
-		case 1: scene.setRoot(start); break;
-		case 2: scene.setRoot(game1); break;
-		case 3: scene.setRoot(game2); break;
+		switch (Game.getPhase()) {
+		case 0: scene.setRoot(start); break;
+		case 1: scene.setRoot(game1); break;
+		case 2: scene.setRoot(game2); break;
 		}
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");
