@@ -46,10 +46,10 @@ public class LoadingScene extends StackPane {
 				for (int i = 0; i < progress; i++) {
 					drawLoadProgress(i);
 				}
-				
-				if(progress == 11) {
-					Main.getScene().setRoot(Main.getMain());
-					stop();
+				if(progress == 10) {
+					//Main.getScene().setRoot(Main.getMain());
+					Thread.currentThread().stop();
+					System.out.println("STOPPP");
 				}
 			}
 		};
