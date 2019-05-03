@@ -1,14 +1,15 @@
 package main;
 
+import constant.Numbers;
 import model.base.AllCharacter;
 
 public class Game {
 	// TODO
 //	game loop
 //	pause button
-	private static int phase;
-	private static int hpEnemyBase;
-	private static int hpPlayerBase;
+	private static int phase=-1;
+	private static int hpEnemyBase=Numbers.HP_ENEMY_BASE;
+	private static int hpPlayerBase=Numbers.HP_PLAYER_BASE;
 	public static void logicUpdate() {
 		//update all logic
 	}

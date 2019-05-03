@@ -8,7 +8,7 @@ public class Time {
 	public static void updateTime() {
 		time++;
 	}
-	public static double getTime() {
+	public static int getTime() {
 		return time;
 	}
 	

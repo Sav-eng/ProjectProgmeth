@@ -81,6 +81,8 @@ public class LoadResource {
 	public static Image[] fairyAttack = new Image[5];
 	public static Image[] ice = new Image[5];
 	
+	
+	
 	public static void loadResource() {
 
 		setProgress(1);

@@ -34,10 +34,10 @@ public abstract class Character {
 		this.baseCooldown = baseCooldown;
 		this.reward = reward;
 		cooldown = 0;
-		if (player)
-			AllCharacter.getPlayer().add(this);
-		else
-			AllCharacter.getEnemy().add(this);
+//		if (player)
+//			AllCharacter.getPlayer().add(this);
+//		else
+//			AllCharacter.getEnemy().add(this);
 	}
 
 	public void move() {
@@ -244,7 +244,7 @@ public abstract class Character {
 		Image[] out = new Image[1];
 		if (this.getDoing() == 1) {
 			switch (this.getName()) {
-			case "knight1": out = LoadResource.knight1Walk; break;
+			case "Knight1": out = LoadResource.knight1Walk; break;
 			case "Knight2": out = LoadResource.knight2Walk; break;
 			case "Knight3": out = LoadResource.knight3Walk; break;
 			case "Angle": out = LoadResource.angleWalk; break;
@@ -262,7 +262,7 @@ public abstract class Character {
 		}
 			} else if (this.getDoing() == 2 || this.getDoing() ==3) {
 				switch (this.getName()) {
-				case "knight1": out = LoadResource.knight1Attack; break;
+				case "Knight1": out = LoadResource.knight1Attack; break;
 				case "Knight2": out = LoadResource.knight2Attack; break;
 				case "Knight3": out = LoadResource.knight3Attack; break;
 				case "Angle": out = LoadResource.angleAttack; break;
@@ -280,7 +280,7 @@ public abstract class Character {
 			}
 		} else {
 			switch (this.getName()) {
-			case "knight1": out = LoadResource.knight1Die; break;
+			case "Knight1": out = LoadResource.knight1Die; break;
 			case "Knight2": out = LoadResource.knight2Die; break;
 			case "Knight3": out = LoadResource.knight3Die; break;
 			case "Angle": out = LoadResource.angleDie; break;

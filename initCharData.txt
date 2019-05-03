@@ -141,8 +141,8 @@ Reward: 250
 
 Troll2
 HP: 7000
-ATK: 1000
-DEF: 400
+ATK: 1500
+DEF: 800
 MOVESPEED: 
 BaseCooldown: 30
 Reward: 500
