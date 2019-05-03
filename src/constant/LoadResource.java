@@ -33,6 +33,7 @@ public class LoadResource {
 	public static Image world1Base;
 	public static Image world2Base;
 	public static Image enerymyBase;
+	public static Image stopButton;
 	
 	public static Image[] wizardFireWalk = new Image[5];
 	public static Image[] wizardFireDie = new Image[5];
@@ -228,6 +229,7 @@ public class LoadResource {
 		world2Bg = loadImage("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+		
 		
 		setProgress(8);
 		
