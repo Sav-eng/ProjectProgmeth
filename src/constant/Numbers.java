@@ -1,5 +1,7 @@
 package constant;
 
+import com.sun.scenario.effect.impl.prism.ps.PPSBlend_DIFFERENCEPeer;
+
 public class Numbers {
 	public static final int WIN_WIDTH = 1600;
 	public static final int WIN_HEIGHT = 600;
@@ -22,4 +24,6 @@ public class Numbers {
 	public static final int CHA_MOVESPD = 1;
 	public static final int MELEE_RANGE = 100;
 	public static final int LONG_RANGE = 100;
+	public static final int LEVELUP_PRICE = 5000;
+	public static final int BOOST_PRICE = 250;
 }
