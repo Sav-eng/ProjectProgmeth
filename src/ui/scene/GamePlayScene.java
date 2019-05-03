@@ -45,6 +45,7 @@ public class GamePlayScene extends StackPane {
 	
 	public void drawBg() {
 			gc.drawImage(LoadResource.world2Bg, 100, -120);
+			gc.drawImage(LoadResource.stopButton, 1452, 0);
 	}
 	
 	public void drawBase(int level) {
