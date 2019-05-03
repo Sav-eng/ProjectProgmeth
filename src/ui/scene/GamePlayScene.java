@@ -9,8 +9,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import ui.hud.ControlPane;
+import ui.hud.PauseButton;
 
 public class GamePlayScene extends StackPane {
 
@@ -18,6 +21,7 @@ public class GamePlayScene extends StackPane {
 	GraphicsContext gc;
 	int level;
 	ControlPane bottom;
+	BorderPane stopButt;
 	
 	public GamePlayScene(int level) {
 		super();
@@ -40,12 +44,19 @@ public class GamePlayScene extends StackPane {
 		this.getChildren().add(bottom);
 		this.getChildren().add(bg);
 		
+		stopButt = new BorderPane();
+		PauseButton pauseButton = new PauseButton();
+		stopButt.setTop(pauseButton);
+		stopButt.setAlignment(pauseButton, Pos.TOP_RIGHT);
+		
+		this.getChildren().add(stopButt);
 //		this.getChildren().add(bottom);
 	}
 	
+	
 	public void drawBg() {
 			gc.drawImage(LoadResource.world2Bg, 100, -120);
-			gc.drawImage(LoadResource.stopButton, 1452, 0);
+			gc.drawImage(LoadResource.pauseButton, 1452, 0);
 	}
 	
 	public void drawBase(int level) {
