@@ -214,9 +214,9 @@ public class LoadResource {
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		
-		mainMenuSound = loadSound("Sound/mainMenu");
-		bossSound = loadSound("Sound/boss");
-		gamePlaySound = loadSound("Sound/gamePlay");
+//		mainMenuSound = loadSound("Sound/mainMenu");
+//		bossSound = loadSound("Sound/boss");
+//		gamePlaySound = loadSound("Sound/gamePlay");
 		setProgress(1);
 		setProgress(2);
 		setProgress(3);
