@@ -38,7 +38,7 @@ public class EndScene extends StackPane {
 
 	private static void drawVictory(GraphicsContext gc) {
 		gc.setFill(Color.GOLD);
-//		gc.setStroke(Color.BLACK);
+		gc.setStroke(Color.GOLDENROD);
 		gc.setLineWidth(2.0);
 		gc.setFont(new Font("koverwatch", 100));
 		gc.fillText("Victory", 700, 300);
