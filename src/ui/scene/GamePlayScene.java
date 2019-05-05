@@ -47,24 +47,24 @@ public class GamePlayScene extends StackPane {
 		this.getChildren().add(bottom);
 		this.getChildren().add(bg);
 		
-		stopButt = new BorderPane();
-		PauseButton pauseButton = new PauseButton();
-		stopButt.setTop(pauseButton);
-		stopButt.setAlignment(pauseButton, Pos.TOP_RIGHT);
-		
-		this.getChildren().add(stopButt);
+//		stopButt = new BorderPane();
+//		PauseButton pauseButton = new PauseButton();
+//		stopButt.setTop(pauseButton);
+//		stopButt.setAlignment(pauseButton, Pos.TOP_RIGHT);
+//		
+//		this.getChildren().add(stopButt);
 //		this.getChildren().add(bottom);
 	}
 	
 	
 	public void drawBg() {
 			gc.drawImage(LoadResource.world2Bg, 100, -120);
-			gc.drawImage(LoadResource.pauseButton, 1452, 0);
-			gc.setFill(Color.BLACK);
-			gc.setStroke(Color.GOLDENROD);
-			gc.setLineWidth(1.0);
-			gc.setFont(new Font("AR ADGothicJP", 30));
-			gc.strokeText(Player.getMoney()+"", 150, 50, 100);
+//			gc.drawImage(LoadResource.pauseButton, 1452, 0);
+//			gc.setFill(Color.BLACK);
+//			gc.setStroke(Color.GOLDENROD);
+//			gc.setLineWidth(1.0);
+//			gc.setFont(new Font("AR ADGothicJP", 30));
+//			gc.strokeText(Player.getMoney()+"", 150, 50, 100);
 	}
 	
 	public void drawBase(int level) {
