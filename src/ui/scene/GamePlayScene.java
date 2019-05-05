@@ -21,11 +21,11 @@ import ui.hud.PauseButton;
 
 public class GamePlayScene extends BorderPane {
 
-	Canvas bg;
-	GraphicsContext gc;
-	int level;
-	ControlPane bottom;
-	BorderPane stopButt;
+	private Canvas bg;
+	private GraphicsContext gc;
+	private int level;
+	private ControlPane bottom;
+	private BorderPane stopButt;
 	
 	public GamePlayScene(int level) {
 		super();
@@ -89,5 +89,17 @@ public class GamePlayScene extends BorderPane {
 			gc.drawImage(LoadResource.enerymyBase, 1290, 180);
 		}
 	}
-		
+
+
+	public Canvas getBg() {
+		return bg;
+	}
+
+
+	public GraphicsContext getGc() {
+		return gc;
+	}
+	
+	
+	
 }

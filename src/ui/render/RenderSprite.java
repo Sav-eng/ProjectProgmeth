@@ -5,6 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
 import model.data.Player;
@@ -12,9 +13,18 @@ import model.data.Player;
 public class RenderSprite {
 
 	private static Canvas allChar = new Canvas();
+//	private static Canvas allChar;
+//	private static GraphicsContext gc;
 	private static GraphicsContext gc = allChar.getGraphicsContext2D();
+//	private static GraphicsContext gc = Main.getScene().getRoot().getGc();
 
 	public static void render() {
+		if(Main.getScene().getRoot().equals(Main.getGame1())) {
+			allChar = Main.getGame1().getBg();
+		} else if(Main.getScene().getRoot().equals(Main.getGame2())) {
+			allChar = Main.getGame2().getBg();
+		}
+		gc = allChar.getGraphicsContext2D();
 		for (Character a : AllCharacter.getPlayer()) {
 			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
 		}
