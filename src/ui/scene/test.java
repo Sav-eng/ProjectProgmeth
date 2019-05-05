@@ -20,7 +20,7 @@ public class test extends Application {
 
 		// TODO Implement Main
 		//LoadResource.loadResource();
-		
+		EndScene root = new EndScene();
 		
 		
 //		HBox root = new HBox();
