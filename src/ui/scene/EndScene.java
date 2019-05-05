@@ -19,6 +19,8 @@ public class EndScene extends StackPane {
 		canvas.setWidth(Numbers.WIN_WIDTH);
 		canvas.setHeight(Numbers.WIN_HEIGHT);
 		gc = canvas.getGraphicsContext2D();
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 
 //		if() {
 //			drawVictory();
@@ -30,21 +32,25 @@ public class EndScene extends StackPane {
 //		gc.setStroke(Color.BLACK);
 //		gc.strokeText("Victory", 500, 500);
 		drawVictory(gc);
+//		drawDefeat(gc);
 		this.getChildren().add(canvas);
 	}
 
 	private static void drawVictory(GraphicsContext gc) {
-		gc.setFill(Color.BLACK);
-		gc.setStroke(Color.GOLDENROD);
-		gc.setLineWidth(10.0);
+		gc.setFill(Color.GOLD);
+//		gc.setStroke(Color.BLACK);
+		gc.setLineWidth(2.0);
 		gc.setFont(new Font("koverwatch", 100));
-		gc.fillText("Victory", 500, 500);
-//		gc.strokeText("Victory", 500, 500, 100);
+		gc.fillText("Victory", 700, 300);
+		gc.strokeText("Victory", 700, 300, 300);
 	}
 
 	private static void drawDefeat(GraphicsContext gc) {
-		gc.setLineWidth(1.0);
-		gc.setFont(new Font("AR ADGothicJP", 100));
-		gc.strokeText("Defeat", 150, 50, 100);
+		gc.setFill(Color.ORANGERED);
+		gc.setStroke(Color.DARKORANGE);
+		gc.setLineWidth(2.0);
+		gc.setFont(new Font("koverwatch", 100));
+		gc.fillText("Defeat", 700, 300);
+		gc.strokeText("Defeat", 700, 300, 300);
 	}
 }
