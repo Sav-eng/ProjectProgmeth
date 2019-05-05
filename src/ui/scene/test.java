@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import main.Main;
+import ui.hud.ControlPane;
 
 public class test extends Application {
 
@@ -20,8 +21,8 @@ public class test extends Application {
 
 		// TODO Implement Main
 		//LoadResource.loadResource();
-		EndScene root = new EndScene();
-		
+//		EndScene root = new EndScene();
+		ControlPane root = new ControlPane(1);
 		
 //		HBox root = new HBox();
 //		LoadResource.loadResource();

@@ -1,5 +1,9 @@
 package ui.hud;
 
+import java.awt.Button;
+
+import javax.xml.bind.helpers.PrintConversionEventImpl;
+
 import constant.LoadResource;
 import constant.Numbers;
 import javafx.beans.binding.Bindings;
@@ -8,11 +12,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import main.Main;
 import model.base.AllCharacter;
@@ -24,24 +30,26 @@ import model.mon.RangeMonster;
 
 public class ControlPane extends HBox {
 
-	EntityButton Char1;
-	EntityButton Char2;
-	EntityButton Char3;
-	EntityButton Char4;
-	EntityButton Char5;
-	RateButton rateUp;
-	UpgradeButton levelUp;
-	AttackBuffButton attackUp;
-	DefenceBuffButton defenceUp;
-
+	private EntityButton Char1;
+	private EntityButton Char2;
+	private EntityButton Char3;
+	private EntityButton Char4;
+	private EntityButton Char5;
+	private RateButton rateUp;
+	private UpgradeButton levelUp;
+	private AttackBuffButton attackUp;
+	private DefenceBuffButton defenceUp;
+	
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
 		super();
 		this.setSpacing(10);
 		this.setPrefHeight(0.2 * Numbers.WIN_HEIGHT);
+//		this.setPrefHeight(Numbers.WIN_HEIGHT);
 		this.setPrefWidth(Numbers.WIN_WIDTH);
-		this.setPadding(new Insets(5, 0, 5, 0));
-		this.setAlignment(Pos.BOTTOM_CENTER);
+		this.setMaxHeight(0.2 * Numbers.WIN_HEIGHT);
+		this.setPadding(new Insets(5, 200, 5, 0));
+		this.setAlignment(Pos.CENTER);
 		this.setStyle("-fx-background-color: #c19a6b;");
 
 		switch (level) {
@@ -52,8 +60,12 @@ public class ControlPane extends HBox {
 			InitializeButtonLevel2();
 			break;
 		}
+		
 
-		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
+//		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
+		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp),pair(Char1.getPrice(), Char1),pair(Char2.getPrice(), Char2),pair(Char3.getPrice(), Char3));
+		this.getChildren().addAll(pair(Char4.getPrice(), Char4),pair(Char5.getPrice(), Char5),pair(attackUp.getPrice(), attackUp));
+		this.getChildren().addAll(pair(defenceUp.getPrice(), defenceUp),pair(levelUp.getPrice(), levelUp));
 	}
 
 	public void InitializeButtonLevel1() {
@@ -203,5 +215,16 @@ public class ControlPane extends HBox {
 	
 	public void levelDull() {
 		levelUp.setGraphic(new ImageView(LoadResource.levelUpCd));
+	}
+	
+	public VBox pair(int price,GameButton button) {
+		VBox out = new VBox();
+		String temp = price + "";
+		Label priceTag = new Label(temp);
+		priceTag.setAlignment(Pos.CENTER);
+		out.getChildren().add(button);
+		out.getChildren().add(priceTag);
+		out.setAlignment(Pos.CENTER);
+		return out;
 	}
 }

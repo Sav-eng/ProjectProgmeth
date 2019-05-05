@@ -1,5 +1,6 @@
 package ui.render;
 
+import constant.Numbers;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -33,4 +34,7 @@ public class RenderSprite {
 		return allChar;
 	}
 
+	public static void clearCanvas() {
+		gc.clearRect(0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+	}
 }

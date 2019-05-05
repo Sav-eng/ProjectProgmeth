@@ -2,6 +2,8 @@ package main;
 
 import javafx.animation.AnimationTimer;
 import model.base.AllCharacter;
+import ui.render.AllSpriteUpdate;
+import ui.render.RenderSprite;
 
 public class Loop {
 	public static AnimationTimer timer = new AnimationTimer() {
@@ -14,12 +16,15 @@ public class Loop {
 				
 				// TODO
 //				clear canvas
+				RenderSprite.clearCanvas();
 //				set new canvas
 				//update all data
 				AllCharacter.updateCharacter();
 //				//update money
 				//update time
+				AllSpriteUpdate.update();
 				//render character
+				RenderSprite.render();
 				//render cooldown
 				
 			}
