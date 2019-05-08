@@ -2,10 +2,19 @@ package main;
 
 import javafx.animation.AnimationTimer;
 import model.base.AllCharacter;
+<<<<<<< HEAD
 import model.data.Player;
 import ui.hud.RateButton;
 import ui.render.AllSpriteUpdate;
 import ui.render.RenderSprite;
+||||||| merged common ancestors
+import ui.render.AllSpriteUpdate;
+import ui.render.RenderSprite;
+=======
+import model.data.Player;
+import ui.render.AllUpdate;
+import ui.render.Render;
+>>>>>>> 9f8471a8d22a92597888091484437306fb39a627
 
 public class Loop {
 	public static AnimationTimer timer = new AnimationTimer() {
@@ -16,18 +25,16 @@ public class Loop {
 
 			if (frameCount % 2 == 0) {
 				
-				// TODO
-				//clear canvas
-				RenderSprite.clearCanvas();
+				Render.clearCanvas();
 //				set new canvas
 				//update all data
 				Player.updateMoney();
 				AllCharacter.updateCharacter();
 //				//update money
 				//update time
-				AllSpriteUpdate.update();
+				AllUpdate.update();
 				//render character
-				RenderSprite.render();
+				Render.render();
 				//render cooldown
 				//update money
 				
@@ -36,7 +43,7 @@ public class Loop {
 		}
 	};
 
-	public AnimationTimer geTimer() {
+	public static AnimationTimer geTimer() {
 		return timer;
 	}
 }

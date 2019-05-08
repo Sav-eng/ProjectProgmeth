@@ -1,6 +1,7 @@
 package ui.hud;
 
 import java.awt.Button;
+import java.util.ArrayList;
 
 import javax.xml.bind.helpers.PrintConversionEventImpl;
 
@@ -20,6 +21,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import main.Game;
 import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
@@ -28,6 +30,7 @@ import model.data.Time;
 import model.mon.HeroMonster;
 import model.mon.MeleeMonster;
 import model.mon.RangeMonster;
+import ui.scene.GamePlayScene;
 
 public class ControlPane extends HBox {
 
@@ -41,6 +44,7 @@ public class ControlPane extends HBox {
 	private AttackBuffButton attackUp;
 	private DefenceBuffButton defenceUp;
 	private Label cooldownLeft;
+	private ArrayList<GameButton> updateLabelList = new ArrayList<GameButton>();
 
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
@@ -62,6 +66,14 @@ public class ControlPane extends HBox {
 			InitializeButtonLevel2();
 			break;
 		}
+
+		updateLabelList.add(Char1);
+		updateLabelList.add(Char2);
+		updateLabelList.add(Char3);
+		updateLabelList.add(Char4);
+		updateLabelList.add(Char5);
+		updateLabelList.add(defenceUp);
+		updateLabelList.add(attackUp);
 
 //		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
 		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
@@ -85,13 +97,13 @@ public class ControlPane extends HBox {
 		Char4 = new EntityButton(LoadResource.fairyIcon, 350, 200);
 		Char4.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char5 = new EntityButton(LoadResource.wizardFireIcon, 700, 300);
+		Char5 = new EntityButton(LoadResource.wizardFireIcon, 700, 500);
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
-		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
-		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
-		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, Numbers.LEVELUP_PRICE, 1);
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
 
 		Char1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -153,21 +165,25 @@ public class ControlPane extends HBox {
 		rateUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(RateButton.getCost())) {
-					Player.consumeMoney(RateButton.getCost());
-					RateButton.levelUp();
-				}
+				if (RateButton.getLevel() != 10)
+					if (Player.isConsume(RateButton.getCost())) {
+						Player.consumeMoney(RateButton.getCost());
+						RateButton.levelUp();
+					}
 			}
 		});
 
 		levelUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
+//				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
 					Player.consumeMoney(Numbers.LEVELUP_PRICE);
 					Main.getScene().setRoot(Main.getGame2());
+					Main.getGame2().setTop(GamePlayScene.getBg());
+					Main.getGame2().setBottom(Main.getGame2().getBottomPane());
 					Player.setLevel(Player.getLevel() + 1);
-				}
+					Game.setPhase(2);
+//				}
 			}
 		});
 
@@ -217,9 +233,105 @@ public class ControlPane extends HBox {
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
-		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT * 2);
-		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT * 2);
-		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
+		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 500, 600, Numbers.WORLDBUFFAMOUNT * 2);
+		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 500, 600, Numbers.WORLDBUFFAMOUNT * 2);
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, 0, 2);
+
+		Char1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
+					if (Player.isConsume(Char1.getPrice())) {
+						Player.consumeMoney(Char2.getPrice());
+						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 100, 0));
+					}
+				}
+			}
+		});
+
+		Char2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
+					if (Player.isConsume(Char2.getPrice())) {
+						Player.consumeMoney(Char2.getPrice());
+						AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 888, 400, true, 110, 0));
+					}
+			}
+		});
+
+		Char3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
+					if (Player.isConsume(Char3.getPrice())) {
+						Player.consumeMoney(Char3.getPrice());
+						AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 3000, 1223, 400, true, 90, 0));
+					}
+			}
+		});
+
+		Char4.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
+					if (Player.isConsume(Char4.getPrice())) {
+						Player.consumeMoney(Char4.getPrice());
+						AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 2000, 1999, 100, true, 150, 0));
+					}
+			}
+		});
+
+		Char5.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
+					if (Player.isConsume(Char5.getPrice())) {
+						Player.consumeMoney(Char5.getPrice());
+
+						AllCharacter.getPlayer().add(new HeroMonster("Angle", 5000, 2777, 1200, true, 150, 0));
+					}
+			}
+		});
+
+		rateUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (RateButton.getLevel() != 10)
+					if (Player.isConsume(RateButton.getCost())) {
+						Player.consumeMoney(RateButton.getCost());
+						RateButton.levelUp();
+					}
+			}
+		});
+
+		attackUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+					for (Character a : AllCharacter.getPlayer()) {
+						if (a instanceof RangeMonster) {
+							((RangeMonster) a).attackBoost();
+						}
+					}
+				}
+			}
+		});
+
+		defenceUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+					for (Character a : AllCharacter.getPlayer()) {
+						if (a instanceof MeleeMonster) {
+							((MeleeMonster) a).defenceBoost();
+						}
+					}
+				}
+			}
+		});
 	}
 
 	public void rateBright() {
@@ -228,6 +340,14 @@ public class ControlPane extends HBox {
 
 	public void rateDull() {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUpCd));
+	}
+
+	public Label getCooldownLeft() {
+		return cooldownLeft;
+	}
+
+	public void setCooldownLeft(Label cooldownLeft) {
+		this.cooldownLeft = cooldownLeft;
 	}
 
 	public void levelBright() {
@@ -268,5 +388,33 @@ public class ControlPane extends HBox {
 			out.getChildren().add(cooldownLeft);
 		}
 		return out;
+	}
+
+	public ArrayList<GameButton> getUpdateLabelList() {
+		return updateLabelList;
+	}
+
+	public AttackBuffButton getAttackUp() {
+		return attackUp;
+	}
+
+	public DefenceBuffButton getDefenceUp() {
+		return defenceUp;
+	}
+	
+	public void attackBright() {
+		attackUp.setGraphic(new ImageView(LoadResource.atkUp));
+	}
+	
+	public void attackDull() {
+		attackUp.setGraphic(new ImageView(LoadResource.atkUpCd));
+	}
+	
+	public void defenceBright() {
+		defenceUp.setGraphic(new ImageView(LoadResource.defUp));
+	}
+
+	public void defenceDull() {
+		defenceUp.setGraphic(new ImageView(LoadResource.defUpCd));
 	}
 }
