@@ -40,7 +40,7 @@ public class Main extends Application {
 			LoadingScene.getTimer().stop();
 			main = new MainMenuScene();
 			game1 = new GamePlayScene(1);
-//			game2 = new GamePlayScene(2);
+			game2 = new GamePlayScene(2);
 			System.out.println("Done download");
 			Platform.runLater(new Runnable() {
 				@Override

@@ -30,6 +30,7 @@ import model.data.Time;
 import model.mon.HeroMonster;
 import model.mon.MeleeMonster;
 import model.mon.RangeMonster;
+import ui.scene.GamePlayScene;
 
 public class ControlPane extends HBox {
 
@@ -100,7 +101,7 @@ public class ControlPane extends HBox {
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
-		levelUp = new UpgradeButton(LoadResource.levelUpCd, 3000, 1);
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, Numbers.LEVELUP_PRICE, 1);
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
 
@@ -175,12 +176,14 @@ public class ControlPane extends HBox {
 		levelUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
+//				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
 					Player.consumeMoney(Numbers.LEVELUP_PRICE);
 					Main.getScene().setRoot(Main.getGame2());
+					Main.getGame2().setTop(GamePlayScene.getBg());
+					Main.getGame2().setBottom(Main.getGame2().getBottomPane());
 					Player.setLevel(Player.getLevel() + 1);
 					Game.setPhase(2);
-				}
+//				}
 			}
 		});
 

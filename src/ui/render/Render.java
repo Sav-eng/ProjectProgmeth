@@ -34,10 +34,10 @@ public class Render {
 		gc.setStroke(Color.GOLDENROD);
 		gc.setLineWidth(1.0);
 		gc.setFont(new Font("AR ADGothicJP", 30));
-		gc.strokeText("$ " +Player.getMoney()+"", 150, 50, 100);
-		gc.strokeText("RateLvl: "+ RateButton.getLevel(), 150, 75);
-		gc.strokeText(Game.getHpPlayerBase()+" /"+Numbers.HP_PLAYER_BASE, 20, 130);
-		gc.strokeText(Game.getHpEnemyBase() + " /"+Numbers.HP_ENEMY_BASE, 1190, 130);
+		gc.fillText("$ " +Player.getMoney()+"", 20, 50, 100);
+		gc.fillText("RateLvl: "+ RateButton.getLevel(), 20, 75);
+		gc.fillText(Game.getHpPlayerBase()+" /"+Numbers.HP_PLAYER_BASE, 20, 130);
+		gc.fillText(Game.getHpEnemyBase() + " /"+Numbers.HP_ENEMY_BASE, 1170, 130);
 	}
 
 	

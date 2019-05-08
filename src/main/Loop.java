@@ -33,7 +33,7 @@ public class Loop {
 		}
 	};
 
-	public AnimationTimer geTimer() {
+	public static AnimationTimer geTimer() {
 		return timer;
 	}
 }
