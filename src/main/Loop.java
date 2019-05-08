@@ -4,7 +4,7 @@ import javafx.animation.AnimationTimer;
 import model.base.AllCharacter;
 import model.data.Player;
 import ui.render.AllUpdate;
-import ui.render.RenderSprite;
+import ui.render.Render;
 
 public class Loop {
 	public static AnimationTimer timer = new AnimationTimer() {
@@ -17,7 +17,7 @@ public class Loop {
 				
 				// TODO
 //				clear canvas
-				RenderSprite.clearCanvas();
+				Render.clearCanvas();
 //				set new canvas
 				//update all data
 				AllCharacter.updateCharacter();
@@ -25,7 +25,7 @@ public class Loop {
 				//update time
 				AllUpdate.update();
 				//render character
-				RenderSprite.render();
+				Render.render();
 				//render cooldown
 				
 			}

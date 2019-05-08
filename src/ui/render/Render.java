@@ -5,13 +5,15 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import main.Game;
 import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
 import model.data.Player;
+import ui.hud.RateButton;
 import ui.scene.GamePlayScene;
 
-public class RenderSprite {
+public class Render {
 
 	private static Canvas allChar = GamePlayScene.getBg();
 //	private static Canvas allChar;
@@ -32,7 +34,10 @@ public class RenderSprite {
 		gc.setStroke(Color.GOLDENROD);
 		gc.setLineWidth(1.0);
 		gc.setFont(new Font("AR ADGothicJP", 30));
-		gc.strokeText(Player.getMoney()+"", 150, 50, 100);
+		gc.strokeText("$ " +Player.getMoney()+"", 150, 50, 100);
+		gc.strokeText("RateLvl: "+ RateButton.getLevel(), 150, 75);
+		gc.strokeText(Game.getHpPlayerBase()+" /"+Numbers.HP_PLAYER_BASE, 20, 130);
+		gc.strokeText(Game.getHpEnemyBase() + " /"+Numbers.HP_ENEMY_BASE, 1190, 130);
 	}
 
 	

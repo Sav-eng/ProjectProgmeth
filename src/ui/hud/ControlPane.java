@@ -100,7 +100,7 @@ public class ControlPane extends HBox {
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
-		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, 3000, 1);
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 600, Numbers.WORLDBUFFAMOUNT);
 
@@ -179,6 +179,7 @@ public class ControlPane extends HBox {
 					Player.consumeMoney(Numbers.LEVELUP_PRICE);
 					Main.getScene().setRoot(Main.getGame2());
 					Player.setLevel(Player.getLevel() + 1);
+					Game.setPhase(2);
 				}
 			}
 		});
@@ -390,4 +391,27 @@ public class ControlPane extends HBox {
 		return updateLabelList;
 	}
 
+	public AttackBuffButton getAttackUp() {
+		return attackUp;
+	}
+
+	public DefenceBuffButton getDefenceUp() {
+		return defenceUp;
+	}
+	
+	public void attackBright() {
+		attackUp.setGraphic(new ImageView(LoadResource.atkUp));
+	}
+	
+	public void attackDull() {
+		attackUp.setGraphic(new ImageView(LoadResource.atkUpCd));
+	}
+	
+	public void defenceBright() {
+		defenceUp.setGraphic(new ImageView(LoadResource.defUp));
+	}
+
+	public void defenceDull() {
+		defenceUp.setGraphic(new ImageView(LoadResource.defUpCd));
+	}
 }

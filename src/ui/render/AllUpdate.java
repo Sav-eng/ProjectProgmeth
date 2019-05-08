@@ -8,6 +8,7 @@ import model.base.AllCharacter;
 import model.base.Character;
 import model.data.Player;
 import model.data.Time;
+import sun.net.www.content.text.plain;
 import ui.hud.ControlPane;
 import ui.hud.EntityButton;
 import ui.hud.GameButton;
@@ -90,6 +91,26 @@ public class AllUpdate {
 			pane.rateBright();
 		} else {
 			pane.rateDull();
+		}
+		
+		if(Player.getLevel() == 2) {
+			pane.levelBright();
+		} else if (Player.getMoney() >= 3000) {
+			pane.levelBright();
+		} else {
+			pane.levelDull();
+		}
+		
+		if(Time.getTime() - pane.getAttackUp().getPressTime() >= pane.getAttackUp().getCooldownTime() && Player.getMoney() >= pane.getAttackUp().getPrice()) {
+			pane.attackBright();
+		} else {
+			pane.attackDull();
+		}
+		
+		if(Time.getTime() - pane.getDefenceUp().getPressTime() >= pane.getDefenceUp().getCooldownTime() && Player.getMoney() >= pane.getDefenceUp().getPrice()) {
+			pane.defenceBright();
+		} else {
+			pane.defenceDull();
 		}
 	}
 }
