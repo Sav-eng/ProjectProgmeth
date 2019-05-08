@@ -21,8 +21,8 @@ import ui.hud.PauseButton;
 
 public class GamePlayScene extends BorderPane {
 
-	private Canvas bg;
-	private GraphicsContext gc;
+	private static Canvas bg;
+	private static GraphicsContext gc;
 	private int level;
 	private ControlPane bottom;
 	private BorderPane stopButt;
@@ -66,7 +66,7 @@ public class GamePlayScene extends BorderPane {
 	}
 	
 	
-	public void drawBg() {
+	public static void drawBg() {
 //			gc.drawImage(LoadResource.world2Bg, 100, -120);
 //			gc.drawImage(LoadResource.pauseButton, 1452, 0);
 //			gc.setFill(Color.BLACK);
@@ -77,7 +77,7 @@ public class GamePlayScene extends BorderPane {
 			gc.drawImage(LoadResource.world2Bg, 0, -120);
 	}
 	
-	public void drawBase(int level) {
+	public static void drawBase(int level) {
 		if(level == 1) {
 //			gc.drawImage(LoadResource.world1Base, 70, 190);
 //			gc.drawImage(LoadResource.enerymyBase, 1290, 185);
@@ -91,15 +91,19 @@ public class GamePlayScene extends BorderPane {
 	}
 
 
-	public Canvas getBg() {
+	public static Canvas getBg() {
 		return bg;
 	}
 
 
-	public GraphicsContext getGc() {
+	public static GraphicsContext getGc() {
 		return gc;
 	}
-	
+
+
+	public int getLevel() {
+		return level;
+	}
 	
 	
 }
