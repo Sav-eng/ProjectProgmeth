@@ -112,6 +112,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
 					if (Player.isConsume(Char1.getPrice())) {
 						Player.consumeMoney(Char1.getPrice());
+						Char1.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
 					}
 				}
@@ -124,6 +125,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
 					if (Player.isConsume(Char2.getPrice())) {
 						Player.consumeMoney(Char2.getPrice());
+						Char2.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new RangeMonster("Archer", 999, 421, 20, true, 40, 0));
 					}
 			}
@@ -135,6 +137,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
 					if (Player.isConsume(Char3.getPrice())) {
 						Player.consumeMoney(Char3.getPrice());
+						Char3.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new MeleeMonster("Thief", 564, 356, 100, true, 30, 0));
 					}
 			}
@@ -146,6 +149,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
 					if (Player.isConsume(Char4.getPrice())) {
 						Player.consumeMoney(Char4.getPrice());
+						Char4.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 777, 100, true, 100, 0));
 					}
 			}
@@ -157,7 +161,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
 					if (Player.isConsume(Char5.getPrice())) {
 						Player.consumeMoney(Char5.getPrice());
-
+						Char5.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 888, 400, true, 110, 0));
 					}
 			}
@@ -194,6 +198,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Player.isConsume(Numbers.BOOST_PRICE)) {
 					Player.consumeMoney(Numbers.BOOST_PRICE);
+					attackUp.setPressTime(Time.getTime());
 					for (Character a : AllCharacter.getPlayer()) {
 						if (a instanceof RangeMonster) {
 							((RangeMonster) a).attackBoost();
@@ -208,6 +213,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Player.isConsume(Numbers.BOOST_PRICE)) {
 					Player.consumeMoney(Numbers.BOOST_PRICE);
+					defenceUp.setPressTime(Time.getTime());
 					for (Character a : AllCharacter.getPlayer()) {
 						if (a instanceof MeleeMonster) {
 							((MeleeMonster) a).defenceBoost();
@@ -245,6 +251,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
 					if (Player.isConsume(Char1.getPrice())) {
 						Player.consumeMoney(Char1.getPrice());
+						Char1.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 100, 0));
 					}
 				}
@@ -257,6 +264,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
 					if (Player.isConsume(Char2.getPrice())) {
 						Player.consumeMoney(Char2.getPrice());
+						Char2.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 888, 400, true, 110, 0));
 					}
 			}
@@ -268,6 +276,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
 					if (Player.isConsume(Char3.getPrice())) {
 						Player.consumeMoney(Char3.getPrice());
+						Char3.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 3000, 1223, 400, true, 90, 0));
 					}
 			}
@@ -279,6 +288,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
 					if (Player.isConsume(Char4.getPrice())) {
 						Player.consumeMoney(Char4.getPrice());
+						Char4.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 2000, 1999, 100, true, 150, 0));
 					}
 			}
@@ -290,7 +300,7 @@ public class ControlPane extends HBox {
 				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
 					if (Player.isConsume(Char5.getPrice())) {
 						Player.consumeMoney(Char5.getPrice());
-
+						Char5.setPressTime(Time.getTime());
 						AllCharacter.getPlayer().add(new HeroMonster("Angle", 5000, 2777, 1200, true, 150, 0));
 					}
 			}
@@ -313,6 +323,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
 					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+					attackUp.setPressTime(Time.getTime());
 					for (Character a : AllCharacter.getPlayer()) {
 						if (a instanceof RangeMonster) {
 							((RangeMonster) a).attackBoost();
@@ -327,6 +338,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
 					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+					defenceUp.setPressTime(Time.getTime());
 					for (Character a : AllCharacter.getPlayer()) {
 						if (a instanceof MeleeMonster) {
 							((MeleeMonster) a).defenceBoost();
@@ -379,6 +391,7 @@ public class ControlPane extends HBox {
 				left = new Label(cooldown + "");
 			}
 			cooldownLeft.add(left);
+//			out.getChildren().add(cooldownLeft.get(cooldownLeft.size()-1));
 			out.getChildren().add(left);
 		} else if (button instanceof SpecialSkillButton) {
 			SpecialSkillButton sButton = (SpecialSkillButton) button;
@@ -391,6 +404,7 @@ public class ControlPane extends HBox {
 			}
 			cooldownLeft.add(left);
 			out.getChildren().add(left);
+//			out.getChildren().add(cooldownLeft.get(cooldownLeft.size()-1));
 		}
 		return out;
 	}
