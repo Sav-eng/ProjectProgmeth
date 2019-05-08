@@ -144,7 +144,6 @@ public class Character {
 			enemy.doing = 4;
 			doing = 1;
 		}
-
 	}
 
 	public void die() {
