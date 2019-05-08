@@ -111,7 +111,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
 					if (Player.isConsume(Char1.getPrice())) {
-						Player.consumeMoney(Char2.getPrice());
+						Player.consumeMoney(Char1.getPrice());
 						AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
 					}
 				}
@@ -244,7 +244,7 @@ public class ControlPane extends HBox {
 			public void handle(ActionEvent event) {
 				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
 					if (Player.isConsume(Char1.getPrice())) {
-						Player.consumeMoney(Char2.getPrice());
+						Player.consumeMoney(Char1.getPrice());
 						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 100, 0));
 					}
 				}
