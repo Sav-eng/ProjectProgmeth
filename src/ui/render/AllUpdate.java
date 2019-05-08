@@ -19,7 +19,6 @@ import ui.scene.GamePlayScene;
 
 public class AllUpdate {
 
-
 	// TODO
 	public static void update() {
 		for (Character e : AllCharacter.getPlayer()) {
@@ -34,38 +33,40 @@ public class AllUpdate {
 	}
 
 	private static void updateEachSprite(Character a) {
-		if (a.getPastDoing() == a.getDoing()) {
-			if (a.getCooldown() != 0) {
-				a.setSprite(a.getSprite() + 1);
-			}
-			if (a.getDoing() == 2 || a.getDoing() == 3) {
-				if (a.getSprite() == a.nameToSprite().length) {
-					if (a.getDoing() == 2) {
-						a.attack(AllCharacter.getFirstEnemy());
-						a.setSprite(0);
-					} else {
-						a.attackBase();
+		if (Time.getTime() % 2 == 0)
+			if (a.getPastDoing() == a.getDoing()) {
+				System.out.println("past = present");
+				if (a.getCooldown() == 0) {
+					a.setSprite(a.getSprite() + 1);
+				}
+				if (a.getDoing() == 2 || a.getDoing() == 3) {
+					if (a.getSprite() == a.nameToSprite().length) {
+						if (a.getDoing() == 2) {
+							a.attack(AllCharacter.getFirstEnemy());
+							a.setSprite(0);
+						} else {
+							a.attackBase();
+							a.setSprite(0);
+						}
+					}
+				} else if (a.getDoing() == 1) {
+					if (a.getSprite() == a.nameToSprite().length) {
 						a.setSprite(0);
 					}
+				} else if (a.getDoing() == 4) {
+					if (a.getSprite() == a.nameToSprite().length) {
+						a.die();
+					}
 				}
-			} else if (a.getDoing() == 1) {
-				if (a.getSprite() == a.nameToSprite().length) {
-					a.setSprite(0);
-				}
-			} else if (a.getDoing() == 4) {
-				if (a.getSprite() == a.nameToSprite().length) {
-					a.die();
-				}
+			} else {
+				a.setSprite(0);
 			}
-		} else {
-			a.setSprite(0);
-		}
 	}
-	
+
 	private static void updateLabel() {
 		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
 		ControlPane pane = scene.getBottomPane();
-		for(int i = 0 ; i<7 ; i++ ) {
+		for (int i = 0; i < 7; i++) {
 			GameButton e = pane.getUpdateLabelList().get(i);
 			if (e instanceof EntityButton) {
 				EntityButton aButton = (EntityButton) e;
@@ -73,55 +74,59 @@ public class AllUpdate {
 				if (cooldown == 0) {
 					pane.getCooldownLeft().get(i).setText("Ready");
 				} else {
-					pane.getCooldownLeft().get(i).setText(cooldown+"");
+					pane.getCooldownLeft().get(i).setText(cooldown + "");
 				}
 			} else if (e instanceof SpecialSkillButton) {
 				SpecialSkillButton sButton = (SpecialSkillButton) e;
 				int cooldown = Math.max(sButton.getCooldownTime() - (Time.getTime() - sButton.getPressTime()), 0);
-				if (cooldown == 0) {					
+				if (cooldown == 0) {
 					pane.getCooldownLeft().get(i).setText("Ready");
 				} else {
-					pane.getCooldownLeft().get(i).setText(cooldown+"");
+					pane.getCooldownLeft().get(i).setText(cooldown + "");
 				}
 
 			}
 		}
 	}
+
 	private static void updateHigtlight() {
 		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
 		ControlPane pane = scene.getBottomPane();
-		if(Player.getMoney() >= RateButton.getCost() || RateButton.getLevel() == 10) {
+		if (Player.getMoney() >= RateButton.getCost() || RateButton.getLevel() == 10) {
 			pane.rateBright();
 		} else {
 			pane.rateDull();
 		}
-		
-		if(Player.getLevel() == 2) {
+
+		if (Player.getLevel() == 2) {
 			pane.levelBright();
 		} else if (Player.getMoney() >= Numbers.LEVELUP_PRICE) {
 			pane.levelBright();
 		} else {
 			pane.levelDull();
 		}
-		
-		if(Time.getTime() - pane.getAttackUp().getPressTime() >= pane.getAttackUp().getCooldownTime() && Player.getMoney() >= pane.getAttackUp().getPrice()) {
+
+		if (Time.getTime() - pane.getAttackUp().getPressTime() >= pane.getAttackUp().getCooldownTime()
+				&& Player.getMoney() >= pane.getAttackUp().getPrice()) {
 			pane.attackBright();
 		} else {
 			pane.attackDull();
 		}
-		
-		if(Time.getTime() - pane.getDefenceUp().getPressTime() >= pane.getDefenceUp().getCooldownTime() && Player.getMoney() >= pane.getDefenceUp().getPrice()) {
+
+		if (Time.getTime() - pane.getDefenceUp().getPressTime() >= pane.getDefenceUp().getCooldownTime()
+				&& Player.getMoney() >= pane.getDefenceUp().getPrice()) {
 			pane.defenceBright();
 		} else {
 			pane.defenceDull();
 		}
-		
+
 	}
+
 	public static void updatePriceTag() {
 		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
 		ControlPane pane = scene.getBottomPane();
-		if(RateButton.getLevel() != 10) {
-			pane.getRatePrice().setText(RateButton.getCost()+"");
+		if (RateButton.getLevel() != 10) {
+			pane.getRatePrice().setText(RateButton.getCost() + "");
 		} else {
 			pane.getRatePrice().setText("Lv.Max");
 		}

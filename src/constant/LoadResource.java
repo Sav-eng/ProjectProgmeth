@@ -97,9 +97,9 @@ public class LoadResource {
 					Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
-			knight1Walk[i] = loadImage("Knight_1/walk/" + (i + 1) + ".png", Numbers.KNIGHT1_WIDTH, Numbers.CHA_HEIGHT);
-			knight1Attack[i] = loadImage("Knight_1/die/" + (i + 1) + ".png", Numbers.KNIGHT1_WIDTH, Numbers.CHA_HEIGHT);
-			knight1Die[i] = loadImage("Knight_1/attack/" + (i + 1) + ".png", Numbers.KNIGHT1_WIDTH, Numbers.CHA_HEIGHT);
+			knight1Walk[i] = loadImage("Knight_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			knight1Attack[i] = loadImage("Knight_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			knight1Die[i] = loadImage("Knight_1/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
 		setProgress(1);
 		
@@ -180,9 +180,9 @@ public class LoadResource {
 			troll2Walk[i] = loadImage("Troll_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
-			orkAttack[i] = loadImage("Ork/attack/" + (i + 1) + ".png", Numbers.ORK_WIDTH, Numbers.BOSS_HEIGHT);
-			orkDie[i] = loadImage("Ork/die/" + (i + 1) + ".png", Numbers.ORK_WIDTH, Numbers.BOSS_HEIGHT);
-			orkWalk[i] = loadImage("Ork/walk/" + (i + 1) + ".png", Numbers.ORK_WIDTH, Numbers.BOSS_HEIGHT);
+			orkAttack[i] = loadImage("Ork/attack/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
+			orkDie[i] = loadImage("Ork/die/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
+			orkWalk[i] = loadImage("Ork/walk/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
 		}
 		for (int i = 0; i < 12; i++) {
 			angleAttack[i] = loadImage("Angle/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -226,7 +226,7 @@ public class LoadResource {
 		atkUpCd = loadImage("Other/atkUpBlack.png", 100, 100);
 		defUpCd = loadImage("Other/shieldUpBlack.png", 100, 100);
 		world1Bg = loadImage("Other/world1.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		world2Bg = loadImage("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		world2Bg = loadBg("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		pauseButton = loadImage("Other/pauseButton.png", 30, 30);
@@ -249,6 +249,10 @@ public class LoadResource {
 		return progress;
 	}
 	private static Image loadImage(String path, double width, double height) {
+		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, true, true);
+	}
+	
+	private static Image loadBg(String path, double width, double height) {
 		return new Image(ClassLoader.getSystemResourceAsStream(path), width, height, false, true);
 	}
 
