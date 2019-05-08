@@ -13,8 +13,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.util.Duration;
 import model.data.Player;
 import ui.hud.ControlPane;
 import ui.hud.PauseButton;
@@ -25,6 +28,7 @@ public class GamePlayScene extends BorderPane {
 	private static GraphicsContext gc;
 	private int level;
 	private ControlPane bottom;
+	private static MediaPlayer bgm;
 	
 	public GamePlayScene(int level) {
 		super();
@@ -43,6 +47,10 @@ public class GamePlayScene extends BorderPane {
 		
 		bottom = new ControlPane(level);
 		
+		bgm = new MediaPlayer(new Media(LoadResource.gamePlaySound.getSource()));
+		bgm.setOnEndOfMedia(()->{
+			bgm.seek(Duration.ZERO);
+		});
 //		this.setTop(bg);
 //		this.setBottom(bottom);
 		this.setAlignment(bottom, Pos.BOTTOM_CENTER);
@@ -81,7 +89,10 @@ public class GamePlayScene extends BorderPane {
 		return level;
 	}
 
-
+	public MediaPlayer getBgm() {
+		return bgm;
+	}
+	
 	public ControlPane getBottomPane() {
 		return bottom;
 	}
