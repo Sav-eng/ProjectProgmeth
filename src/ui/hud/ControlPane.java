@@ -44,6 +44,7 @@ public class ControlPane extends HBox {
 	private AttackBuffButton attackUp;
 	private DefenceBuffButton defenceUp;
 	private Label cooldownLeft;
+	private Label ratePrice;
 	private ArrayList<GameButton> updateLabelList = new ArrayList<GameButton>();
 
 	public ControlPane(int level) {
@@ -76,7 +77,7 @@ public class ControlPane extends HBox {
 		updateLabelList.add(attackUp);
 
 //		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
-		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
+		this.getChildren().addAll(ratePair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
 				pair(Char2.getPrice(), Char2), pair(Char3.getPrice(), Char3));
 		this.getChildren().addAll(pair(Char4.getPrice(), Char4), pair(Char5.getPrice(), Char5),
 				pair(attackUp.getPrice(), attackUp));
@@ -169,6 +170,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();
+						ratePrice.setText(RateButton.getCost()+"");
 					}
 			}
 		});
@@ -301,6 +303,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();
+						ratePrice.setText(RateButton.getCost()+"");
 					}
 			}
 		});
@@ -389,6 +392,17 @@ public class ControlPane extends HBox {
 		}
 		return out;
 	}
+	
+	public VBox ratePair(int price, GameButton button) {
+		VBox out = new VBox();
+		String temp = price + "";
+		ratePrice = new Label(temp);
+		ratePrice.setAlignment(Pos.CENTER);
+		out.getChildren().add(button);
+		out.getChildren().add(ratePrice);
+		out.setAlignment(Pos.CENTER);
+		return out;
+	}
 
 	public ArrayList<GameButton> getUpdateLabelList() {
 		return updateLabelList;
@@ -417,4 +431,10 @@ public class ControlPane extends HBox {
 	public void defenceDull() {
 		defenceUp.setGraphic(new ImageView(LoadResource.defUpCd));
 	}
+
+	public Label getRatePrice() {
+		return ratePrice;
+	}
+	
+	
 }

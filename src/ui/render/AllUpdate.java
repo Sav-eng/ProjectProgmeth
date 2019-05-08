@@ -1,6 +1,7 @@
 package ui.render;
 
 import constant.LoadResource;
+import constant.Numbers;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import main.Main;
@@ -29,6 +30,7 @@ public class AllUpdate {
 		}
 		updateLabel();
 		updateHigtlight();
+		updatePriceTag();
 	}
 
 	private static void updateEachSprite(Character a) {
@@ -95,7 +97,7 @@ public class AllUpdate {
 		
 		if(Player.getLevel() == 2) {
 			pane.levelBright();
-		} else if (Player.getMoney() >= 3000) {
+		} else if (Player.getMoney() >= Numbers.LEVELUP_PRICE) {
 			pane.levelBright();
 		} else {
 			pane.levelDull();
@@ -111,6 +113,16 @@ public class AllUpdate {
 			pane.defenceBright();
 		} else {
 			pane.defenceDull();
+		}
+		
+	}
+	public static void updatePriceTag() {
+		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
+		ControlPane pane = scene.getBottomPane();
+		if(RateButton.getLevel() != 10) {
+			pane.getRatePrice().setText(RateButton.getCost()+"");
+		} else {
+			pane.getRatePrice().setText("Lv.Max");
 		}
 	}
 }
