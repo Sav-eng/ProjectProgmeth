@@ -41,8 +41,8 @@ public class GamePlayScene extends BorderPane {
 		bg.setHeight(0.8 * Numbers.WIN_HEIGHT);
 		
 		gc = bg.getGraphicsContext2D();
-		this.drawBg();
-		this.drawBase(level);
+		GamePlayScene.drawBg();
+		GamePlayScene.drawBase(level);
 		
 		bottom = new ControlPane(level);
 		

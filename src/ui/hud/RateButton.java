@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 
 public class RateButton extends GameButton{
 	
-	private static int level;
+	private static int level = 1;
 	private static int produceRate;
 	
 	public RateButton(Image character, int price,int level) {

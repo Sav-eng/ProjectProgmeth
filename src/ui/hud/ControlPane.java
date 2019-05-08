@@ -24,6 +24,7 @@ import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
 import model.data.Player;
+import model.data.Time;
 import model.mon.HeroMonster;
 import model.mon.MeleeMonster;
 import model.mon.RangeMonster;
@@ -39,7 +40,8 @@ public class ControlPane extends HBox {
 	private UpgradeButton levelUp;
 	private AttackBuffButton attackUp;
 	private DefenceBuffButton defenceUp;
-	
+	private Label cooldownLeft;
+
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
 		super();
@@ -60,32 +62,33 @@ public class ControlPane extends HBox {
 			InitializeButtonLevel2();
 			break;
 		}
-		
 
 //		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
-		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp),pair(Char1.getPrice(), Char1),pair(Char2.getPrice(), Char2),pair(Char3.getPrice(), Char3));
-		this.getChildren().addAll(pair(Char4.getPrice(), Char4),pair(Char5.getPrice(), Char5),pair(attackUp.getPrice(), attackUp));
-		this.getChildren().addAll(pair(defenceUp.getPrice(), defenceUp),pair(levelUp.getPrice(), levelUp));
+		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
+				pair(Char2.getPrice(), Char2), pair(Char3.getPrice(), Char3));
+		this.getChildren().addAll(pair(Char4.getPrice(), Char4), pair(Char5.getPrice(), Char5),
+				pair(attackUp.getPrice(), attackUp));
+		this.getChildren().addAll(pair(defenceUp.getPrice(), defenceUp), pair(levelUp.getPrice(), levelUp));
 	}
 
 	public void InitializeButtonLevel1() {
 		// TODO set entityButton
-		Char1 = new EntityButton(LoadResource.knight1Icon, 100, 1);
+		Char1 = new EntityButton(LoadResource.knight1Icon, 100, 120);
 		Char1.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char2 = new EntityButton(LoadResource.archerIcon, 100, 1);
+		Char2 = new EntityButton(LoadResource.archerIcon, 250, 120);
 		Char2.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char3 = new EntityButton(LoadResource.thiefIcon, 100, 1);
+		Char3 = new EntityButton(LoadResource.thiefIcon, 150, 150);
 		Char3.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char4 = new EntityButton(LoadResource.fairyIcon, 100, 1);
+		Char4 = new EntityButton(LoadResource.fairyIcon, 350, 200);
 		Char4.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char5 = new EntityButton(LoadResource.wizardFireIcon, 100, 1);
+		Char5 = new EntityButton(LoadResource.wizardFireIcon, 700, 300);
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
-		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
+		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
 		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 15, Numbers.WORLDBUFFAMOUNT);
@@ -93,9 +96,11 @@ public class ControlPane extends HBox {
 		Char1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(100)) {
-					Player.consumeMoney(100);
-					AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
+				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
+					if (Player.isConsume(Char1.getPrice())) {
+						Player.consumeMoney(Char2.getPrice());
+						AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
+					}
 				}
 			}
 		});
@@ -103,41 +108,45 @@ public class ControlPane extends HBox {
 		Char2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(250)) {
-					Player.consumeMoney(250);
-					AllCharacter.getPlayer().add(new RangeMonster("Archer", 999, 421, 20, true, 40, 0));
-				}
+				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
+					if (Player.isConsume(Char2.getPrice())) {
+						Player.consumeMoney(Char2.getPrice());
+						AllCharacter.getPlayer().add(new RangeMonster("Archer", 999, 421, 20, true, 40, 0));
+					}
 			}
 		});
 
 		Char3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(150)) {
-					Player.consumeMoney(150);
-					AllCharacter.getPlayer().add(new MeleeMonster("Thief", 564, 356, 100, true, 30, 0));
-				}
+				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
+					if (Player.isConsume(Char3.getPrice())) {
+						Player.consumeMoney(Char3.getPrice());
+						AllCharacter.getPlayer().add(new MeleeMonster("Thief", 564, 356, 100, true, 30, 0));
+					}
 			}
 		});
 
 		Char4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(350)) {
-					Player.consumeMoney(350);
-					AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 777, 100, true, 100, 0));
-				}
+				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
+					if (Player.isConsume(Char4.getPrice())) {
+						Player.consumeMoney(Char4.getPrice());
+						AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 777, 100, true, 100, 0));
+					}
 			}
 		});
 
 		Char5.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(700)) {
-					Player.consumeMoney(700);
+				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
+					if (Player.isConsume(Char5.getPrice())) {
+						Player.consumeMoney(Char5.getPrice());
 
-					AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 888, 400, true, 110, 0));
-				}
+						AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 888, 400, true, 110, 0));
+					}
 			}
 		});
 
@@ -157,6 +166,7 @@ public class ControlPane extends HBox {
 				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
 					Player.consumeMoney(Numbers.LEVELUP_PRICE);
 					Main.getScene().setRoot(Main.getGame2());
+					Player.setLevel(Player.getLevel() + 1);
 				}
 			}
 		});
@@ -191,33 +201,46 @@ public class ControlPane extends HBox {
 	}
 
 	public void InitializeButtonLevel2() {
-		Char1 = new EntityButton(LoadResource.knight2Icon, 100, 1);
-		Char2 = new EntityButton(LoadResource.knight3Icon, 100, 1);
-		Char3 = new EntityButton(LoadResource.wizardFireIcon, 100, 1);
-		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 100, 1);
-		Char5 = new EntityButton(LoadResource.angleIcon, 100, 1);
-		rateUp = new RateButton(LoadResource.rateUpCd, 300, RateButton.getLevel());
+		Char1 = new EntityButton(LoadResource.knight2Icon, 350, 40);
+		Char1.setStyle(
+				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
+		Char2 = new EntityButton(LoadResource.wizardFireIcon, 700, 100);
+		Char2.setStyle(
+				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
+		Char3 = new EntityButton(LoadResource.knight3Icon, 400, 90);
+		Char3.setStyle(
+				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
+		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 900, 130);
+		Char4.setStyle(
+				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
+		Char5 = new EntityButton(LoadResource.angleIcon, 1500, 500);
+		Char5.setStyle(
+				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
+		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT * 2);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 200, 20, Numbers.WORLDBUFFAMOUNT * 2);
 		levelUp = new UpgradeButton(LoadResource.levelUpCd, 500, 1);
 	}
-	
+
 	public void rateBright() {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUp));
 	}
+
 	public void rateDull() {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUpCd));
 	}
-	
+
 	public void levelBright() {
-		levelUp.setGraphic(new ImageView(LoadResource.levelUp));
+		if (Player.getLevel() == 1) {
+			levelUp.setGraphic(new ImageView(LoadResource.levelUp));
+		}
 	}
-	
+
 	public void levelDull() {
 		levelUp.setGraphic(new ImageView(LoadResource.levelUpCd));
 	}
-	
-	public VBox pair(int price,GameButton button) {
+
+	public VBox pair(int price, GameButton button) {
 		VBox out = new VBox();
 		String temp = price + "";
 		Label priceTag = new Label(temp);
@@ -225,6 +248,25 @@ public class ControlPane extends HBox {
 		out.getChildren().add(button);
 		out.getChildren().add(priceTag);
 		out.setAlignment(Pos.CENTER);
+		if (button instanceof EntityButton) {
+			EntityButton aButton = (EntityButton) button;
+			int cooldown = Math.max(aButton.getCooldownTime() - (Time.getTime() - button.getPressTime()), 0);
+			if (cooldown == 0) {
+				cooldownLeft = new Label("Ready");
+			} else {
+				cooldownLeft = new Label(cooldown + "");
+			}
+			out.getChildren().add(cooldownLeft);
+		} else if (button instanceof SpecialSkillButton) {
+			SpecialSkillButton sButton = (SpecialSkillButton) button;
+			int cooldown = Math.max(sButton.getCooldownTime() - (Time.getTime() - button.getPressTime()), 0);
+			if (cooldown == 0) {
+				cooldownLeft = new Label("Ready");
+			} else {
+				cooldownLeft = new Label(cooldown + "");
+			}
+			out.getChildren().add(cooldownLeft);
+		}
 		return out;
 	}
 }

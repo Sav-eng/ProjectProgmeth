@@ -21,6 +21,7 @@ public class RenderSprite {
 
 	public static void render() {
 		GamePlayScene.drawBg();
+		GamePlayScene.drawBase(Player.getLevel());
 		for (Character a : AllCharacter.getPlayer()) {
 			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
 		}

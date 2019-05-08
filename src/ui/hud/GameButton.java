@@ -18,6 +18,7 @@ public abstract class GameButton extends Button {
 	private int price;
 	private boolean isPress;
 	private boolean isCooldown;
+	private int pressTime;
 
 	public GameButton(Image character,int price) {
 		super();
@@ -70,4 +71,14 @@ public abstract class GameButton extends Button {
 	public int getPrice() {
 		return price;
 	}
+
+	public int getPressTime() {
+		return pressTime;
+	}
+
+	public void setPressTime(int pressTime) {
+		this.pressTime = pressTime;
+	}
+	
+	
 }
