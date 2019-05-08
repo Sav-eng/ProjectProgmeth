@@ -4,7 +4,18 @@ public class Player {
 	private static int money=0;
 	private static boolean buffAtk;
 	private static boolean buffDef;
+	private static int level;
 	
+	
+	
+	public static int getLevel() {
+		return level;
+	}
+
+	public static void setLevel(int level) {
+		Player.level = level;
+	}
+
 	public static int getMoney() {
 		return money;
 	}

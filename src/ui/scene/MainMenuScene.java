@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+import main.Loop;
 import main.Main;
 import ui.hud.MainmenuButton;
 
@@ -68,6 +69,7 @@ public class MainMenuScene extends StackPane {
 			public void handle(ActionEvent event) {
 				Main.getScene().setRoot(Main.getGame1());
 				bgm.stop();
+				
 			}
 		});
 
