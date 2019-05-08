@@ -1,6 +1,7 @@
 package ui.hud;
 
 import java.awt.Button;
+import java.util.ArrayList;
 
 import javax.xml.bind.helpers.PrintConversionEventImpl;
 
@@ -20,6 +21,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import main.Game;
 import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
@@ -41,6 +43,7 @@ public class ControlPane extends HBox {
 	private AttackBuffButton attackUp;
 	private DefenceBuffButton defenceUp;
 	private Label cooldownLeft;
+	private ArrayList<GameButton> updateLabelList = new ArrayList<GameButton>();
 
 	public ControlPane(int level) {
 		// TODO Auto-generated constructor stub
@@ -62,7 +65,15 @@ public class ControlPane extends HBox {
 			InitializeButtonLevel2();
 			break;
 		}
-
+		
+		updateLabelList.add(Char1);
+		updateLabelList.add(Char2);
+		updateLabelList.add(Char3);
+		updateLabelList.add(Char4);
+		updateLabelList.add(Char5);
+		updateLabelList.add(defenceUp);
+		updateLabelList.add(attackUp);
+		
 //		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
 		this.getChildren().addAll(pair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
 				pair(Char2.getPrice(), Char2), pair(Char3.getPrice(), Char3));
@@ -229,6 +240,16 @@ public class ControlPane extends HBox {
 	public void rateDull() {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUpCd));
 	}
+	
+	
+
+	public Label getCooldownLeft() {
+		return cooldownLeft;
+	}
+
+	public void setCooldownLeft(Label cooldownLeft) {
+		this.cooldownLeft = cooldownLeft;
+	}
 
 	public void levelBright() {
 		if (Player.getLevel() == 1) {
@@ -269,4 +290,10 @@ public class ControlPane extends HBox {
 		}
 		return out;
 	}
+
+	public ArrayList<GameButton> getUpdateLabelList() {
+		return updateLabelList;
+	}
+	
+	
 }

@@ -1,13 +1,20 @@
 package ui.render;
 
 import constant.LoadResource;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
+import model.data.Time;
+import ui.hud.ControlPane;
+import ui.hud.EntityButton;
+import ui.hud.GameButton;
+import ui.hud.SpecialSkillButton;
+import ui.scene.GamePlayScene;
 
 public class AllSpriteUpdate {
 
-	private static Image temp;
 
 	// TODO
 	public static void update() {
@@ -17,6 +24,7 @@ public class AllSpriteUpdate {
 		for (Character e : AllCharacter.getEnemy()) {
 			updateEachSprite(e);
 		}
+		updateLabel();
 	}
 
 	private static void updateEachSprite(Character a) {
@@ -45,6 +53,31 @@ public class AllSpriteUpdate {
 			}
 		} else {
 			a.setSprite(0);
+		}
+	}
+	
+	private static void updateLabel() {
+		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
+		ControlPane pane = scene.getBottomPane();
+		for(GameButton e : pane.getUpdateLabelList() ) {
+			if (e instanceof EntityButton) {
+				EntityButton aButton = (EntityButton) e;
+				int cooldown = Math.max(aButton.getCooldownTime() - (Time.getTime() - aButton.getPressTime()), 0);
+				if (cooldown == 0) {
+					pane.getCooldownLeft().setText("Ready");
+				} else {
+					pane.getCooldownLeft().setText(cooldown+"");
+				}
+			} else if (e instanceof SpecialSkillButton) {
+				SpecialSkillButton sButton = (SpecialSkillButton) e;
+				int cooldown = Math.max(sButton.getCooldownTime() - (Time.getTime() - sButton.getPressTime()), 0);
+				if (cooldown == 0) {					
+					pane.getCooldownLeft().setText("Ready");
+				} else {
+					pane.getCooldownLeft().setText(cooldown+"");
+				}
+
+			}
 		}
 	}
 }

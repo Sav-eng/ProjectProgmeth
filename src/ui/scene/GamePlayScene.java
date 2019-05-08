@@ -104,6 +104,12 @@ public class GamePlayScene extends BorderPane {
 	public int getLevel() {
 		return level;
 	}
+
+
+	public ControlPane getBottomPane() {
+		return bottom;
+	}
+	
 	
 	
 }
