@@ -46,11 +46,24 @@ public class GamePlayScene extends BorderPane {
 		GamePlayScene.drawBase(level);
 		
 		bottom = new ControlPane(level);
-		
-		bgm = new MediaPlayer(new Media(LoadResource.gamePlaySound.getSource()));
-		bgm.setOnEndOfMedia(()->{
-			bgm.seek(Duration.ZERO);
-		});
+		switch (level) {
+		case 1:
+			bgm = new MediaPlayer(new Media(LoadResource.gamePlaySound.getSource()));
+			bgm.setOnEndOfMedia(()->{
+				bgm.seek(Duration.ZERO);
+			});
+			bgm.setVolume(0.15);
+			break;
+		case 2:
+			bgm = new MediaPlayer(new Media(LoadResource.bossSound.getSource()));
+			bgm.setOnEndOfMedia(()->{
+				bgm.seek(Duration.ZERO);
+			});
+			break;
+		default:
+			break;
+		}
+
 //		this.setTop(bg);
 //		this.setBottom(bottom);
 		this.setAlignment(bottom, Pos.BOTTOM_CENTER);
