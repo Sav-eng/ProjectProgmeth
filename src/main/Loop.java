@@ -24,7 +24,6 @@ public class Loop {
 				AllCharacter.updateCharacter();
 				AllUpdate.update();
 				Render.render();
-				
 			}
 			frameCount++;
 		}

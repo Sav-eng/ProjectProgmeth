@@ -34,10 +34,6 @@ public class Character {
 		this.baseCooldown = baseCooldown;
 		this.reward = reward;
 		cooldown = 0;
-//		if (player)
-//			AllCharacter.getPlayer().add(this);
-//		else
-//			AllCharacter.getEnemy().add(this);
 	}
 
 	public void move() {
@@ -55,14 +51,21 @@ public class Character {
 	}
 
 	public void update() {
-		if (!isCooldown() && this.canAttack(AllCharacter.getFirstEnemy())) {
+		if (!isCooldown() && canAttack()) {
 			doing = 2;
-		} else if (!isCooldown() && this.canAttackBase()) {
+			System.out.println("ATTACK");
+		} else if (!isCooldown() && canAttackBase()) {
 			doing = 3;
-		} else if (this.canMove()) {
+			System.out.println("ATACKBASE");
+		} else if (canMove()) {
 			this.move();
-			//System.out.println(this.name + "is Moving");
+			doing = 1;
+			System.out.println(this.name + "is Moving");
+		} else {
+			System.out.println("Do nothing");
+			doing = 0;
 		}
+		
 	}
 
 	public void attackBase() {
@@ -84,23 +87,39 @@ public class Character {
 
 	private boolean canMove() {
 		int pos;
+		System.out.println(this.player);
 		if (player) {
 			pos = AllCharacter.getPlayer().indexOf(this);
-			if (AllCharacter.getPlayer().get(pos + 1) != null && Math
-					.abs(this.getX() - AllCharacter.getPlayer().get(pos + 1).getX()) >= Numbers.SPACINGCHARACTER) {
-				return false;
-			}
+			if(pos>1) {
+				if (AllCharacter.getPlayer().get(pos - 1) != null && Math
+						.abs(this.getX() - AllCharacter.getPlayer().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
+					return false;
+				} 
+			} else return true;
+			
 		} else {
 			pos = AllCharacter.getEnemy().indexOf(this);
-			if (AllCharacter.getEnemy().get(pos + 1) != null && Math
-					.abs(this.getX() - AllCharacter.getEnemy().get(pos + 1).getX()) >= Numbers.SPACINGCHARACTER) {
-				return false;
-			}
+			if(pos>1) {
+				if (AllCharacter.getEnemy().get(pos - 1) != null && Math
+						.abs(this.getX() - AllCharacter.getEnemy().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
+					return false;
+				} 
+			} else return true;
+			
 		}
 		return false;
 	}
 
-	private boolean canAttack(Character enemy) {
+	private boolean canAttack() {
+		Character enemy;
+		if(player){
+			if(AllCharacter.getEnemy().size()>0)enemy = AllCharacter.getFirstEnemy();
+			else enemy = null;
+		}
+		else {
+			if(AllCharacter.getPlayer().size()>0)enemy = AllCharacter.getFirstPlayer();
+			else enemy = null;
+		}
 		if(enemy == null)return false;
 		if (Math.abs(enemy.getX() - this.x) <= this.range && cooldown == 0) {
 			return true;

@@ -28,7 +28,7 @@ public class GamePlayScene extends BorderPane {
 	private static GraphicsContext gc;
 	private int level;
 	private ControlPane bottom;
-	private static MediaPlayer bgm;
+	private MediaPlayer bgm;
 	
 	public GamePlayScene(int level) {
 		super();
@@ -52,7 +52,7 @@ public class GamePlayScene extends BorderPane {
 			bgm.setOnEndOfMedia(()->{
 				bgm.seek(Duration.ZERO);
 			});
-			bgm.setVolume(0.15);
+			bgm.setVolume(0.2);
 			break;
 		case 2:
 			bgm = new MediaPlayer(new Media(LoadResource.bossSound.getSource()));

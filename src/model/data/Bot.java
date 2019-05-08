@@ -2,13 +2,12 @@ package model.data;
 
 import main.Game;
 import model.base.AllCharacter;
-import model.base.Character;
 import model.mon.MeleeMonster;
 
 public class Bot {
 	private static boolean check = false;
 	public static void summon() {
-		int timeNow = Time.getTime()-60;
+		int timeNow = Math.max(1, Time.getTime()-60);
 		int phase = Game.getPhase();
 		if(phase==2 || timeNow >= 3600) {
 			if(timeNow%150==0) {
@@ -25,6 +24,7 @@ public class Bot {
 				AllCharacter.getEnemy().add(new MeleeMonster("Orc",1500,966,300,false,100,100));
 			} else if(timeNow%900==0) {
 				//summon Ork
+				System.out.println("COMN");
 				AllCharacter.getEnemy().add(new MeleeMonster("Ork",2000,3277,350,false,200,250));
 			}
 		} else if(phase==1){
