@@ -6,14 +6,16 @@ import javafx.scene.image.Image;
 import main.Main;
 import model.base.AllCharacter;
 import model.base.Character;
+import model.data.Player;
 import model.data.Time;
 import ui.hud.ControlPane;
 import ui.hud.EntityButton;
 import ui.hud.GameButton;
+import ui.hud.RateButton;
 import ui.hud.SpecialSkillButton;
 import ui.scene.GamePlayScene;
 
-public class AllSpriteUpdate {
+public class AllUpdate {
 
 
 	// TODO
@@ -25,6 +27,7 @@ public class AllSpriteUpdate {
 			updateEachSprite(e);
 		}
 		updateLabel();
+		updateHigtlight();
 	}
 
 	private static void updateEachSprite(Character a) {
@@ -78,6 +81,15 @@ public class AllSpriteUpdate {
 				}
 
 			}
+		}
+	}
+	private static void updateHigtlight() {
+		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
+		ControlPane pane = scene.getBottomPane();
+		if(Player.getMoney() >= RateButton.getCost() || RateButton.getLevel() == 10) {
+			pane.rateBright();
+		} else {
+			pane.rateDull();
 		}
 	}
 }

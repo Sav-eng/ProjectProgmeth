@@ -2,7 +2,8 @@ package main;
 
 import javafx.animation.AnimationTimer;
 import model.base.AllCharacter;
-import ui.render.AllSpriteUpdate;
+import model.data.Player;
+import ui.render.AllUpdate;
 import ui.render.RenderSprite;
 
 public class Loop {
@@ -22,7 +23,7 @@ public class Loop {
 				AllCharacter.updateCharacter();
 //				//update money
 				//update time
-				AllSpriteUpdate.update();
+				AllUpdate.update();
 				//render character
 				RenderSprite.render();
 				//render cooldown
