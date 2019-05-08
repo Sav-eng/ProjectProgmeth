@@ -99,6 +99,7 @@ public class Character {
 	}
 
 	private boolean canAttack(Character enemy) {
+		if(enemy == null)return false;
 		if (Math.abs(enemy.getX() - this.x) <= this.range && cooldown == 0) {
 			return true;
 		} else if (Math.abs(enemy.getX() - this.x) <= this.range) {

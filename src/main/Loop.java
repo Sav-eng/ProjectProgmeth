@@ -2,6 +2,8 @@ package main;
 
 import javafx.animation.AnimationTimer;
 import model.base.AllCharacter;
+import model.data.Player;
+import ui.hud.RateButton;
 import ui.render.AllSpriteUpdate;
 import ui.render.RenderSprite;
 
@@ -15,10 +17,11 @@ public class Loop {
 			if (frameCount % 2 == 0) {
 				
 				// TODO
-//				clear canvas
+				//clear canvas
 				RenderSprite.clearCanvas();
 //				set new canvas
 				//update all data
+				Player.updateMoney();
 				AllCharacter.updateCharacter();
 //				//update money
 				//update time
@@ -26,6 +29,7 @@ public class Loop {
 				//render character
 				RenderSprite.render();
 				//render cooldown
+				//update money
 				
 			}
 			frameCount++;
