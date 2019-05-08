@@ -28,7 +28,8 @@ public class Character {
 		this.atk = atk;
 		this.def = def;
 		this.moveSpeed = Numbers.CHA_MOVESPD;
-		this.x = 0;
+		if(player)this.x = Numbers.POSITION_PLAYER;
+		else this.x = Numbers.POSITION_ENEMY;
 		this.player = player;
 		this.baseCooldown = baseCooldown;
 		this.reward = reward;
@@ -41,7 +42,8 @@ public class Character {
 
 	public void move() {
 		cooldown = 0;
-		x += moveSpeed;
+		if(player)x += moveSpeed;
+		else x -= moveSpeed;
 	}
 
 	public boolean isCooldown() {
@@ -59,7 +61,7 @@ public class Character {
 			doing = 3;
 		} else if (this.canMove()) {
 			this.move();
-
+			//System.out.println(this.name + "is Moving");
 		}
 	}
 

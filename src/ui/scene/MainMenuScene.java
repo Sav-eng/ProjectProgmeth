@@ -70,9 +70,10 @@ public class MainMenuScene extends StackPane {
 				Main.getScene().setRoot(Main.getGame1());
 				Main.getGame1().setTop(GamePlayScene.getBg());
 				Main.getGame1().setBottom(Main.getGame1().getBottomPane());
+				Main.getGame1().getBgm().play();
 				bgm.stop();
-				GamePlayScene.ge
-				Loop.geTimer().start();
+				//GamePlayScene.getBgm().play();
+				Loop.getTimer().start();
 			}
 		});
 
