@@ -43,7 +43,7 @@ public class ControlPane extends HBox {
 	private UpgradeButton levelUp;
 	private AttackBuffButton attackUp;
 	private DefenceBuffButton defenceUp;
-	private Label cooldownLeft;
+	private ArrayList<Label> cooldownLeft = new ArrayList<Label>();
 	private Label ratePrice;
 	private ArrayList<GameButton> updateLabelList = new ArrayList<GameButton>();
 
@@ -345,12 +345,10 @@ public class ControlPane extends HBox {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUpCd));
 	}
 
-	public Label getCooldownLeft() {
-		return cooldownLeft;
-	}
+	
 
-	public void setCooldownLeft(Label cooldownLeft) {
-		this.cooldownLeft = cooldownLeft;
+	public ArrayList<Label> getCooldownLeft() {
+		return cooldownLeft;
 	}
 
 	public void levelBright() {
@@ -374,21 +372,25 @@ public class ControlPane extends HBox {
 		if (button instanceof EntityButton) {
 			EntityButton aButton = (EntityButton) button;
 			int cooldown = Math.max(aButton.getCooldownTime() - (Time.getTime() - button.getPressTime()), 0);
+			Label left;
 			if (cooldown == 0) {
-				cooldownLeft = new Label("Ready");
+				left = new Label("Ready");
 			} else {
-				cooldownLeft = new Label(cooldown + "");
+				left = new Label(cooldown + "");
 			}
-			out.getChildren().add(cooldownLeft);
+			cooldownLeft.add(left);
+			out.getChildren().add(left);
 		} else if (button instanceof SpecialSkillButton) {
 			SpecialSkillButton sButton = (SpecialSkillButton) button;
 			int cooldown = Math.max(sButton.getCooldownTime() - (Time.getTime() - button.getPressTime()), 0);
+			Label left;
 			if (cooldown == 0) {
-				cooldownLeft = new Label("Ready");
+				left = new Label("Ready");
 			} else {
-				cooldownLeft = new Label(cooldown + "");
+				left = new Label(cooldown + "");
 			}
-			out.getChildren().add(cooldownLeft);
+			cooldownLeft.add(left);
+			out.getChildren().add(left);
 		}
 		return out;
 	}
