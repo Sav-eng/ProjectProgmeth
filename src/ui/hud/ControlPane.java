@@ -73,8 +73,8 @@ public class ControlPane extends HBox {
 		updateLabelList.add(Char3);
 		updateLabelList.add(Char4);
 		updateLabelList.add(Char5);
-		updateLabelList.add(defenceUp);
 		updateLabelList.add(attackUp);
+		updateLabelList.add(defenceUp);
 
 //		this.getChildren().addAll(rateUp, Char1, Char2, Char3, Char4, Char5, attackUp, defenceUp, levelUp);
 		this.getChildren().addAll(ratePair(rateUp.getPrice(), rateUp), pair(Char1.getPrice(), Char1),
@@ -86,19 +86,19 @@ public class ControlPane extends HBox {
 
 	public void InitializeButtonLevel1() {
 		// TODO set entityButton
-		Char1 = new EntityButton(LoadResource.knight1Icon, 100, 120);
+		Char1 = new EntityButton(LoadResource.knight1Icon, 100, 60);
 		Char1.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char2 = new EntityButton(LoadResource.archerIcon, 250, 120);
+		Char2 = new EntityButton(LoadResource.archerIcon, 250, 400);
 		Char2.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char3 = new EntityButton(LoadResource.thiefIcon, 150, 150);
+		Char3 = new EntityButton(LoadResource.thiefIcon, 150, 300);
 		Char3.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char4 = new EntityButton(LoadResource.fairyIcon, 350, 200);
+		Char4 = new EntityButton(LoadResource.fairyIcon, 350, 800);
 		Char4.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char5 = new EntityButton(LoadResource.wizardFireIcon, 700, 500);
+		Char5 = new EntityButton(LoadResource.wizardFireIcon, 700, 1200);
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
@@ -225,19 +225,19 @@ public class ControlPane extends HBox {
 	}
 
 	public void InitializeButtonLevel2() {
-		Char1 = new EntityButton(LoadResource.knight2Icon, 350, 40);
+		Char1 = new EntityButton(LoadResource.knight2Icon, 350, 60);
 		Char1.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char2 = new EntityButton(LoadResource.wizardFireIcon, 700, 100);
+		Char2 = new EntityButton(LoadResource.wizardFireIcon, 700, 500);
 		Char2.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char3 = new EntityButton(LoadResource.knight3Icon, 400, 90);
+		Char3 = new EntityButton(LoadResource.knight3Icon, 400, 550);
 		Char3.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 900, 130);
+		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 900, 800);
 		Char4.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char5 = new EntityButton(LoadResource.angleIcon, 1500, 500);
+		Char5 = new EntityButton(LoadResource.angleIcon, 1500, 1500);
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
