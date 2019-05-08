@@ -25,10 +25,10 @@ public class Render {
 		GamePlayScene.drawBg();
 		GamePlayScene.drawBase(Player.getLevel());
 		for (Character a : AllCharacter.getPlayer()) {
-			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
+			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
 		}
 		for (Character a : AllCharacter.getEnemy()) {
-			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 200);
+			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 350);
 		}
 		gc.setFill(Color.BLACK);
 		gc.setStroke(Color.GOLDENROD);

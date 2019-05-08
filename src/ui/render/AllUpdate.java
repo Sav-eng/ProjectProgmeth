@@ -65,22 +65,23 @@ public class AllUpdate {
 	private static void updateLabel() {
 		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
 		ControlPane pane = scene.getBottomPane();
-		for(GameButton e : pane.getUpdateLabelList() ) {
+		for(int i = 0 ; i<7 ; i++ ) {
+			GameButton e = pane.getUpdateLabelList().get(i);
 			if (e instanceof EntityButton) {
 				EntityButton aButton = (EntityButton) e;
 				int cooldown = Math.max(aButton.getCooldownTime() - (Time.getTime() - aButton.getPressTime()), 0);
 				if (cooldown == 0) {
-					pane.getCooldownLeft().setText("Ready");
+					pane.getCooldownLeft().get(i).setText("Ready");
 				} else {
-					pane.getCooldownLeft().setText(cooldown+"");
+					pane.getCooldownLeft().get(i).setText(cooldown+"");
 				}
 			} else if (e instanceof SpecialSkillButton) {
 				SpecialSkillButton sButton = (SpecialSkillButton) e;
 				int cooldown = Math.max(sButton.getCooldownTime() - (Time.getTime() - sButton.getPressTime()), 0);
 				if (cooldown == 0) {					
-					pane.getCooldownLeft().setText("Ready");
+					pane.getCooldownLeft().get(i).setText("Ready");
 				} else {
-					pane.getCooldownLeft().setText(cooldown+"");
+					pane.getCooldownLeft().get(i).setText(cooldown+"");
 				}
 
 			}
