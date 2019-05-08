@@ -33,6 +33,7 @@ public class Character {
 		this.player = player;
 		this.baseCooldown = baseCooldown;
 		this.reward = reward;
+		pastDoing = -1;
 		cooldown = 0;
 	}
 
@@ -51,21 +52,22 @@ public class Character {
 	}
 
 	public void update() {
+		pastDoing = doing;
 		if (!isCooldown() && canAttack()) {
 			doing = 2;
-			System.out.println("ATTACK");
+			//System.out.println("ATTACK");
 		} else if (!isCooldown() && canAttackBase()) {
 			doing = 3;
-			System.out.println("ATACKBASE");
+			//System.out.println("ATACKBASE");
 		} else if (canMove()) {
 			this.move();
 			doing = 1;
-			System.out.println(this.name + "is Moving");
+			//System.out.println(this.name + "is Moving");
 		} else {
-			System.out.println("Do nothing");
+			//System.out.println("Do nothing");
 			doing = 0;
 		}
-		
+		System.out.println(sprite);
 	}
 
 	public void attackBase() {
@@ -87,22 +89,22 @@ public class Character {
 
 	private boolean canMove() {
 		int pos;
-		System.out.println(this.player);
+		//System.out.println(this.player);
 		if (player) {
 			pos = AllCharacter.getPlayer().indexOf(this);
-			if(pos>1) {
+			if(pos>=1) {
 				if (AllCharacter.getPlayer().get(pos - 1) != null && Math
 						.abs(this.getX() - AllCharacter.getPlayer().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
-					return false;
+					return true;
 				} 
 			} else return true;
 			
 		} else {
 			pos = AllCharacter.getEnemy().indexOf(this);
-			if(pos>1) {
+			if(pos>=1) {
 				if (AllCharacter.getEnemy().get(pos - 1) != null && Math
 						.abs(this.getX() - AllCharacter.getEnemy().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
-					return false;
+					return true;
 				} 
 			} else return true;
 			
