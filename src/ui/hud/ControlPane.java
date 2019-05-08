@@ -176,14 +176,14 @@ public class ControlPane extends HBox {
 		levelUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-//				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
+				if (Player.isConsume(Numbers.LEVELUP_PRICE)) {
 					Player.consumeMoney(Numbers.LEVELUP_PRICE);
 					Main.getScene().setRoot(Main.getGame2());
 					Main.getGame2().setTop(GamePlayScene.getBg());
 					Main.getGame2().setBottom(Main.getGame2().getBottomPane());
 					Player.setLevel(Player.getLevel() + 1);
 					Game.setPhase(2);
-//				}
+				}
 			}
 		});
 
