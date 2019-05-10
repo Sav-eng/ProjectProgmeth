@@ -7,6 +7,7 @@ import model.data.Player;
 import model.data.Time;
 import ui.render.AllUpdate;
 import ui.render.Render;
+import ui.scene.EndScene;
 
 
 public class Loop {
@@ -24,6 +25,16 @@ public class Loop {
 				AllCharacter.updateCharacter();
 				AllUpdate.update();
 				Render.render();
+				if(Game.getHpEnemyBase() <= 0 || Game.getHpPlayerBase() <=0) {
+					if(Game.getHpEnemyBase() <= 0) {
+						EndScene win  = new EndScene(true);
+						Main.getScene().setRoot(win);
+					} else {
+						EndScene loss = new EndScene(false);
+						Main.getScene().setRoot(loss);
+					}
+					Loop.timer.stop();
+				}
 			}
 			frameCount++;
 		}

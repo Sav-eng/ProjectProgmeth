@@ -82,7 +82,7 @@ public class GamePlayScene extends BorderPane {
 			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
 			
 		} else if(level ==2) {
-			gc.drawImage(LoadResource.world2Base, -30, 190);
+			gc.drawImage(LoadResource.world2Base, 0, 190);
 			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
 		}
 	}
