@@ -21,7 +21,7 @@ public class Numbers {
 	public static final int KNIGHT1_WIDTH = 140;
 	public static final int CHA_MOVESPD = 1;
 	public static final int MELEE_RANGE = 10;
-	public static final int LONG_RANGE = 400;
+	public static final int LONG_RANGE = 200;
 	public static final int LEVELUP_PRICE = 5000;
 	public static final int BOOST_PRICE = 250;
 }

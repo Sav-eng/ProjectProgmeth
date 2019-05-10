@@ -67,21 +67,6 @@ public class Player {
 		case 5:
 			Player.money+=3;
 			break;
-		case 6:
-			Player.money+=4;
-			break;
-		case 7:
-			Player.money+=5;
-			break;
-		case 8:
-			Player.money+=6;
-			break;
-		case 9:
-			Player.money+=7;
-			break;
-		case 10:
-			Player.money+=8;
-			break;
 		default:
 			break;
 		}

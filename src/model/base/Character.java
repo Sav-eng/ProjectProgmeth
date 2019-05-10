@@ -37,6 +37,7 @@ public class Character {
 		this.baseCooldown = baseCooldown;
 		this.reward = reward;
 		pastDoing = -1;
+		doing = 1;
 		cooldown = 0;
 	}
 
@@ -59,7 +60,10 @@ public class Character {
 
 	public void update() {
 		pastDoing = doing;
-		if (!isCooldown() && canAttack() && doing != 4) {
+		if(canMove()) {
+			this.move();
+			doing = 1;
+		} else if (!isCooldown() && canAttack() && doing != 4) {
 			doing = 2;
 			//System.out.println(cooldown);
 		} else if (!isCooldown() && canAttackBase() && doing != 4) {
@@ -67,10 +71,6 @@ public class Character {
 			//System.out.println(cooldown);
 		} else if (isCooldown() && ( canAttack()|| canAttackBase())) {
 			decreaseCooldown();
-		} else if (canMove()) {
-			this.move();
-			doing = 1;
-//			System.out.println(this.name + "is Moving");
 		} 
 		System.out.println(name + ":" + doing);
 	}
