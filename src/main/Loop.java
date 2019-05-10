@@ -24,9 +24,9 @@ public class Loop {
 				Render.clearCanvas();
 				Player.updateMoney();
 				Bot.summon();
+				AllCharacter.checkDie();
 				AllCharacter.updateCharacter();
 				AllUpdate.update();
-				AllCharacter.checkDie();
 				Render.render();
 				if(Game.getHpEnemyBase() <= 0 || Game.getHpPlayerBase() <=0) {
 					if(Game.getHpEnemyBase() <= 0) {

@@ -16,7 +16,8 @@ public class HeroMonster extends Character implements Range,Melee{
 		super(name, hp, atk, def, player,baseCooldown,reward);
 		baseAtk = atk;
 		baseDef = def;
-		super.setRange(Numbers.LONG_RANGE);
+		if(Game.getPhase()==1)super.setRange(Numbers.LONG_RANGE);
+		else super.setRange(Numbers.MELEE_RANGE);
 	}
 
 	@Override

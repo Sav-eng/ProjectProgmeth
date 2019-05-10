@@ -189,6 +189,8 @@ public class ControlPane extends HBox {
 					Main.getGame2().setBottom(Main.getGame2().getBottomPane());
 					Player.setLevel(Player.getLevel() + 1);
 					Game.setPhase(2);
+					Main.getGame1().getBgm().stop();
+					Main.getGame2().getBgm().play();
 				}
 			}
 		});

@@ -42,7 +42,7 @@ public class AllUpdate {
 					System.out.println(a.getName() + " COOLDOWN");
 				}
 				if (a.getDoing() == 2 || a.getDoing() == 3) {
-					if (a.getSprite() >= a.nameToSprite().length-1) {
+					if (a.getSprite() >= a.nameToSprite().length) {
 						if (a.getDoing() == 2) {
 							if (a.isPlayer()) {
 								a.attack(AllCharacter.getFirstEnemy());
@@ -64,6 +64,7 @@ public class AllUpdate {
 				} else if (a.getDoing() == 4) {
 					if (a.getSprite() >= a.nameToSprite().length) {
 						a.die();
+						System.out.println("GU DIE");
 //						a.setSprite(0);
 					}
 				}
