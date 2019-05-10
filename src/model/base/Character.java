@@ -39,6 +39,7 @@ public class Character {
 
 	public void move() {
 		cooldown = 0;
+		System.out.println("FUCK");
 		if(player)x += moveSpeed;
 		else x -= moveSpeed;
 	}
@@ -55,19 +56,17 @@ public class Character {
 		pastDoing = doing;
 		if (!isCooldown() && canAttack()) {
 			doing = 2;
-			//System.out.println("ATTACK");
+			//System.out.println(cooldown);
 		} else if (!isCooldown() && canAttackBase()) {
 			doing = 3;
-			//System.out.println("ATACKBASE");
+			//System.out.println(cooldown);
 		} else if (canMove()) {
 			this.move();
 			doing = 1;
-			//System.out.println(this.name + "is Moving");
-		} else {
-			//System.out.println("Do nothing");
-			doing = 0;
-		}
-		System.out.println(sprite);
+//			System.out.println(this.name + "is Moving");
+		} 
+		//System.out.println(sprite);
+		//System.out.println(cooldown);
 	}
 
 	public void attackBase() {
@@ -76,6 +75,8 @@ public class Character {
 		} else {
 			Game.setHpPlayerBase(Game.getHpPlayerBase() - atk);
 		}
+		cooldown = baseCooldown;
+		System.out.println(cooldown);
 	}
 
 	private boolean canAttackBase() {
@@ -97,7 +98,7 @@ public class Character {
 						.abs(this.getX() - AllCharacter.getPlayer().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
 					return true;
 				} 
-			} else return true;
+			} else if(!canAttack() && !canAttackBase()) return true;
 			
 		} else {
 			pos = AllCharacter.getEnemy().indexOf(this);
@@ -106,7 +107,9 @@ public class Character {
 						.abs(this.getX() - AllCharacter.getEnemy().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
 					return true;
 				} 
-			} else return true;
+			} else if(!canAttack() && !canAttackBase()) {
+				return true;
+			}
 			
 		}
 		return false;
@@ -140,7 +143,7 @@ public class Character {
 			atkWithDef = this.atk - enemy.getDef();
 		enemy.setHp(enemy.getHp() - atkWithDef);
 		if (enemy.getHp() <= 0) {
-			Player.setMoney(reward);
+			if(isPlayer())Player.setMoney(Player.getMoney() + enemy.reward);
 			enemy.doing = 4;
 			doing = 1;
 		}
@@ -148,9 +151,9 @@ public class Character {
 
 	public void die() {
 		if (this.player) {
-			AllCharacter.getEnemy().remove(0);
-		} else {
 			AllCharacter.getPlayer().remove(0);
+		} else {
+			AllCharacter.getEnemy().remove(0);
 		}
 	}
 
@@ -264,7 +267,7 @@ public class Character {
 
 	public Image[] nameToSprite() {
 		Image[] out = new Image[1];
-		if (this.getDoing() == 1) {
+		if (this.getDoing() == 1 || this.getDoing() == 0) {
 			switch (this.getName()) {
 			case "Knight1": out = LoadResource.knight1Walk; break;
 			case "Knight2": out = LoadResource.knight2Walk; break;
@@ -300,7 +303,7 @@ public class Character {
 				case "WizardFire" : out = LoadResource.wizardFireAttack; break;
 				case "WizardLaser" : out = LoadResource.wizardLaserAttack; break;
 			}
-		} else {
+		} else if(this.doing == 4) {
 			switch (this.getName()) {
 			case "Knight1": out = LoadResource.knight1Die; break;
 			case "Knight2": out = LoadResource.knight2Die; break;
@@ -317,8 +320,9 @@ public class Character {
 			case "Troll2" : out = LoadResource.troll2Die; break;
 			case "WizardFire" : out = LoadResource.wizardFireDie; break;
 			case "WizardLaser" : out = LoadResource.wizardLaserDie; break;
-		}
+			}
 		}
 		return out;
 	}
+	
 }

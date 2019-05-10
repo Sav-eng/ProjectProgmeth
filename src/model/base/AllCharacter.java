@@ -12,10 +12,10 @@ public class AllCharacter {
 	
 	public static void updateCharacter() {
 		//System.out.println("update");
-		for(Character x: enemy) {
+		for(Character x: player) {
 			x.update();
 		}
-		for(Character x: player) {
+		for(Character x: enemy) {
 			x.update();
 		}
 	}

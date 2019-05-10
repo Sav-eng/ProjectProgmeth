@@ -21,8 +21,8 @@ public class test extends Application {
 
 		// TODO Implement Main
 		//LoadResource.loadResource();
-//		EndScene root = new EndScene();
-		ControlPane root = new ControlPane(1);
+		EndScene root = new EndScene();
+//		ControlPane root = new ControlPane(1);
 		
 //		HBox root = new HBox();
 //		LoadResource.loadResource();

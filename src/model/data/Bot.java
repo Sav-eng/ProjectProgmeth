@@ -7,7 +7,7 @@ import model.mon.MeleeMonster;
 public class Bot {
 	private static boolean check = false;
 	public static void summon() {
-		int timeNow = Math.max(1, Time.getTime()-60);
+		/*int timeNow = Math.max(1, Time.getTime()-60);
 		int phase = Game.getPhase();
 		if(phase==2 || timeNow >= 3600) {
 			if(timeNow%150==0) {
@@ -41,6 +41,7 @@ public class Bot {
 				AllCharacter.getEnemy().add(new MeleeMonster("Troll2",7000,1500,800,false,30,1000));
 				check=true;
 			}
-		}
+		}*/
+		if(Time.getTime()==10)AllCharacter.getEnemy().add(new MeleeMonster("Golem",6000,3641,0,false,500,100));
 	}
 }

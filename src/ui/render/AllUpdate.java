@@ -35,27 +35,34 @@ public class AllUpdate {
 	private static void updateEachSprite(Character a) {
 		if (Time.getTime() % 2 == 0)
 			if (a.getPastDoing() == a.getDoing()) {
-				System.out.println("past = present");
-				if (a.getCooldown() == 0) {
+				//System.out.println("past = present");
+				if (!a.isCooldown()) {
 					a.setSprite(a.getSprite() + 1);
 				}
 				if (a.getDoing() == 2 || a.getDoing() == 3) {
-					if (a.getSprite() == a.nameToSprite().length) {
+					if (a.getSprite() >= a.nameToSprite().length-1) {
 						if (a.getDoing() == 2) {
-							a.attack(AllCharacter.getFirstEnemy());
+							if (a.isPlayer()) {
+								a.attack(AllCharacter.getFirstEnemy());
+							} else {
+								a.attack(AllCharacter.getFirstPlayer());
+							}
+							System.out.println(a.getCooldown());
 							a.setSprite(0);
 						} else {
 							a.attackBase();
 							a.setSprite(0);
 						}
+						a.setSprite(0);
 					}
 				} else if (a.getDoing() == 1) {
-					if (a.getSprite() == a.nameToSprite().length) {
+					if (a.getSprite() >= a.nameToSprite().length) {
 						a.setSprite(0);
 					}
 				} else if (a.getDoing() == 4) {
-					if (a.getSprite() == a.nameToSprite().length) {
+					if (a.getSprite() >= a.nameToSprite().length) {
 						a.die();
+//						a.setSprite(0);
 					}
 				}
 			} else {
