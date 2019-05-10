@@ -11,7 +11,7 @@ public class EndScene extends StackPane {
 	private static Canvas canvas;
 	private static GraphicsContext gc;
 
-	public EndScene() {
+	public EndScene(boolean win) {
 		super();
 		this.setPrefSize(Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 
@@ -22,17 +22,11 @@ public class EndScene extends StackPane {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 
-//		if() {
-//			drawVictory();
-//		} else if () {
-//			drawDefeat();
-//		}
-////		gc.strokeRect(100, 100, 100, 100);
-//		gc.setFont(Font.font(50));
-//		gc.setStroke(Color.BLACK);
-//		gc.strokeText("Victory", 500, 500);
-		drawVictory(gc);
-//		drawDefeat(gc);
+		if(win) {
+			drawVictory(gc);
+		} else {
+			drawDefeat(gc);
+		}
 		this.getChildren().add(canvas);
 	}
 

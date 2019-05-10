@@ -243,7 +243,7 @@ public class ControlPane extends HBox {
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
 		attackUp = new AttackBuffButton(LoadResource.atkUpCd, 500, 600, Numbers.WORLDBUFFAMOUNT * 2);
 		defenceUp = new DefenceBuffButton(LoadResource.defUpCd, 500, 600, Numbers.WORLDBUFFAMOUNT * 2);
-		levelUp = new UpgradeButton(LoadResource.levelUpCd, 0, 2);
+		levelUp = new UpgradeButton(LoadResource.levelUpCd, 9999, 2);
 
 		Char1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -377,6 +377,11 @@ public class ControlPane extends HBox {
 		VBox out = new VBox();
 		String temp = price + "";
 		Label priceTag = new Label(temp);
+		if(button instanceof UpgradeButton) {
+			if(price == 9999) {
+				priceTag.setText("Max");
+			}
+		}
 		priceTag.setAlignment(Pos.CENTER);
 		out.getChildren().add(button);
 		out.getChildren().add(priceTag);

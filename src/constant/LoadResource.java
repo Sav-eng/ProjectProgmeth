@@ -227,8 +227,10 @@ public class LoadResource {
 		defUpCd = loadImage("Other/shieldUpBlack.png", 100, 100);
 		world1Bg = loadImage("Other/world1.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		world2Bg = loadBg("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
-		world1Base = loadImage("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
-		enerymyBase = loadImage("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+		world1Base = loadBg("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+//		world2Base = loadBg("Other/base2.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+//		world2Base = loadBg("Other/base2.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+		enerymyBase = loadBg("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		pauseButton = loadImage("Other/pauseButton.png", 30, 30);
 		
 		setProgress(8);
