@@ -19,11 +19,14 @@ public class Loop {
 
 			if (frameCount % 2 == 0) {
 				Time.updateTime();
+				if(Time.buffATK==0)AllCharacter.debuffATK();
+				if(Time.buffDEF==0)AllCharacter.debuffDEF();
 				Render.clearCanvas();
 				Player.updateMoney();
 				Bot.summon();
 				AllCharacter.updateCharacter();
 				AllUpdate.update();
+				AllCharacter.checkDie();
 				Render.render();
 				if(Game.getHpEnemyBase() <= 0 || Game.getHpPlayerBase() <=0) {
 					if(Game.getHpEnemyBase() <= 0) {

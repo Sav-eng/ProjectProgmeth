@@ -21,6 +21,7 @@ public class Character {
 	private int cooldown;
 	private int baseCooldown;
 	private int reward;
+	private boolean death = false;
 
 	public Character(String name, int hp, int atk, int def, boolean player, int baseCooldown, int reward) {
 		this.name = name;
@@ -160,11 +161,7 @@ public class Character {
 	}
 
 	public void die() {
-		if (this.player) {
-			AllCharacter.getPlayer().remove(0);
-		} else {
-			AllCharacter.getEnemy().remove(0);
-		}
+		death = true;
 	}
 
 	public int getMoveSpeed() {
@@ -172,7 +169,7 @@ public class Character {
 	}
 
 	public boolean isDeath() {
-		return this.hp <= 0;
+		return death;
 	}
 
 	public int getHp() {
