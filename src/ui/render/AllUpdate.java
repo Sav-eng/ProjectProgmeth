@@ -37,7 +37,9 @@ public class AllUpdate {
 			if (a.getPastDoing() == a.getDoing()) {
 				//System.out.println("past = present");
 				if (!a.isCooldown()) {
-					a.setSprite(a.getSprite() + 1);
+					a.setSprite(a.getSprite() + 1);	
+				} else {
+					System.out.println(a.getName() + " COOLDOWN");
 				}
 				if (a.getDoing() == 2 || a.getDoing() == 3) {
 					if (a.getSprite() >= a.nameToSprite().length-1) {

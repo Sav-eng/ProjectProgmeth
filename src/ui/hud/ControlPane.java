@@ -204,6 +204,7 @@ public class ControlPane extends HBox {
 							((RangeMonster) a).attackBoost();
 						}
 					}
+					Time.buffATK = 100;
 				}
 			}
 		});
@@ -219,6 +220,7 @@ public class ControlPane extends HBox {
 							((MeleeMonster) a).defenceBoost();
 						}
 					}
+					Time.buffDEF = 100;
 				}
 			}
 		});

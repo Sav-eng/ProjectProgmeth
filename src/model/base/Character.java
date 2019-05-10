@@ -72,8 +72,7 @@ public class Character {
 			doing = 1;
 //			System.out.println(this.name + "is Moving");
 		} 
-		//System.out.println(sprite);
-		//System.out.println(cooldown);
+		System.out.println(name + ":" + doing);
 	}
 
 	public void attackBase() {
@@ -151,12 +150,13 @@ public class Character {
 		else
 			atkWithDef = this.atk - enemy.getDef();
 		enemy.setHp(enemy.getHp() - atkWithDef);
-		System.out.println(enemy.getName() + ":"+ enemy.getHp());
+		//System.out.println(enemy.getName() + ":"+ enemy.getHp());
 		if (enemy.getHp() <= 0) {
 			if (isPlayer())
 				Player.setMoney(Player.getMoney() + enemy.reward);
 			enemy.doing = 4;
 			doing = 1;
+			enemy.cooldown = 0;
 		}
 	}
 
