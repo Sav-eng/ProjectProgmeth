@@ -82,7 +82,7 @@ public class Character {
 			Game.setHpPlayerBase(Game.getHpPlayerBase() - atk);
 		}
 		cooldown = baseCooldown;
-		System.out.println(cooldown);
+		//System.out.println(cooldown);
 	}
 
 	private boolean canAttackBase() {

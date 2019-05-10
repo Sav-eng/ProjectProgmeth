@@ -62,6 +62,7 @@ public class AllUpdate {
 				} else if (a.getDoing() == 4) {
 					if (a.getSprite() >= a.nameToSprite().length) {
 						a.die();
+						a.setSprite(a.getSprite()-1);
 						//System.out.println("GU DIE");
 //						a.setSprite(0);
 					}
