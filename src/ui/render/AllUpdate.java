@@ -38,8 +38,6 @@ public class AllUpdate {
 				//System.out.println("past = present");
 				if (!a.isCooldown()) {
 					a.setSprite(a.getSprite() + 1);	
-				} else {
-					System.out.println(a.getName() + " COOLDOWN");
 				}
 				if (a.getDoing() == 2 || a.getDoing() == 3) {
 					if (a.getSprite() >= a.nameToSprite().length) {
@@ -64,7 +62,7 @@ public class AllUpdate {
 				} else if (a.getDoing() == 4) {
 					if (a.getSprite() >= a.nameToSprite().length) {
 						a.die();
-						System.out.println("GU DIE");
+						//System.out.println("GU DIE");
 //						a.setSprite(0);
 					}
 				}

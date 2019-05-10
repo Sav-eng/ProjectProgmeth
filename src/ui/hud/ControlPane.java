@@ -141,7 +141,7 @@ public class ControlPane extends HBox {
 						if (Player.isConsume(Char3.getPrice())) {
 							Player.consumeMoney(Char3.getPrice());
 							Char3.setPressTime(Time.getTime());
-							AllCharacter.getPlayer().add(new MeleeMonster("Thief", 564, 356, 100, true, 30, 0));
+							AllCharacter.getPlayer().add(new MeleeMonster("Thief", 564, 356, 100, true, 15, 0));
 						}
 			}
 		});
@@ -154,7 +154,7 @@ public class ControlPane extends HBox {
 						if (Player.isConsume(Char4.getPrice())) {
 							Player.consumeMoney(Char4.getPrice());
 							Char4.setPressTime(Time.getTime());
-							AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 777, 100, true, 100, 0));
+							AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 1111, 100, true, 100, 0));
 						}
 			}
 		});
@@ -167,7 +167,7 @@ public class ControlPane extends HBox {
 						if (Player.isConsume(Char5.getPrice())) {
 							Player.consumeMoney(Char5.getPrice());
 							Char5.setPressTime(Time.getTime());
-							AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 888, 400, true, 110, 0));
+							AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 1200, 400, true, 110, 0));
 						}
 			}
 		});
@@ -276,7 +276,7 @@ public class ControlPane extends HBox {
 						if (Player.isConsume(Char2.getPrice())) {
 							Player.consumeMoney(Char2.getPrice());
 							Char2.setPressTime(Time.getTime());
-							AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 888, 400, true, 110, 0));
+							AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 888, 400, true, 60, 0));
 						}
 			}
 		});
@@ -303,7 +303,7 @@ public class ControlPane extends HBox {
 							Player.consumeMoney(Char4.getPrice());
 							Char4.setPressTime(Time.getTime());
 							AllCharacter.getPlayer()
-									.add(new RangeMonster("WizardLaser", 2000, 1999, 100, true, 150, 0));
+									.add(new RangeMonster("WizardLaser", 2000, 1999, 100, true, 90, 0));
 						}
 			}
 		});
@@ -316,7 +316,7 @@ public class ControlPane extends HBox {
 						if (Player.isConsume(Char5.getPrice())) {
 							Player.consumeMoney(Char5.getPrice());
 							Char5.setPressTime(Time.getTime());
-							AllCharacter.getPlayer().add(new HeroMonster("Angle", 5000, 2777, 1200, true, 150, 0));
+							AllCharacter.getPlayer().add(new HeroMonster("Angle", 5000, 2777, 1200, true, 60, 0));
 						}
 			}
 		});

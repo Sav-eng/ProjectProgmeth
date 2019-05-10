@@ -129,9 +129,9 @@ public class LoadResource {
 		for (int i = 0; i < 5; i++) {
 			wizardLaserAttack[i] = loadImage("Wizard_laser/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
-			wizardLaserDie[i] = loadImage("Wizard_laser/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardLaserDie[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
-			wizardLaserWalk[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardLaserWalk[i] = loadImage("Wizard_laser/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
 					Numbers.CHA_HEIGHT);
 		}
 		setProgress(3);

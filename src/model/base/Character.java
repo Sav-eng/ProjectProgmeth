@@ -72,7 +72,7 @@ public class Character {
 		} else if (isCooldown() && ( canAttack()|| canAttackBase())) {
 			decreaseCooldown();
 		} 
-		System.out.println(name + ":" + doing);
+		//System.out.println(name + ":" + doing);
 	}
 
 	public void attackBase() {

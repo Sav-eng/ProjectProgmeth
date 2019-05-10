@@ -12,10 +12,10 @@ public class Bot {
 		int phase = Game.getPhase();
 		if (AllCharacter.getEnemy().size() <= 10) {
 			if (phase == 2 || timeNow >= 3600) {
-				if (timeNow % 150 == 0) {
+				if (timeNow % 250 == 0) {
 					// summonTroll1
 					AllCharacter.getEnemy().add(new MeleeMonster("Troll1", 3500, 1577, 700, false, 80, 200));
-				} else if (timeNow % 370 == 0) {
+				} else if (timeNow % 500 == 0) {
 					// summon Golem
 					AllCharacter.getEnemy().add(new MeleeMonster("Golem", 6000, 3641, 0, false, 500, 100));
 				} 
@@ -35,10 +35,10 @@ public class Bot {
 				}
 			}
 		}
-		 if ((Game.getPhase()==2 || Time.getTime() >= 3600)&& timeNow % 500 == 0) {
+		 if ((Game.getPhase()==2 || Time.getTime() >= 3600)&& timeNow % 1000 == 0) {
 				// summon Ork
 				//System.out.println("COMN");
-				AllCharacter.getEnemy().add(new MeleeMonster("Ork", 2000, 3277, 350, false, 200, 250));
+				AllCharacter.getEnemy().add(new MeleeMonster("Ork", 5000, 3277, 400, false, 200, 250));
 			}
 		// if(Time.getTime()==10)AllCharacter.getEnemy().add(new
 		// MeleeMonster("Golem",6000,3641,0,false,500,100));
