@@ -47,7 +47,7 @@ public class AllUpdate {
 							} else {
 								a.attack(AllCharacter.getFirstPlayer());
 							}
-							System.out.println(a.getCooldown());
+							//System.out.println(a.getCooldown());
 							a.setSprite(0);
 						} else {
 							a.attackBase();
