@@ -35,7 +35,7 @@ public class Render {
 		gc.setLineWidth(1.0);
 		gc.setFont(new Font("AR ADGothicJP", 30));
 		gc.fillText("$ " +Player.getMoney()+"", 20, 50, 100);
-		if(RateButton.getLevel() != 10) {
+		if(RateButton.getLevel() != 6) {
 			gc.fillText("RateLv: "+ RateButton.getLevel(), 20, 75);
 		} else {
 			gc.fillText("RateLv: MAX", 20, 75);

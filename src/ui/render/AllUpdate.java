@@ -134,7 +134,7 @@ public class AllUpdate {
 	public static void updatePriceTag() {
 		GamePlayScene scene = (GamePlayScene) Main.getScene().getRoot();
 		ControlPane pane = scene.getBottomPane();
-		if (RateButton.getLevel() != 10) {
+		if (RateButton.getLevel() != 6) {
 			pane.getRatePrice().setText(RateButton.getCost() + "");
 		} else {
 			pane.getRatePrice().setText("Lv.Max");

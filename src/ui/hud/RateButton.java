@@ -40,16 +40,12 @@ public class RateButton extends GameButton{
 	
 	public static int getCost() {
 		switch(RateButton.getLevel()) {
-		case 1: return 90;
-		case 2: return 180;
-		case 3: return 300;
-		case 4: return 450;
-		case 5: return 660;
-		case 6: return 900;
-		case 7: return 1050;
-		case 8: return 1200;
-		case 9: return 1500;
-		default: return 1800;
+		case 1: return 500;
+		case 2: return 1000;
+		case 3: return 1800;
+		case 4: return 3000;
+		case 5: return 4500;
+		default: return 0;
 		}
 	}
 	
