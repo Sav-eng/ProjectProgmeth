@@ -229,7 +229,7 @@ public class LoadResource {
 		world2Bg = loadBg("Other/world2.jpg", Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
 		world1Base = loadBg("Other/base1Fliped.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 //		world2Base = loadBg("Other/base2.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
-//		world2Base = loadBg("Other/base2.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
+		world2Base = loadBg("Other/base2.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		enerymyBase = loadBg("Other/enermyBaseFlip.png", Numbers.BASE_WIDTH, Numbers.BASE_HEIGHT);
 		pauseButton = loadImage("Other/pauseButton.png", 30, 30);
 		
