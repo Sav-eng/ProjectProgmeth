@@ -5,7 +5,8 @@ public class Numbers {
 	public static final int WIN_HEIGHT = 600;
 	public static final int CHA_WIDTH = 100;
 	public static final int CHA_HEIGHT = 100;
-	public static final int BOSS_WIDTH = 150;
+	public static final int CHA_WIDTH_FIX = 140;
+	public static final int BOSS_WIDTH = 180;
 	public static final int BOSS_HEIGHT = 150;
 	public static final int POSITION_ENEMY = 1180;
 	public static final int POSITION_PLAYER = 20;

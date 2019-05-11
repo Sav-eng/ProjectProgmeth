@@ -90,48 +90,48 @@ public class LoadResource {
 	public static void loadResource() {
 
 		for (int i = 0; i < 5; i++) {
-			wizardFireWalk[i] = loadImage("Wizard_fire/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardFireWalk[i] = loadImage("Wizard_fire/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX,
 					Numbers.CHA_HEIGHT);
-			wizardFireDie[i] = loadImage("Wizard_fire/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			wizardFireAttack[i] = loadImage("Wizard_fire/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardFireDie[i] = loadImage("Wizard_fire/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			wizardFireAttack[i] = loadImage("Wizard_fire/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX,
 					Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
-			knight1Walk[i] = loadImage("Knight_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight1Attack[i] = loadImage("Knight_1/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight1Die[i] = loadImage("Knight_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			knight1Walk[i] = loadImage("Knight_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight1Attack[i] = loadImage("Knight_1/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight1Die[i] = loadImage("Knight_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		setProgress(1);
 		
-		knight1Attack[7] = loadImage("Knight_1/attack/8.png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+		knight1Attack[7] = loadImage("Knight_1/attack/8.png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		for (int i = 0; i < 7; i++) {
-			knight2Walk[i] = loadImage("Knight_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight2Attack[i] = loadImage("Knight_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight2Die[i] = loadImage("Knight_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			knight2Walk[i] = loadImage("Knight_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight2Attack[i] = loadImage("Knight_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight2Die[i] = loadImage("Knight_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
-			knight3Walk[i] = loadImage("Knight_3/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight3Attack[i] = loadImage("Knight_3/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			knight3Die[i] = loadImage("Knight_3/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			knight3Walk[i] = loadImage("Knight_3/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight3Attack[i] = loadImage("Knight_3/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			knight3Die[i] = loadImage("Knight_3/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		setProgress(2);
 		
 		for (int i = 0; i < 5; i++) {
-			thiefAttack[i] = loadImage("Thief/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			thiefWalk[i] = loadImage("Thief/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			thiefDie[i] = loadImage("Thief/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			thiefAttack[i] = loadImage("Thief/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			thiefWalk[i] = loadImage("Thief/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			thiefDie[i] = loadImage("Thief/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 5; i++) {
-			archerAttack[i] = loadImage("Archer/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			archerWalk[i] = loadImage("Archer/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			archerDie[i] = loadImage("Archer/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			archerAttack[i] = loadImage("Archer/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			archerWalk[i] = loadImage("Archer/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			archerDie[i] = loadImage("Archer/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 5; i++) {
-			wizardLaserAttack[i] = loadImage("Wizard_laser/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardLaserAttack[i] = loadImage("Wizard_laser/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX,
 					Numbers.CHA_HEIGHT);
-			wizardLaserDie[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardLaserDie[i] = loadImage("Wizard_laser/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX,
 					Numbers.CHA_HEIGHT);
-			wizardLaserWalk[i] = loadImage("Wizard_laser/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH,
+			wizardLaserWalk[i] = loadImage("Wizard_laser/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX,
 					Numbers.CHA_HEIGHT);
 		}
 		setProgress(3);
@@ -139,7 +139,7 @@ public class LoadResource {
 		
 		
 		for (int i = 0; i < 3; i++) {
-			laser[i] = loadImage("Wizard_laser/laser/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			laser[i] = loadImage("Wizard_laser/laser/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 12; i++) {
 			goblinAttack[i] = loadImage("Goblin/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
@@ -168,16 +168,16 @@ public class LoadResource {
 			orcDie[i] = loadImage("Orc/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
-			troll1Attack[i] = loadImage("Troll_1/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			troll1Die[i] = loadImage("Troll_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			troll1Walk[i] = loadImage("Troll_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			troll1Attack[i] = loadImage("Troll_1/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			troll1Die[i] = loadImage("Troll_1/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			troll1Walk[i] = loadImage("Troll_1/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		
 		setProgress(5);
 		for (int i = 0; i < 7; i++) {
-			troll2Attack[i] = loadImage("Troll_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			troll2Die[i] = loadImage("Troll_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			troll2Walk[i] = loadImage("Troll_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			troll2Attack[i] = loadImage("Troll_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			troll2Die[i] = loadImage("Troll_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			troll2Walk[i] = loadImage("Troll_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
 			orkAttack[i] = loadImage("Ork/attack/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
@@ -195,9 +195,9 @@ public class LoadResource {
 			angleDie[i] = loadImage("Angle/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
 		}
 		for (int i = 0; i < 5; i++) {
-			fairyAttack[i] = loadImage("Fairy/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			fairyDie[i] = loadImage("Fairy/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
-			fairyWalk[i] = loadImage("Fairy/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);
+			fairyAttack[i] = loadImage("Fairy/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			fairyDie[i] = loadImage("Fairy/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			fairyWalk[i] = loadImage("Fairy/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
 		}
 		for(int i=0;i<5;i++) {
 			ice[i] = loadImage("Ice/Ice" + (i + 1) + ".png", Numbers.CHA_WIDTH, Numbers.CHA_HEIGHT);

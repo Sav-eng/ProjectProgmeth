@@ -174,7 +174,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();
-						ratePrice.setText(RateButton.getCost()+"");
+						ratePrice.setText(RateButton.getCost() + "");
 					}
 			}
 		});
@@ -198,32 +198,34 @@ public class ControlPane extends HBox {
 		attackUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.BOOST_PRICE)) {
-					Player.consumeMoney(Numbers.BOOST_PRICE);
-					attackUp.setPressTime(Time.getTime());
-					for (Character a : AllCharacter.getPlayer()) {
-						if (a instanceof RangeMonster) {
-							((RangeMonster) a).attackBoost();
+				if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
+					if (Player.isConsume(Numbers.BOOST_PRICE)) {
+						Player.consumeMoney(Numbers.BOOST_PRICE);
+						attackUp.setPressTime(Time.getTime());
+						for (Character a : AllCharacter.getPlayer()) {
+							if (a instanceof RangeMonster) {
+								((RangeMonster) a).attackBoost();
+							}
 						}
+						Time.buffATK = 100;
 					}
-					Time.buffATK = 100;
-				}
 			}
 		});
 
 		defenceUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.BOOST_PRICE)) {
-					Player.consumeMoney(Numbers.BOOST_PRICE);
-					defenceUp.setPressTime(Time.getTime());
-					for (Character a : AllCharacter.getPlayer()) {
-						if (a instanceof MeleeMonster) {
-							((MeleeMonster) a).defenceBoost();
+				if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
+					if (Player.isConsume(Numbers.BOOST_PRICE)) {
+						Player.consumeMoney(Numbers.BOOST_PRICE);
+						defenceUp.setPressTime(Time.getTime());
+						for (Character a : AllCharacter.getPlayer()) {
+							if (a instanceof MeleeMonster) {
+								((MeleeMonster) a).defenceBoost();
+							}
 						}
+						Time.buffDEF = 100;
 					}
-					Time.buffDEF = 100;
-				}
 			}
 		});
 	}
@@ -317,7 +319,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();
-						ratePrice.setText(RateButton.getCost()+"");
+						ratePrice.setText(RateButton.getCost() + "");
 					}
 			}
 		});
@@ -325,34 +327,36 @@ public class ControlPane extends HBox {
 		attackUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
-					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
-					attackUp.setPressTime(Time.getTime());
-					for (Character a : AllCharacter.getPlayer()) {
-						if (a instanceof RangeMonster) {
-							((RangeMonster) a).attackBoost();
-						} else if (a instanceof HeroMonster) {
-							((HeroMonster) a).attackBoost();
+				if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
+					if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+						Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+						attackUp.setPressTime(Time.getTime());
+						for (Character a : AllCharacter.getPlayer()) {
+							if (a instanceof RangeMonster) {
+								((RangeMonster) a).attackBoost();
+							} else if (a instanceof HeroMonster) {
+								((HeroMonster) a).attackBoost();
+							}
 						}
 					}
-				}
 			}
 		});
 
 		defenceUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
-					Player.consumeMoney(Numbers.BOOST_PRICE * 2);
-					defenceUp.setPressTime(Time.getTime());
-					for (Character a : AllCharacter.getPlayer()) {
-						if (a instanceof MeleeMonster) {
-							((MeleeMonster) a).defenceBoost();
-						} else if(a instanceof HeroMonster) {
-							((HeroMonster) a).defenceBoost();
+				if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
+					if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+						Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+						defenceUp.setPressTime(Time.getTime());
+						for (Character a : AllCharacter.getPlayer()) {
+							if (a instanceof MeleeMonster) {
+								((MeleeMonster) a).defenceBoost();
+							} else if (a instanceof HeroMonster) {
+								((HeroMonster) a).defenceBoost();
+							}
 						}
 					}
-				}
 			}
 		});
 	}
@@ -364,8 +368,6 @@ public class ControlPane extends HBox {
 	public void rateDull() {
 		rateUp.setGraphic(new ImageView(LoadResource.rateUpCd));
 	}
-
-	
 
 	public ArrayList<Label> getCooldownLeft() {
 		return cooldownLeft;
@@ -385,8 +387,8 @@ public class ControlPane extends HBox {
 		VBox out = new VBox();
 		String temp = price + "";
 		Label priceTag = new Label(temp);
-		if(button instanceof UpgradeButton) {
-			if(price == 9999) {
+		if (button instanceof UpgradeButton) {
+			if (price == 9999) {
 				priceTag.setText("Max");
 			}
 		}
@@ -421,7 +423,7 @@ public class ControlPane extends HBox {
 		}
 		return out;
 	}
-	
+
 	public VBox ratePair(int price, GameButton button) {
 		VBox out = new VBox();
 		String temp = price + "";
@@ -444,15 +446,15 @@ public class ControlPane extends HBox {
 	public DefenceBuffButton getDefenceUp() {
 		return defenceUp;
 	}
-	
+
 	public void attackBright() {
 		attackUp.setGraphic(new ImageView(LoadResource.atkUp));
 	}
-	
+
 	public void attackDull() {
 		attackUp.setGraphic(new ImageView(LoadResource.atkUpCd));
 	}
-	
+
 	public void defenceBright() {
 		defenceUp.setGraphic(new ImageView(LoadResource.defUp));
 	}
@@ -492,6 +494,5 @@ public class ControlPane extends HBox {
 	public UpgradeButton getLevelUp() {
 		return levelUp;
 	}
-	
-	
+
 }

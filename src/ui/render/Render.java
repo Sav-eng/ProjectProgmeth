@@ -25,8 +25,8 @@ public class Render {
 			gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
 		}
 		for (Character a : AllCharacter.getEnemy()) {
-			if(a.getName() != "Ork" && a.getName() != "Troll2")gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 350);
-			else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 300);
+			if(a.getName() != "Ork" && a.getName() != "Troll2")gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
+			else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 280);
 		}
 		gc.setFill(Color.BLACK);
 		gc.setStroke(Color.GOLDENROD);
