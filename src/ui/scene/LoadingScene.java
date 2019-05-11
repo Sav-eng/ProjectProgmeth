@@ -23,7 +23,6 @@ public class LoadingScene extends StackPane {
 		// TODO Auto-generated constructor stub
 		bg = new Canvas();
 		gContext = bg.getGraphicsContext2D();
-		//System.out.println("Hello");
 		timer = new AnimationTimer() {
 			
 			@Override

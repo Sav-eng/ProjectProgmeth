@@ -16,10 +16,7 @@ import ui.scene.GamePlayScene;
 public class Render {
 
 	private static Canvas allChar = GamePlayScene.getBg();
-//	private static Canvas allChar;
-//	private static GraphicsContext gc;
 	private static GraphicsContext gc = GamePlayScene.getGc();
-//	private static GraphicsContext gc = Main.getScene().getRoot().getGc();
 
 	public static void render() {
 		GamePlayScene.drawBg();

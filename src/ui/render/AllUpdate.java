@@ -35,7 +35,7 @@ public class AllUpdate {
 	private static void updateEachSprite(Character a) {
 		if (Time.getTime() % 2 == 0)
 			if (a.getPastDoing() == a.getDoing()) {
-				//System.out.println("past = present");
+				
 				if (!a.isCooldown()) {
 					a.setSprite(a.getSprite() + 1);	
 				}
@@ -47,7 +47,6 @@ public class AllUpdate {
 							} else {
 								a.attack(AllCharacter.getFirstPlayer());
 							}
-							//System.out.println(a.getCooldown());
 							a.setSprite(0);
 						} else {
 							a.attackBase();
@@ -63,8 +62,6 @@ public class AllUpdate {
 					if (a.getSprite() >= a.nameToSprite().length) {
 						a.die();
 						a.setSprite(a.getSprite()-1);
-						//System.out.println("GU DIE");
-//						a.setSprite(0);
 					}
 				}
 			} else {
