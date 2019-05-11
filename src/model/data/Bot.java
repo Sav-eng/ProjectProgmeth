@@ -36,7 +36,7 @@ public class Bot {
 					check = true;
 				}
 				if(timeNow % 350 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Ork", 5000, 4277, 350, false, 200, 250));
-				if(timeNow % 700 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 15000, 4500, 1000, false, 20, 1000));
+				if(timeNow % 700 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 20000, 4500, 1000, false, 20, 1000));
 			}
 		}
 		 if ((Game.getPhase()==2 || Time.getTime() >= 7200)&& timeNow % 2000 == 0) {
