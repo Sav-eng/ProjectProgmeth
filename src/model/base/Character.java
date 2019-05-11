@@ -145,6 +145,7 @@ public class Character {
 	public void attack(Character enemy) {
 		int atkWithDef;
 		cooldown = baseCooldown;
+		System.out.println(this.atk);
 		if (this.atk - enemy.getDef() < 0)
 			atkWithDef = 0;
 		else

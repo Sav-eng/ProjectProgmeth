@@ -11,7 +11,7 @@ public class Bot {
 		int timeNow = Math.max(1, Time.getTime() - 60);
 		int phase = Game.getPhase();
 		if (AllCharacter.getEnemy().size() <= 10) {
-			if (phase == 2 || timeNow >= 3600) {
+			if ((phase == 2 || timeNow >= 7200 ) && Game.getHpEnemyBase() >= 2500) {
 				if (timeNow % 250 == 0) {
 					// summonTroll1
 					AllCharacter.getEnemy().add(new MeleeMonster("Troll1", 3500, 1577, 700, false, 80, 200));
@@ -23,7 +23,7 @@ public class Bot {
 				if (timeNow % 250 == 0) {
 					// summon goblin
 					AllCharacter.getEnemy().add(new MeleeMonster("Goblin", 1000, 555, 100, false, 60, 30));
-				} else if (timeNow % 350 == 0) {
+				} else if (timeNow % 400 == 0) {
 					// summon Orc
 					AllCharacter.getEnemy().add(new MeleeMonster("Orc", 1500, 966, 300, false, 100, 100));
 				}
@@ -33,9 +33,11 @@ public class Bot {
 					AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 10000, 1500, 800, false, 20, 1000));
 					check = true;
 				}
+				if(timeNow % 400 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Ork", 2000, 3277, 350, false, 200, 250));
+				if(timeNow % 1000 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 10000, 1500, 800, false, 20, 1000));
 			}
 		}
-		 if ((Game.getPhase()==2 || Time.getTime() >= 3600)&& timeNow % 1000 == 0) {
+		 if ((Game.getPhase()==2 || Time.getTime() >= 7200)&& timeNow % 1000 == 0) {
 				// summon Ork
 				//System.out.println("COMN");
 				AllCharacter.getEnemy().add(new MeleeMonster("Ork", 5000, 3277, 400, false, 200, 250));
