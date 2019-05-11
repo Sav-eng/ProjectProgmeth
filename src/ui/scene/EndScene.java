@@ -34,17 +34,17 @@ public class EndScene extends StackPane {
 		gc.setFill(Color.GOLD);
 		gc.setStroke(Color.GOLDENROD);
 		gc.setLineWidth(2.0);
-		gc.setFont(new Font("koverwatch", 100));
-		gc.fillText("Victory", 700, 300);
-		gc.strokeText("Victory", 700, 300, 300);
+		gc.setFont(new Font("Arial", 100));
+		gc.fillText("Victory", 650, 300,300);
+		gc.strokeText("Victory", 650, 300, 300);
 	}
 
 	private static void drawDefeat(GraphicsContext gc) {
 		gc.setFill(Color.ORANGERED);
 		gc.setStroke(Color.DARKORANGE);
 		gc.setLineWidth(2.0);
-		gc.setFont(new Font("koverwatch", 100));
-		gc.fillText("Defeat", 700, 300);
-		gc.strokeText("Defeat", 700, 300, 300);
+		gc.setFont(new Font("Arial", 100));
+		gc.fillText("Defeat", 650, 300, 300);
+		gc.strokeText("Defeat", 650, 300, 300);
 	}
 }
