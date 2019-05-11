@@ -64,8 +64,6 @@ public class GamePlayScene extends BorderPane {
 			break;
 		}
 
-//		this.setTop(bg);
-//		this.setBottom(bottom);
 		this.setAlignment(bottom, Pos.BOTTOM_CENTER);
 	}
 	
@@ -76,13 +74,11 @@ public class GamePlayScene extends BorderPane {
 	
 	public static void drawBase(int level) {
 		if(level == 1) {
-//			gc.drawImage(LoadResource.world1Base, 70, 190);
-//			gc.drawImage(LoadResource.enerymyBase, 1290, 185);
 			gc.drawImage(LoadResource.world1Base, -30, 190);
 			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
 			
 		} else if(level ==2) {
-			gc.drawImage(LoadResource.world2Base, 0, 190);
+			gc.drawImage(LoadResource.world2Base, -10, 190);
 			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
 		}
 	}

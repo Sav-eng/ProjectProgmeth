@@ -102,4 +102,26 @@ public class MainMenuScene extends StackPane {
 			}
 		});
 	}
+
+	public Canvas getBg() {
+		return bg;
+	}
+
+	public GraphicsContext getGc() {
+		return gc;
+	}
+
+	public VBox getMenuButton() {
+		return menuButton;
+	}
+
+	public MainmenuButton getPlayButtonMainmenu() {
+		return playButtonMainmenu;
+	}
+
+	public MainmenuButton getExitButtonMainmenu() {
+		return exitButtonMainmenu;
+	}
+	
+	
 }

@@ -464,6 +464,34 @@ public class ControlPane extends HBox {
 	public Label getRatePrice() {
 		return ratePrice;
 	}
+
+	public EntityButton getChar1() {
+		return Char1;
+	}
+
+	public EntityButton getChar2() {
+		return Char2;
+	}
+
+	public EntityButton getChar3() {
+		return Char3;
+	}
+
+	public EntityButton getChar4() {
+		return Char4;
+	}
+
+	public EntityButton getChar5() {
+		return Char5;
+	}
+
+	public RateButton getRateUp() {
+		return rateUp;
+	}
+
+	public UpgradeButton getLevelUp() {
+		return levelUp;
+	}
 	
 	
 }
