@@ -104,8 +104,7 @@ public class Character {
 						.abs(this.getX() - AllCharacter.getPlayer().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
 					return true;
 				}
-			} else if (!canAttack() && !canAttackBase())
-				return true;
+			} else if (!canAttack() && !canAttackBase()) return true;
 		} else {
 			pos = AllCharacter.getEnemy().indexOf(this);
 			if (pos >= 1) {
@@ -113,10 +112,7 @@ public class Character {
 						.abs(this.getX() - AllCharacter.getEnemy().get(pos - 1).getX()) >= Numbers.SPACINGCHARACTER) {
 					return true;
 				}
-			} else if (!canAttack() && !canAttackBase()) {
-				return true;
-			}
-
+			} else if (!canAttack() && !canAttackBase()) return true;
 		}
 		return false;
 	}
@@ -124,15 +120,9 @@ public class Character {
 	private boolean canAttack() {
 		Character enemy;
 		if (player) {
-			if (AllCharacter.getEnemy().size() > 0)
-				enemy = AllCharacter.getFirstEnemy();
-			else
-				enemy = null;
+			enemy = AllCharacter.getFirstEnemy();
 		} else {
-			if (AllCharacter.getPlayer().size() > 0)
-				enemy = AllCharacter.getFirstPlayer();
-			else
-				enemy = null;
+			enemy = AllCharacter.getFirstPlayer();
 		}
 		if (enemy == null)
 			return false;
@@ -145,7 +135,7 @@ public class Character {
 	public void attack(Character enemy) {
 		int atkWithDef;
 		cooldown = baseCooldown;
-		System.out.println(this.atk);
+		//System.out.println(this.atk);
 		if (this.atk - enemy.getDef() < 0)
 			atkWithDef = 0;
 		else

@@ -62,10 +62,10 @@ public class Player {
 			Player.money++;
 			break;
 		case 4:
-			Player.money+=2;
+			Player.money+=3;
 			break;
 		case 5:
-			Player.money+=3;
+			Player.money+=4;
 			break;
 		case 6:
 			Player.money+=5;

@@ -10,7 +10,7 @@ public class Numbers {
 	public static final int POSITION_ENEMY = 1180;
 	public static final int POSITION_PLAYER = 20;
 	public static final int HP_PLAYER_BASE = 5000;
-	public static final int HP_ENEMY_BASE = 10000;
+	public static final int HP_ENEMY_BASE = 50000;
 	public static final double WORLDBUFFAMOUNT = 0.5;
 	public static final int SPACINGCHARACTER = 50;
 	public static final int BASE_WIDTH = 200;

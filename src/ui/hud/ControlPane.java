@@ -150,7 +150,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char4.getPrice())) {
 						Player.consumeMoney(Char4.getPrice());
 						Char4.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 1777, 100, true, 100, 0));
+						AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 1777, 500, true, 100, 0));
 					}
 			}
 		});
@@ -235,13 +235,13 @@ public class ControlPane extends HBox {
 		Char2 = new EntityButton(LoadResource.wizardFireIcon, 700, 500);
 		Char2.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #cd7f32, derive(#cd7f32, -30%), derive(#cd7f32, 30%));");
-		Char3 = new EntityButton(LoadResource.knight3Icon, 400, 550);
+		Char3 = new EntityButton(LoadResource.knight3Icon, 2000, 550);
 		Char3.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 900, 800);
+		Char4 = new EntityButton(LoadResource.wizardLaserIcon, 3000, 800);
 		Char4.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #C0C0C0, derive(#C0C0C0, -30%), derive(#C0C0C0, 30%));");
-		Char5 = new EntityButton(LoadResource.angleIcon, 1500, 1500);
+		Char5 = new EntityButton(LoadResource.angleIcon, 7000, 3000);
 		Char5.setStyle(
 				"-fx-background-color: radial-gradient(radius 180%, #FFDF00, derive(#FFDF00, -30%), derive(#FFDF00, 30%));");
 		rateUp = new RateButton(LoadResource.rateUpCd, RateButton.getCost(), RateButton.getLevel());
@@ -256,7 +256,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char1.getPrice())) {
 						Player.consumeMoney(Char1.getPrice());
 						Char1.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 400, true, 75, 0));
+						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 75, 0));
 					}
 				}
 			}
@@ -269,7 +269,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char2.getPrice())) {
 						Player.consumeMoney(Char2.getPrice());
 						Char2.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 1333, 400, true, 110, 0));
+						AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 1333, 400, true, 60, 0));
 					}
 			}
 		});
@@ -281,7 +281,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char3.getPrice())) {
 						Player.consumeMoney(Char3.getPrice());
 						Char3.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 3000, 1223, 600, true, 75, 0));
+						AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 4000, 2223, 1900, true, 75, 0));
 					}
 			}
 		});
@@ -293,7 +293,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char4.getPrice())) {
 						Player.consumeMoney(Char4.getPrice());
 						Char4.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 2000, 1999, 100, true, 75, 0));
+						AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 4000, 2999, 1100, true, 75, 0));
 					}
 			}
 		});
@@ -305,7 +305,7 @@ public class ControlPane extends HBox {
 					if (Player.isConsume(Char5.getPrice())) {
 						Player.consumeMoney(Char5.getPrice());
 						Char5.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new HeroMonster("Angle", 5000, 2777, 1200, true, 60, 0));
+						AllCharacter.getPlayer().add(new HeroMonster("Angle", 8000, 3777, 2700, true, 50, 0));
 					}
 			}
 		});
