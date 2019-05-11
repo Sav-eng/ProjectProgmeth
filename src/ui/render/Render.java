@@ -22,7 +22,7 @@ public class Render {
 		GamePlayScene.drawBg();
 		GamePlayScene.drawBase(Player.getLevel());
 		for (Character a : AllCharacter.getPlayer()) {
-			if(a.getName() == "WizardFire" || a.getName() == "WizardLaser") gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX()-20, 320);
+			if(a.getName() == "WizardFire" || a.getName() == "WizardLaser" || a.getName() == "Fairy") gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX()-30, 320);
 			else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
 		}
 		for (Character a : AllCharacter.getEnemy()) {
