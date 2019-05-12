@@ -48,21 +48,21 @@ public class test extends Application {
 		gContext.drawImage(LoadResource.fairyDie[3], 0, 0);
 		gContext.drawImage(LoadResource.fairyDie[4], 0, 0);
 		
-		gContext.drawImage(LoadResource.orkAttack[0], 0, 200);
-		gContext.drawImage(LoadResource.orkAttack[1], 0, 200);
-		gContext.drawImage(LoadResource.orkAttack[2], 0, 200);
-		gContext.drawImage(LoadResource.orkAttack[3], 0, 200);
-		gContext.drawImage(LoadResource.orkAttack[4], 0, 200);
-		gContext.drawImage(LoadResource.orkWalk[0], 0, 200);
-		gContext.drawImage(LoadResource.orkWalk[1], 0, 200);
-		gContext.drawImage(LoadResource.orkWalk[2], 0, 200);
-		gContext.drawImage(LoadResource.orkWalk[3], 0, 200);
-		gContext.drawImage(LoadResource.orkWalk[4], 0, 200);
-		gContext.drawImage(LoadResource.orkDie[0], 0, 200);
-		gContext.drawImage(LoadResource.orkDie[1], 0, 200);
-		gContext.drawImage(LoadResource.orkDie[2], 0, 200);
-		gContext.drawImage(LoadResource.orkDie[3], 0, 200);
-		gContext.drawImage(LoadResource.orkDie[4], 0, 200);
+		gContext.drawImage(LoadResource.troll2Attack[0], 0, 200);
+		gContext.drawImage(LoadResource.troll2Attack[1], 0, 200);
+		gContext.drawImage(LoadResource.troll2Attack[2], 0, 200);
+		gContext.drawImage(LoadResource.troll2Attack[3], 0, 200);
+		gContext.drawImage(LoadResource.troll2Attack[4], 0, 200);
+		gContext.drawImage(LoadResource.troll2Walk[0], 0, 200);
+		gContext.drawImage(LoadResource.troll2Walk[1], 0, 200);
+		gContext.drawImage(LoadResource.troll2Walk[2], 0, 200);
+		gContext.drawImage(LoadResource.troll2Walk[3], 0, 200);
+		gContext.drawImage(LoadResource.troll2Walk[4], 0, 200);
+		gContext.drawImage(LoadResource.troll2Die[0], 0, 200);
+		gContext.drawImage(LoadResource.troll2Die[1], 0, 200);
+		gContext.drawImage(LoadResource.troll2Die[2], 0, 200);
+		gContext.drawImage(LoadResource.troll2Die[3], 0, 200);
+		gContext.drawImage(LoadResource.troll2Die[4], 0, 200);
 		
 //		StackPane root = new StackPane();
 		BorderPane root = new BorderPane();

@@ -175,9 +175,9 @@ public class LoadResource {
 		
 		setProgress(5);
 		for (int i = 0; i < 7; i++) {
-			troll2Attack[i] = loadImage("Troll_2/attack/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
-			troll2Die[i] = loadImage("Troll_2/die/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
-			troll2Walk[i] = loadImage("Troll_2/walk/" + (i + 1) + ".png", Numbers.CHA_WIDTH_FIX, Numbers.CHA_HEIGHT);
+			troll2Attack[i] = loadImage("Troll_2/attack/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
+			troll2Die[i] = loadImage("Troll_2/die/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
+			troll2Walk[i] = loadImage("Troll_2/walk/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);
 		}
 		for (int i = 0; i < 7; i++) {
 			orkAttack[i] = loadImage("Ork/attack/" + (i + 1) + ".png", Numbers.BOSS_WIDTH, Numbers.BOSS_HEIGHT);

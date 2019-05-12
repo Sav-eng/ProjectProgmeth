@@ -75,11 +75,11 @@ public class GamePlayScene extends BorderPane {
 	public static void drawBase(int level) {
 		if(level == 1) {
 			gc.drawImage(LoadResource.world1Base, -30, 190);
-			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
+			gc.drawImage(LoadResource.enerymyBase, 1200, 185);
 			
 		} else if(level ==2) {
 			gc.drawImage(LoadResource.world2Base, -10, 210);
-			gc.drawImage(LoadResource.enerymyBase, 1190, 185);
+			gc.drawImage(LoadResource.enerymyBase, 1200, 185);
 		}
 	}
 
