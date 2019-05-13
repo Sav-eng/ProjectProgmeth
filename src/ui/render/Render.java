@@ -21,14 +21,19 @@ public class Render {
 	public static void render() {
 		GamePlayScene.drawBg();
 		GamePlayScene.drawBase(Player.getLevel());
-		for (Character a : AllCharacter.getPlayer()) {
-			if(a.getName() == "WizardFire" || a.getName() == "WizardLaser" || a.getName() == "Fairy") gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX()-30, 320);
-			else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
+		try {
+			for (Character a : AllCharacter.getPlayer()) {
+				if(a.getName() == "WizardFire" || a.getName() == "WizardLaser" || a.getName() == "Fairy") gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX()-30, 320);
+				else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
+			}
+			for (Character a : AllCharacter.getEnemy()) {
+				if(a.getName() != "Ork" && a.getName() != "Troll2")gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
+				else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 280);
+			}	
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-		for (Character a : AllCharacter.getEnemy()) {
-			if(a.getName() != "Ork" && a.getName() != "Troll2")gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 320);
-			else gc.drawImage(a.nameToSprite()[a.getSprite()], a.getX(), 280);
-		}
+		
 		gc.setFill(Color.BLACK);
 		gc.setStroke(Color.GOLDENROD);
 		gc.setLineWidth(1.0);
