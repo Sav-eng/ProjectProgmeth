@@ -10,7 +10,7 @@ public class Game {
 	private static int phase=1;
 	private static int hpEnemyBase=Numbers.HP_ENEMY_BASE;
 	private static int hpPlayerBase=Numbers.HP_PLAYER_BASE;
-
+	
 	public static int getPhase() {
 		return phase;
 	}
