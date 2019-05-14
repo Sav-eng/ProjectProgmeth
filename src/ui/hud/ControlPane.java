@@ -7,6 +7,7 @@ import javax.xml.bind.helpers.PrintConversionEventImpl;
 
 import constant.LoadResource;
 import constant.Numbers;
+import exception.CooldownException;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.NumberExpression;
 import javafx.event.ActionEvent;
@@ -109,12 +110,18 @@ public class ControlPane extends HBox {
 		Char1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
-					if (Player.isConsume(Char1.getPrice())) {
-						Player.consumeMoney(Char1.getPrice());
-						Char1.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
+				try {
+					if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
+						if (Player.isConsume(Char1.getPrice())) {
+							Player.consumeMoney(Char1.getPrice());
+							Char1.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new MeleeMonster("Knight1", 989, 611, 300, true, 80, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
 				}
 			}
 		});
@@ -122,48 +129,81 @@ public class ControlPane extends HBox {
 		Char2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
-					if (Player.isConsume(Char2.getPrice())) {
-						Player.consumeMoney(Char2.getPrice());
-						Char2.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("Archer", 999, 421, 20, true, 30, 0));
+				try {
+					if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
+					{
+						if (Player.isConsume(Char2.getPrice())) {
+							Player.consumeMoney(Char2.getPrice());
+							Char2.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new RangeMonster("Archer", 999, 421, 20, true, 30, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
 			}
 		});
 
 		Char3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
-					if (Player.isConsume(Char3.getPrice())) {
-						Player.consumeMoney(Char3.getPrice());
-						Char3.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Thief", 1064, 556, 100, true, 30, 0));
+				try {
+					if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
+					{
+						if (Player.isConsume(Char3.getPrice())) {
+							Player.consumeMoney(Char3.getPrice());
+							Char3.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new MeleeMonster("Thief", 1064, 556, 100, true, 30, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
 			}
 		});
 
 		Char4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
-					if (Player.isConsume(Char4.getPrice())) {
-						Player.consumeMoney(Char4.getPrice());
-						Char4.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 1777, 500, true, 100, 0));
+				try {
+					if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
+					{
+						if (Player.isConsume(Char4.getPrice())) {
+							Player.consumeMoney(Char4.getPrice());
+							Char4.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new RangeMonster("Fairy", 821, 1777, 500, true, 100, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
+				
 			}
 		});
 
 		Char5.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
-					if (Player.isConsume(Char5.getPrice())) {
-						Player.consumeMoney(Char5.getPrice());
-						Char5.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 1888, 400, true, 110, 0));
+				try {
+					if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
+					{
+						if (Player.isConsume(Char5.getPrice())) {
+							Player.consumeMoney(Char5.getPrice());
+							Char5.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new HeroMonster("WizardFire", 2000, 1888, 400, true, 110, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
 			}
 		});
 
@@ -198,34 +238,50 @@ public class ControlPane extends HBox {
 		attackUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
-					if (Player.isConsume(Numbers.BOOST_PRICE)) {
-						Player.consumeMoney(Numbers.BOOST_PRICE);
-						attackUp.setPressTime(Time.getTime());
-						for (Character a : AllCharacter.getPlayer()) {
-							if (a instanceof RangeMonster) {
-								((RangeMonster) a).attackBoost();
+				try {
+					if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
+					{
+						if (Player.isConsume(Numbers.BOOST_PRICE)) {
+							Player.consumeMoney(Numbers.BOOST_PRICE);
+							attackUp.setPressTime(Time.getTime());
+							for (Character a : AllCharacter.getPlayer()) {
+								if (a instanceof RangeMonster) {
+									((RangeMonster) a).attackBoost();
+								}
 							}
+							Time.buffATK = 100;
 						}
-						Time.buffATK = 100;
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
 			}
 		});
 
 		defenceUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
-					if (Player.isConsume(Numbers.BOOST_PRICE)) {
-						Player.consumeMoney(Numbers.BOOST_PRICE);
-						defenceUp.setPressTime(Time.getTime());
-						for (Character a : AllCharacter.getPlayer()) {
-							if (a instanceof MeleeMonster) {
-								((MeleeMonster) a).defenceBoost();
+				try {
+					if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
+					{
+						if (Player.isConsume(Numbers.BOOST_PRICE)) {
+							Player.consumeMoney(Numbers.BOOST_PRICE);
+							defenceUp.setPressTime(Time.getTime());
+							for (Character a : AllCharacter.getPlayer()) {
+								if (a instanceof MeleeMonster) {
+									((MeleeMonster) a).defenceBoost();
+								}
 							}
+							Time.buffDEF = 100;
 						}
-						Time.buffDEF = 100;
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}	
 			}
 		});
 	}
@@ -254,12 +310,18 @@ public class ControlPane extends HBox {
 		Char1.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
-					if (Player.isConsume(Char1.getPrice())) {
-						Player.consumeMoney(Char1.getPrice());
-						Char1.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 75, 0));
+				try {
+					if (Time.getTime() - Char1.getPressTime() >= Char1.getCooldownTime()) {
+						if (Player.isConsume(Char1.getPrice())) {
+							Player.consumeMoney(Char1.getPrice());
+							Char1.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new MeleeMonster("Knight2", 2000, 1111, 700, true, 75, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
 				}
 			}
 		});
@@ -267,48 +329,83 @@ public class ControlPane extends HBox {
 		Char2.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
-					if (Player.isConsume(Char2.getPrice())) {
-						Player.consumeMoney(Char2.getPrice());
-						Char2.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 1333, 400, true, 60, 0));
+				try {
+					if (Time.getTime() - Char2.getPressTime() >= Char2.getCooldownTime())
+					{
+						if (Player.isConsume(Char2.getPrice())) {
+							Player.consumeMoney(Char2.getPrice());
+							Char2.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new RangeMonster("WizardFire", 2000, 1333, 400, true, 60, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
+				
 			}
 		});
 
 		Char3.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
-					if (Player.isConsume(Char3.getPrice())) {
-						Player.consumeMoney(Char3.getPrice());
-						Char3.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 4000, 2223, 1900, true, 75, 0));
+				try {
+					if (Time.getTime() - Char3.getPressTime() >= Char3.getCooldownTime())
+					{
+						if (Player.isConsume(Char3.getPrice())) {
+							Player.consumeMoney(Char3.getPrice());
+							Char3.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new MeleeMonster("Knight3", 4000, 2223, 1900, true, 75, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
+				
 			}
 		});
 
 		Char4.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
-					if (Player.isConsume(Char4.getPrice())) {
-						Player.consumeMoney(Char4.getPrice());
-						Char4.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 4000, 2999, 1100, true, 75, 0));
+				try {
+					if (Time.getTime() - Char4.getPressTime() >= Char4.getCooldownTime())
+					{
+						if (Player.isConsume(Char4.getPrice())) {
+							Player.consumeMoney(Char4.getPrice());
+							Char4.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new RangeMonster("WizardLaser", 4000, 2999, 1100, true, 75, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
+				
 			}
 		});
 
 		Char5.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
-					if (Player.isConsume(Char5.getPrice())) {
-						Player.consumeMoney(Char5.getPrice());
-						Char5.setPressTime(Time.getTime());
-						AllCharacter.getPlayer().add(new HeroMonster("Angle", 8000, 3777, 2700, true, 50, 0));
+				try {
+					if (Time.getTime() - Char5.getPressTime() >= Char5.getCooldownTime())
+					{
+						if (Player.isConsume(Char5.getPrice())) {
+							Player.consumeMoney(Char5.getPrice());
+							Char5.setPressTime(Time.getTime());
+							AllCharacter.getPlayer().add(new HeroMonster("Angle", 8000, 3777, 2700, true, 50, 0));
+						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
 			}
 		});
 
@@ -327,38 +424,57 @@ public class ControlPane extends HBox {
 		attackUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
-					if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
-						Player.consumeMoney(Numbers.BOOST_PRICE * 2);
-						attackUp.setPressTime(Time.getTime());
-						for (Character a : AllCharacter.getPlayer()) {
-							if (a instanceof RangeMonster) {
-								((RangeMonster) a).attackBoost();
-							} else if (a instanceof HeroMonster) {
-								((HeroMonster) a).attackBoost();
+				try {
+					if (Time.getTime() - attackUp.getPressTime() >= attackUp.getCooldownTime())
+					{
+						if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+							Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+							attackUp.setPressTime(Time.getTime());
+							for (Character a : AllCharacter.getPlayer()) {
+								if (a instanceof RangeMonster) {
+									((RangeMonster) a).attackBoost();
+								} else if (a instanceof HeroMonster) {
+									((HeroMonster) a).attackBoost();
+								}
 							}
 						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					System.out.println("This button is cooldown.");
+				}
+				
 			}
 		});
 
 		defenceUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
-					if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
-						Player.consumeMoney(Numbers.BOOST_PRICE * 2);
-						defenceUp.setPressTime(Time.getTime());
-						for (Character a : AllCharacter.getPlayer()) {
-							if (a instanceof MeleeMonster) {
-								((MeleeMonster) a).defenceBoost();
-							} else if (a instanceof HeroMonster) {
-								((HeroMonster) a).defenceBoost();
+				try {
+					if (Time.getTime() - defenceUp.getPressTime() >= defenceUp.getCooldownTime())
+					{
+						if (Player.isConsume(Numbers.BOOST_PRICE * 2)) {
+							Player.consumeMoney(Numbers.BOOST_PRICE * 2);
+							defenceUp.setPressTime(Time.getTime());
+							for (Character a : AllCharacter.getPlayer()) {
+								if (a instanceof MeleeMonster) {
+									((MeleeMonster) a).defenceBoost();
+								} else if (a instanceof HeroMonster) {
+									((HeroMonster) a).defenceBoost();
+								}
 							}
 						}
+					} else {
+						throw new CooldownException();
 					}
+				} catch (CooldownException e) {
+					// TODO: handle exception
+				}
+				
 			}
 		});
+
 	}
 
 	public void rateBright() {
