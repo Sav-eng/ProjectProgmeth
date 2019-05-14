@@ -16,7 +16,6 @@ public abstract class GameButton extends Button {
 
 	private Image character;
 	private int price;
-	private boolean isCooldown;
 	private int pressTime;
 
 	public GameButton(Image character,int price) {
@@ -29,15 +28,11 @@ public abstract class GameButton extends Button {
 		this.price = price;
 
 		setBorder(new Border(new BorderStroke(Color.GRAY, SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		isCooldown = false;
 
 		this.setGraphic(new ImageView(character));
 		this.setStyle("-fx-background-color: #ffffff;");
 	}
 	
-	public boolean getIsCooldown() {
-		return isCooldown;
-	}
 
 	public Image getCharacter() {
 		return character;

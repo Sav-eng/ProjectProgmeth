@@ -20,7 +20,7 @@ import javafx.scene.text.Font;
 import javafx.util.Duration;
 import model.data.Player;
 import ui.hud.ControlPane;
-import ui.hud.PauseButton;
+
 
 public class GamePlayScene extends BorderPane {
 
