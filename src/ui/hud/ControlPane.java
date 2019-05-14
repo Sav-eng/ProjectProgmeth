@@ -170,7 +170,7 @@ public class ControlPane extends HBox {
 		rateUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (RateButton.getLevel() != 10)
+				if (RateButton.getLevel() != 6)
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();
@@ -315,7 +315,7 @@ public class ControlPane extends HBox {
 		rateUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if (RateButton.getLevel() != 10)
+				if (RateButton.getLevel() != 6)
 					if (Player.isConsume(RateButton.getCost())) {
 						Player.consumeMoney(RateButton.getCost());
 						RateButton.levelUp();

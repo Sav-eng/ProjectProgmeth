@@ -30,8 +30,10 @@ public class Main extends Application {
 		load = new LoadingScene();
 		scene = new Scene(load,1400,Numbers.WIN_HEIGHT);
 //		Main.getScene().setRoot(Main.getMain());
+		
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Age Of Progmeth");
+		primaryStage.setResizable(false);
 		primaryStage.show();
 		
 		new Thread(()-> {
