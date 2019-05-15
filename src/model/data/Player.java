@@ -5,8 +5,6 @@ import ui.hud.RateButton;
 public class Player {
 
 	private static int money = 0;
-	private static boolean buffAtk;
-	private static boolean buffDef;
 	private static int level = 1;
 
 	public static int getLevel() {
