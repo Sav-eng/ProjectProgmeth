@@ -32,6 +32,7 @@ public class Render {
 			}	
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("over sprite");
 		}
 		
 		gc.setFill(Color.BLACK);
