@@ -9,7 +9,6 @@ import model.mon.MeleeMonster;
 import model.mon.RangeMonster;
 
 public class AllCharacter {
-	private static List<Character> allCharacters = new ArrayList<Character>();
 	private static List<Character> enemy = new ArrayList<Character>();
 	private static List<Character> player = new ArrayList<Character>();
 	
