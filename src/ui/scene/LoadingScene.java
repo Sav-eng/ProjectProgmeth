@@ -32,7 +32,7 @@ public class LoadingScene extends StackPane {
 				progress = LoadResource.getProgress();
 				
 				bg.setWidth(Numbers.WIN_WIDTH);
-				bg.setHeight(Numbers.WIN_HEIGHT);
+				bg.setHeight(Numbers.WIN_HEIGHT+50);
 				gContext.setFill(Color.BLACK);
 				gContext.setStroke(Color.BLACK);
 				gContext.fillRect(0, 0, bg.getWidth(), bg.getHeight());

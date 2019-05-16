@@ -33,7 +33,7 @@ public class MainMenuScene extends StackPane {
 
 		bg = new Canvas();
 		bg.setWidth(Numbers.WIN_WIDTH);
-		bg.setHeight(Numbers.WIN_HEIGHT);
+		bg.setHeight(Numbers.WIN_HEIGHT+50);
 		gc = bg.getGraphicsContext2D();
 		this.drawBg(gc);
 		this.getChildren().add(bg);
@@ -82,7 +82,7 @@ public class MainMenuScene extends StackPane {
 	}
 
 	public void drawBg(GraphicsContext gc) {
-		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT);
+		gc.drawImage(LoadResource.menuBg, 0, 0, Numbers.WIN_WIDTH, Numbers.WIN_HEIGHT+50);
 		gc.drawImage(LoadResource.logo, 500, 50);
 
 	}
