@@ -33,7 +33,7 @@ public class Bot {
 				if (!check) {
 					AllCharacter.getEnemy().add(new MeleeMonster("Ork", 5000, 4277, 350, false, 200, 250));
 					AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 15000, 4500, 100, false, 20, 1000));
-					check = true;
+					check = true;	
 				}
 				if(timeNow % 350 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Ork", 5000, 4277, 350, false, 200, 250));
 				if(timeNow % 700 == 0)AllCharacter.getEnemy().add(new MeleeMonster("Troll2", 20000, 4500, 1000, false, 20, 1000));

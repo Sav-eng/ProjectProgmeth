@@ -172,16 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="ui.hud.PauseButton" project="ProjectProgmeth" 
-    file="/ProjectProgmeth/src/ui/hud/PauseButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2148" y="-536"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="ui.hud.DefenceBuffButton" project="ProjectProgmeth" 
+  <class id="20" language="java" name="ui.hud.DefenceBuffButton" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/hud/DefenceBuffButton.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2036" y="498"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="ui.hud.RateButton" project="ProjectProgmeth" 
+  <class id="21" language="java" name="ui.hud.RateButton" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/hud/RateButton.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2124" y="305"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="ui.hud.EntityButton" project="ProjectProgmeth" 
+  <class id="22" language="java" name="ui.hud.EntityButton" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/hud/EntityButton.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2314" y="260"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="ui.hud.UpgradeButton" project="ProjectProgmeth" 
+  <class id="23" language="java" name="ui.hud.UpgradeButton" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/hud/UpgradeButton.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2512" y="260"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +208,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="ui.hud.GameButton" project="ProjectProgmeth" 
+  <class id="24" language="java" name="ui.hud.GameButton" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/hud/GameButton.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2310" y="-401"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +217,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="ui.render.Render" project="ProjectProgmeth" 
+  <class id="25" language="java" name="ui.render.Render" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/render/Render.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2512" y="-484"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -235,7 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="ui.render.AllUpdate" project="ProjectProgmeth" 
+  <class id="26" language="java" name="ui.render.AllUpdate" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/render/AllUpdate.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2710" y="-484"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -244,7 +235,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="ui.scene.GamePlayScene" project="ProjectProgmeth" 
+  <class id="27" language="java" name="ui.scene.GamePlayScene" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/scene/GamePlayScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1068" y="836"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +244,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="ui.scene.MainMenuScene" project="ProjectProgmeth" 
+  <class id="28" language="java" name="ui.scene.MainMenuScene" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/scene/MainMenuScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1307" y="836"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,7 +253,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="ui.scene.EndScene" project="ProjectProgmeth" 
+  <class id="29" language="java" name="ui.scene.EndScene" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/scene/EndScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1561" y="764"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -271,7 +262,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="ui.scene.LoadingScene" project="ProjectProgmeth" 
+  <class id="30" language="java" name="ui.scene.LoadingScene" project="ProjectProgmeth" 
     file="/ProjectProgmeth/src/ui/scene/LoadingScene.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1786" y="791"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,55 +271,55 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="21"/>    
+  <generalization id="31">    
+    <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="25"/>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
   </generalization>  
-  <generalization id="34">    
+  <generalization id="33">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <generalization id="35">    
+  <generalization id="34">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="17"/>  
   </generalization>  
-  <generalization id="36">    
+  <generalization id="35">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <realization id="37">    
+  <realization id="36">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
-  <realization id="38">    
+  <realization id="37">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="9"/>  
   </realization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="25"/>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="24"/>  
   </generalization>  
-  <generalization id="40">    
+  <generalization id="39">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="7"/>  
   </generalization>  
-  <realization id="41">    
+  <realization id="40">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
-  <generalization id="42">    
+  <generalization id="41">    
     <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="25"/>  
+    <end type="TARGET" refId="24"/>  
   </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="25"/>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="24"/>  
   </generalization>  
-  <realization id="44">    
+  <realization id="43">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="9"/>  
   </realization>  
